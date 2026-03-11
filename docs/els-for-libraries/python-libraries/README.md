@@ -148,6 +148,7 @@ Fixes for the following vulnerabilities are available in ELS for Python Librarie
 | CVE-2023-49082 | Medium   | 3.8.5               | 3.8.5.post1+tuxcare |
 | CVE-2023-47627 | High     | 3.8.1               | 3.8.1.post1+tuxcare |
 | CVE-2023-47627 | High     | 3.8.5               | 3.8.5.post1+tuxcare |
+| CVE-2024-30251 | HIGH     | 3.8.1               | 3.8.1.post5+tuxcare |
 | CVE-2023-37276 | High     | 3.8.4               | 3.8.4.post1+tuxcare |
 
   </template>
