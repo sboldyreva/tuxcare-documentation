@@ -9,7 +9,7 @@ NuGet is the standard package manager for .NET, used to deliver the reusable com
 * .NET 6, 8, 10
 * Microsoft.Owin 3.1.0
 * Microsoft.Owin.Security.Cookies 3.1.0
-* Newtonsoft.Json 4.5.11, 4.5.12, 6.0.8, 6.0.9, 8.0.3, 8.0.4, 9.0.1, 9.0.2, 10.0.3, 10.0.4, 11.0.2, 11.0.3, 12.0.3, 12.0.4
+* Newtonsoft.Json 4.5.11, 4.5.12, 6.0.8, 6.0.8.1, 6.0.9, 8.0.3, 8.0.4, 9.0.1, 9.0.2, 10.0.3, 10.0.4, 11.0.2, 11.0.3, 12.0.3, 12.0.4
 * SharpZipLib 0.86.0
 
 Other versions upon request.
