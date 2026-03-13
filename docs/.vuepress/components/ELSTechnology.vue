@@ -1054,7 +1054,7 @@ const techData = [
       },
       {
         name: "protobuf",
-        versions: "4.24.3",
+        versions: "3.17.0 | 4.24.3",
         link: "./python-libraries/",
       },
       {

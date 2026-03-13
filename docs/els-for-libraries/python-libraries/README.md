@@ -25,7 +25,7 @@ Endless Lifecycle Support (ELS) for Libraries from TuxCare provides security fix
 * **paramiko** 3.0.0
 * **pdfkit** 0.6.1
 * **Pillow** 8.4.0, 9.4.0, 9.5.0, 11.2.1
-* **protobuf** 4.24.3
+* **protobuf** 3.17.0, 4.24.3
 * **pydantic** 1.10.5
 * **PyJWT** 1.7.1, 2.3.0, 2.8.0, 2.10.1
 * **pymongo** 3.13.0
@@ -366,6 +366,7 @@ Fixes for the following vulnerabilities are available in ELS for Python Librarie
 | CVE ID        | Severity | Vulnerable Versions | Safe Version         |
 | :-----------: | :------: | :-----------------: | :------------------: |
 | CVE-2025-4565 | Medium   | 4.24.3              | 4.24.3.post1+tuxcare |
+| CVE-2022-1941 | High     | < 3.18.3            | 3.17.0.post1+tuxcare |
 
   </template>
 
