@@ -1276,7 +1276,7 @@ const techData = [
       },
       {
         name: "SharpZipLib",
-        versions: "0.86.0",
+        versions: "0.86.0 | 0.86.1",
         link: "./dotnet/",
       },
     ],

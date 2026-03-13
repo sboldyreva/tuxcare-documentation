@@ -10,7 +10,7 @@ NuGet is the standard package manager for .NET, used to deliver the reusable com
 * Microsoft.Owin 3.1.0
 * Microsoft.Owin.Security.Cookies 3.1.0
 * Newtonsoft.Json 4.5.11, 4.5.12, 6.0.8, 6.0.9, 8.0.3, 8.0.4, 9.0.1, 9.0.2, 10.0.3, 10.0.4, 11.0.2, 11.0.3, 12.0.3, 12.0.4
-* SharpZipLib 0.86.0
+* SharpZipLib 0.86.0, 0.86.1
 
 Other versions upon request.
 
@@ -219,6 +219,9 @@ dotnet nuget add source "https://nexus.repo.tuxcare.com/repository/<els_dotnet_c
 | :----: | :------: | :--------------: | :---------------: | :-----------: |
 | CVE-2024-21907 | High | Newtonsoft.Json | < 13.0.1 | See Nexus |
 | GHSA-5crp-9r3c-p9vr | High | Newtonsoft.Json | < 13.0.1 | See Nexus |
+| CVE-2021-32840 | High | SharpZipLib | < 1.3.3 | 0.86.1+tuxcare.1 |
+| CVE-2021-32841 | Medium | SharpZipLib | >= 1.3.0, < 1.3.3 | 0.86.1+tuxcare.1 |
+| CVE-2021-32842 | Medium | SharpZipLib | >= 1.0.0, < 1.3.3 | 0.86.1+tuxcare.1 |
 
 <script setup>
 
