@@ -1284,8 +1284,13 @@ const techData = [
         link: "./phpmailer/",
       },
       {
+        name: "php-svg-lib",
+        versions: "0.3.4",
+        link: "./php-svg-lib/",
+      },
+      {
         name: "PHPUnit",
-        versions: "12.4.5",
+        versions: "11.4.4 | 12.4.5",
         link: "./phpunit/",
       },
       {
