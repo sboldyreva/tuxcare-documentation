@@ -197,7 +197,7 @@ const techData = [
       },
       {
         name: "Bouncy Castle",
-        versions: "1.76",
+        versions: "1.64 | 1.76",
         link: "./java-libraries/",
       },
       {
