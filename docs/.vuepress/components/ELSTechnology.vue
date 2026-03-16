@@ -693,7 +693,7 @@ const techData = [
       },
       {
         name: "jsPDF",
-        versions: "2.5.2",
+        versions: "2.5.2 | 3.0.4",
         link: "./javascript-libraries/",
       },
       {
@@ -762,8 +762,13 @@ const techData = [
         link: "./javascript-libraries/",
       },
       {
+        name: "loader-utils",
+        versions: "0.2.17",
+        link: "./javascript-libraries/",
+      },
+      {
         name: "multer",
-        versions: "1.4.5-lts",
+        versions: "1.4.5-lts | 1.4.5-lts.2",
         link: "./javascript-libraries/",
       },
       {
@@ -927,8 +932,28 @@ const techData = [
         link: "./undici/",
       },
       {
+        name: "path-to-regexp",
+        versions: "0.1.3",
+        link: "./javascript-libraries/",
+      },
+      {
+        name: "serialize-javascript",
+        versions: "6.0.2",
+        link: "./javascript-libraries/",
+      },
+      {
+        name: "swiper",
+        versions: "11.2.10",
+        link: "./javascript-libraries/",
+      },
+      {
+        name: "tar",
+        versions: "6.2.1",
+        link: "./javascript-libraries/",
+      },
+      {
         name: "Vite",
-        versions: "4.5.5",
+        versions: "4.5.5 | 5.4.14",
         link: "./vite/",
       },
       {

@@ -5,6 +5,7 @@ Endless Lifecycle Support (ELS) for Vite from TuxCare provides security fixes fo
 ## Supported Vite Versions
 
 * Vite 4.5.5
+* Vite 5.4.14
 
 ## Connection to ELS for Vite Library
 

@@ -28,28 +28,33 @@ Endless Lifecycle Support (ELS) for Libraries from TuxCare provides security fix
 * **ip** 1.1.5, 2.0.0
 * **jquery-validation** 1.19.0
 * **jsonpath-plus** 7.2.0
-* **jspdf** 2.5.2
+* **jspdf** 2.5.2, 3.0.4
+* **loader-utils** 0.2.17
 * **marked** 4.0.9
 * **micromatch** 3.1.10
 * **minimatch** 3.0.4
 * **minimist** 1.2.8
 * **moment** 2.10.6
 * **mout** 0.9.1
-* **multer** 1.4.5-lts
+* **multer** 1.4.5-lts, 1.4.5-lts.2
 * **node-forge** 0.10.0
 * **nth-check** 1.0.2
 * **parsejson** 0.0.3
+* **path-to-regexp** 0.1.3
 * **pdfjs-dist** 2.16.105
 * **picocolors** 0.2.1
 * **qs** 2.2.5, 2.3.3, 2.4.2, 5.1.0, 5.2.0
 * **quill** 1.3.7
 * **request** 2.88.0
 * **rollup** 2.1.0, 2.26.5, 2.38.4, 2.79.1, 2.79.2
+* **serialize-javascript** 6.0.2
 * **semver** 7.1.3, 7.3.2
 * **sentry-browser** 5.7.1
 * **shell-quote** 1.4.3
 * **ssr-window** 4.0.2
+* **swiper** 11.2.10
 * **stringstream** 0.0.4
+* **tar** 6.2.1
 * **terser** 4.6.10, 4.8.1, 5.3.0, 5.5.1
 * **tinymce** 6.8.6
 * **tough-cookie** 2.2.0, 2.4.3, 2.5.0
@@ -213,7 +218,11 @@ Fixes for the following vulnerabilities are available in ELS for JavaScript Libr
 | CVE-2025-47944 | Direct   | High     | multer            | >= 1.4.4-lts.1 < 2.0.0 |
 | CVE-2025-48997 | Direct   | High     | multer            | >= 1.4.4-lts.1 < 2.0.1 |
 | CVE-2025-57810 | Direct   | High     | jspdf             | < 3.0.2            |
+| CVE-2025-68428 | Direct   | High     | jspdf             | < 4.0.0            |
+| CVE-2026-24737 | Direct   | High     | jspdf             | < 4.1.0            |
 | CVE-2025-7338  | Direct   | High     | multer            | >= 1.4.4-lts.1, < 2.0.2 |
+| CVE-2026-23950 | Direct   | High     | tar               | < 7.5.4            |
+| CVE-2026-24842 | Direct   | High     | tar               | < 7.5.7            |
 | AIKIDO-2025-10093 | Direct   | High     | ssr-window        | 2.0.0-beta.1 - 4.0.2 |
 | CVE-2020-7733  | Direct   | High     | ua-parser-js      | < 0.7.22           |
 | CVE-2020-7793  | Direct   | High     | ua-parser-js      | < 0.7.23           |
@@ -233,6 +242,10 @@ Fixes for the following vulnerabilities are available in ELS for JavaScript Libr
 | CVE-2025-26791 | Direct   | Medium   | dompurify         | < 3.2.4            |
 | CVE-2025-30359 | Direct   | Medium   | webpack-dev-server | < 5.2.1            |
 | CVE-2025-32997 | Direct   | Medium   | http-proxy-middleware | < 2.0.9, 3.x < 3.0.5 |
+| CVE-2026-24133 | Direct   | Medium   | jspdf             | < 4.1.0            |
+| CVE-2026-24043 | Direct   | Medium   | jspdf             | < 4.1.0            |
+| CVE-2026-24040 | Direct   | Medium   | jspdf             | < 4.1.0            |
+| CVE-2026-23745 | Direct   | Medium   | tar               | < 7.5.3            |
 | AIKIDO-2025-10177 | Direct   | Medium   | copy-anything     | 1.0.0 - 4.0.3      |
 | GHSA-593m-55hh-j8gv | Direct   | Moderate | @sentry/browser   | < 7.119.1, >= 8.0.0-alpha.1, < 8.33.0 |
 | GHSA-rvg8-pwq2-xj7q | Direct   | Moderate | base64url         | < 3.0.0            |
