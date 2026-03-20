@@ -988,13 +988,18 @@ const techData = [
       },
       {
         name: "vue",
-        versions: "2.7.16",
+        versions: "2.6.11 | 2.6.14 | 2.7.16",
+        link: "./vue/",
+      },
+      {
+        name: "vue-server-renderer",
+        versions: "2.6.11 | 2.6.14 | 2.7.16",
         link: "./vue/",
       },
       {
         name: "vue-template-compiler",
-        versions: "2.6.11",
-        link: "./vue-template-compiler/",
+        versions: "2.6.11 | 2.6.14 | 2.7.16",
+        link: "./vue/",
       },
       {
         name: "webpack",

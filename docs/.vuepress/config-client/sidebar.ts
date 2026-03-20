@@ -425,10 +425,6 @@ export default {
                     icon: '/images/vue-logo.webp',
                 },
                 {
-                    path: '/els-for-libraries/vue-template-compiler/',
-                    icon: '/images/vue-template-compiler-logo.webp',
-                },
-                {
                     path: '/els-for-libraries/webpack-dev-server/',
                     icon: '/images/webpack-dev-server.webp',
                 },
