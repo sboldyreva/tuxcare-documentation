@@ -16,8 +16,6 @@ Endless Lifecycle Support (ELS) for MongoDB driver from TuxCare provides securit
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Create or update the .npmrc file**
 
    Navigate to the root directory of your MongoDB Driver project and create a `.npmrc` file or update it if it already exists.
@@ -116,8 +114,6 @@ Endless Lifecycle Support (ELS) for MongoDB driver from TuxCare provides securit
    ```
 
    After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for MongoDB repository.
-
-</ELSSteps>
 
 ## Resolved CVEs
 

@@ -21,8 +21,6 @@ Our ELS for Apache Struts™ service is designed to provide solutions for organi
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Navigate to the build tool directory**
    * Windows
    ```text
@@ -112,9 +110,6 @@ Our ELS for Apache Struts™ service is designed to provide solutions for organi
    ]" />
 
    The build tool should be able to identify and resolve dependencies from the TuxCare ELS for Apache Struts™ repository.
-
-</ELSSteps>
-
 
 ## What's Next?
 

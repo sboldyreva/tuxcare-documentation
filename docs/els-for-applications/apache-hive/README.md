@@ -16,8 +16,6 @@ Our ELS for Apache Hive service is designed to provide solutions for organizatio
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Navigate to the build tool directory**
    * Windows
    ```text
@@ -92,8 +90,6 @@ Our ELS for Apache Hive service is designed to provide solutions for organizatio
    ]" />
 
    The build tool you're using should be able to identify and resolve dependencies from the TuxCare ELS for Apache Hive repository.
-
-</ELSSteps>
 
 ## What's Next?
 

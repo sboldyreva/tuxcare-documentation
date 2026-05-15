@@ -11,8 +11,6 @@
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Download the install script
 
    ```
@@ -50,8 +48,6 @@
    20 KiB
    ```
 
- </ELSSteps>
-
 ## What's Next?
 
 <WhatsNext hide-title>
@@ -62,7 +58,5 @@
 * ![](/images/shield.webp) [Machine-Readable Security Data](/els-for-os/machine-readable-security-data/) — Errata, OVAL, CSAF
 * ![](/images/box.webp) [Supported packages list](https://tuxcare.com/cve-tracker/products/?product=Alpine+Linux+3.18+ELS) — Full list of packages covered by ELS
 * ![](/images/wrench.webp) [Managing the ELS repository](/els-for-os/managing-els-repository/) — Updates, local mirror, and other repository operations
-
-
 
 </WhatsNext>

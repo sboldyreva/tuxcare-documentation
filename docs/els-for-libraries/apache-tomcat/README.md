@@ -25,8 +25,6 @@ Apache Tomcat® is also available for installation as a standalone server. You c
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Navigate to the build tool directory**
    * Windows
    ```text
@@ -99,9 +97,6 @@ Apache Tomcat® is also available for installation as a standalone server. You c
    ]" />
 
    The build tool should be able to identify and resolve dependencies from the TuxCare ELS for Apache Tomcat® repository.
-
-</ELSSteps>
-
 
 ## What's Next?
 

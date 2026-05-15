@@ -23,8 +23,6 @@ TuxCare provides ELS for Grafana as pre-built binaries for the following distrib
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Browse and download from Nexus**
 
    Visit TuxCare [Nexus](https://nexus.repo.tuxcare.com/#browse/browse:els-golang) and sign in with your credentials. Navigate to the `grafana` folder, choose the directory for your operating system, and download the appropriate archive.
@@ -90,8 +88,6 @@ TuxCare provides ELS for Grafana as pre-built binaries for the following distrib
 5. **Start Grafana**
 
    Use your deployment method (systemd, Docker, or manual) and verify that the application runs correctly.
-
-</ELSSteps>
 
 ## What's Next?
 

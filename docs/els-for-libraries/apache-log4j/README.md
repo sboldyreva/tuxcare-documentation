@@ -16,8 +16,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Log4j provides security pat
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Navigate to the build tool directory**
    * Windows
    ```text
@@ -90,9 +88,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Log4j provides security pat
    ]" />
 
    The build tool should be able to identify and resolve dependencies from the TuxCare ELS for Apache Log4j repository.
-
-</ELSSteps>
-
 
 ## Resolved CVEs in ELS for Apache Log4j
 

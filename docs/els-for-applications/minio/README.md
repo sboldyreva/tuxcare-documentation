@@ -22,8 +22,6 @@ TuxCare provides ELS for MinIO as pre-built Linux binaries for the following arc
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Browse and download from Nexus**
 
    Visit TuxCare [Nexus](https://nexus.repo.tuxcare.com/#browse/browse:els-golang) and sign in with your credentials. Navigate to the `minio` folder and download the archive that matches your architecture.
@@ -75,8 +73,6 @@ TuxCare provides ELS for MinIO as pre-built Linux binaries for the following arc
 5. **Start MinIO**
 
    Start the MinIO server with your configuration and verify that it runs correctly.
-
-</ELSSteps>
 
 ## What's Next?
 

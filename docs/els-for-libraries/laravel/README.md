@@ -19,8 +19,6 @@ Other versions upon request.
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Locate the `auth.json` file
 
    Composer reads credentials from a per-user `auth.json`. Create or edit the file at:
@@ -105,8 +103,6 @@ Other versions upon request.
    Composer will resolve dependencies against the TuxCare repository and install the patched releases.
 
    :::
-
-</ELSSteps>
 
 ### Composer Repository Configuration
 
@@ -241,7 +237,6 @@ Fixes for the following vulnerabilities are available in ELS for Laravel from Tu
 | GHSA-wq8p-mqvg-2p5h | High   | >= 8.0.0, < 8.40.0| 8.12.3-p1+tuxcare  |
 | CVE-2024-52301 | Medium   | >= 8.0.0, < 83.28| 8.12.3-p1+tuxcare  |
 | CVE-2021-43808 | Medium   | 8.0.0, < 8.75.0| 8.12.3-p1+tuxcare  |
-
 
 </template>
 

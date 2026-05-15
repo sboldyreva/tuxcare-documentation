@@ -87,8 +87,6 @@ TuxCare provides additional security support for PHP versions after the end of s
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Download the installer script
 
    <CodeTabs :tabs="[
@@ -134,8 +132,6 @@ TuxCare provides additional security support for PHP versions after the end of s
      { title: 'DEB', content: `dpkg -l | grep alt-php` },
      { title: 'APK', content: `apk info | grep alt-php` }
    ]" />
-
-</ELSSteps>
 
 ### Useful Commands and Usage
 
@@ -365,8 +361,6 @@ curl -O "${BASE}${FILE}"
 
 <template #Manual>
 
-<ELSSteps>
-
 1. Open the repository in your browser
 
    Navigate to your tokenized URL:
@@ -459,15 +453,11 @@ curl -O "${BASE}${FILE}"
 
    To verify that the required extensions are loaded, run `php -m`.
 
-</ELSSteps>
-
 </template>
 
 <template #TuxCare_Installer>
 
 TuxCare Installer allows you to install and manage ELS PHP versions through a graphical interface on Windows Server 2019, 2022, and 2025.
-
-<ELSSteps>
 
 1. Download the installer and launch it
 
@@ -522,8 +512,6 @@ TuxCare Installer allows you to install and manage ELS PHP versions through a gr
    Copyright (c) 1997-2016 The PHP Group
    Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
    ```
-
-</ELSSteps>
 
 During installation, the installer creates a folder with PHP configuration and selected modules, and adds TuxCare PHP to the **System PATH**.
 
@@ -612,8 +600,6 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
 
 ### Set up SaxonC
 
-<ELSSteps>
-
 1. Download SaxonC
 
    Download from the [official Saxonica download page](https://www.saxonica.com/download/c.xml). Create a working directory and move the downloaded zip file into it:
@@ -670,11 +656,7 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
    If the PHP web server can't find the Saxon libraries, you may also need to add `/opt/saxonica/lib` to a new file in `/etc/ld.so.conf.d/` and run `ldconfig`.
    :::
 
-</ELSSteps>
-
 ### Build the PHP extension
-
-<ELSSteps>
 
 1. Install alt-php82-devel
 
@@ -779,8 +761,6 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
    ```
 
    If you are using php-fpm or Apache, restart the services.
-
-</ELSSteps>
 
 ## PHP extensions list
 

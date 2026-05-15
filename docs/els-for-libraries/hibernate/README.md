@@ -17,8 +17,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Hibernate provides security patche
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Navigate to the build tool directory**
    * Windows
    ```text
@@ -108,9 +106,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Hibernate provides security patche
    ]" />
 
    The build tool should be able to identify and resolve dependencies from the TuxCare ELS for Hibernate repository.
-
-</ELSSteps>
-
 
 ## What's Next?
 

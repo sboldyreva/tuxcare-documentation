@@ -71,8 +71,6 @@ The .NET Runtime is the base runtime required to run console or server-based .NE
 The following steps use the .NET SDK installation as an example. If you are installing a runtime instead, follow a similar process using the corresponding .msi file.
 :::
 
-<ELSSteps>
-
 1. Download the installer
 
    Use your tokenized URL to access the download page. Choose the appropriate runtime (SDK, Runtime, Desktop Runtime, or ASP.NET Core Runtime) and download the installer for your architecture (x64 or x86). Downloading the latest version is recommended.
@@ -144,8 +142,6 @@ The following steps use the .NET SDK installation as an example. If you are inst
    ```text
    Hello, World!
    ```
-
-</ELSSteps>
 
 ## Additional configurations
 

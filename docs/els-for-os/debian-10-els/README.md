@@ -11,8 +11,6 @@
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Download the install script
 
    ```
@@ -58,8 +56,6 @@
    Description: ELS os release package for deb systems
    Description-md5: f3fdfd5cb5f71a4ebb6f1f40c8d57483
    ```
-
-</ELSSteps>
 
 ## What's Next?
 

@@ -29,8 +29,6 @@ Endless Lifecycle Support (ELS) for MySQL and Percona Server from TuxCare provid
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Download the installer script
 
    ```text
@@ -48,8 +46,6 @@ Endless Lifecycle Support (ELS) for MySQL and Percona Server from TuxCare provid
    ```text
    yum info els-mysql-release
    ```
-
-</ELSSteps>
 
 ## Removing the repository
 

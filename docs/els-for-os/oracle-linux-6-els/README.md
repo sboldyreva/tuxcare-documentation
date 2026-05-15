@@ -11,8 +11,6 @@
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Download the install script
 
    ```
@@ -50,8 +48,6 @@
    License     : GPLv2
    Description : OLE6 Server simulate els release files
    ```
-
-</ELSSteps>
 
 ## What's Next?
 

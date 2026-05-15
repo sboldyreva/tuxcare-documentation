@@ -17,8 +17,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Commons Lang provides secur
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Navigate to the build tool directory**
    * Windows
    ```text
@@ -108,9 +106,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Commons Lang provides secur
    ]" />
 
    The build tool should be able to identify and resolve dependencies from the TuxCare ELS for Apache Commons Lang repository.
-
-</ELSSteps>
-
 
 ## Resolved CVEs in ELS for Apache Commons Lang
 

@@ -11,8 +11,6 @@
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Download the install script
 
    ```
@@ -56,8 +54,6 @@
    Description: ELS define package for Ubuntu 16.04
    Description-md5: 39e3bb446b4c63607f8f0358484545bf
    ```
-
-</ELSSteps>
 
 ## What's Next?
 

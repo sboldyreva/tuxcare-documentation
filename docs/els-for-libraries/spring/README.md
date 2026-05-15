@@ -389,8 +389,6 @@ ELS for Spring® also patches transitive dependencies at no extra cost, includin
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Navigate to the build tool directory**
    * Windows
    ```text
@@ -463,9 +461,6 @@ ELS for Spring® also patches transitive dependencies at no extra cost, includin
    ]" />
 
    The build tool should be able to identify and resolve dependencies from the TuxCare ELS for Spring® repository.
-
-</ELSSteps>
-
 
 ## What's Next?
 

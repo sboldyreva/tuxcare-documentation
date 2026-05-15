@@ -16,8 +16,6 @@ Endless Lifecycle Support (ELS) for YUI from TuxCare provides security fixes for
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Create or update the .npmrc file**
 
    Navigate to the root directory of your YUI project and create a `.npmrc` file or update it if it already exists.
@@ -107,8 +105,6 @@ Endless Lifecycle Support (ELS) for YUI from TuxCare provides security fixes for
    ```
 
    After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for YUI repository.
-
-</ELSSteps>
 
 ## Resolved CVEs
 

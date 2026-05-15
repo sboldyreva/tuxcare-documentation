@@ -16,8 +16,6 @@ Endless Lifecycle Support (ELS) for react-router from TuxCare provides security 
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Create or update the .npmrc file**
 
    Navigate to the root directory of your react-router project and create a `.npmrc` file or update it if it already exists.
@@ -137,8 +135,6 @@ Endless Lifecycle Support (ELS) for react-router from TuxCare provides security 
    ```
 
    After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for react-router repository.
-
-</ELSSteps>
 
 ## What's Next?
 

@@ -46,8 +46,6 @@ alt-python provides a more flexible and convenient environment for working with 
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Download the installer script
 
    <CodeTabs :tabs="[
@@ -113,8 +111,6 @@ alt-python provides a more flexible and convenient environment for working with 
      { title: 'DEB', content: `apt-get update && apt-get --only-upgrade install 'alt-python*'` },
      { title: 'APK', content: `apk update && apk upgrade 'alt-python*'` }
    ]" />
-
-</ELSSteps>
 
 ## What's Next?
 

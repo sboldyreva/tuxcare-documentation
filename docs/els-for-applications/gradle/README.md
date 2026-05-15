@@ -16,8 +16,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Gradle provides security patches f
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 ## Linux Installation
 
 1. **Download Gradle**
@@ -66,8 +64,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Gradle provides security patches f
    ```
 
    The output should display the Gradle version and build details.
-
-</ELSSteps>
 
 ## What's Next?
 

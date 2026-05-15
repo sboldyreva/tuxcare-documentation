@@ -11,8 +11,6 @@
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Download the install script
 
    <CodeTabs :tabs="[
@@ -55,8 +53,6 @@
    License      : GPLv2
    Description  : CentOS Server els-release file
    ```
-
-</ELSSteps>
 
 ## What's Next?
 

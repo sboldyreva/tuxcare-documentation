@@ -125,8 +125,6 @@ Other libraries upon request.
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Create or update the .npmrc file**
 
    Navigate to the root directory of your JavaScript Libraries project and create a `.npmrc` file or update it if it already exists.
@@ -206,8 +204,6 @@ Other libraries upon request.
    ```
 
    After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for JavaScript Libraries repository.
-
-</ELSSteps>
 
 ## What's Next?
 

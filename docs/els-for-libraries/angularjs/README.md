@@ -16,8 +16,6 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Create or update the .npmrc file**
 
    Navigate to the root directory of your AngularJS project and create a `.npmrc` file or update it if it already exists.
@@ -157,8 +155,6 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
    ```
 
    After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for AngularJS repository.
-
-</ELSSteps>
 
 ## Resolved CVEs
 

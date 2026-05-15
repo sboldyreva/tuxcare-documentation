@@ -47,8 +47,6 @@ alt-ruby provides a more flexible and convenient environment for working with di
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Download the installer script
 
    <CodeTabs :tabs="[
@@ -106,8 +104,6 @@ alt-ruby provides a more flexible and convenient environment for working with di
      { title: 'DEB', content: `apt-get update && apt-get --only-upgrade install 'alt-ruby*'` },
      { title: 'APK', content: `apk update && apk upgrade 'alt-ruby*'` }
    ]" />
-
-</ELSSteps>
 
 ## What's Next?
 

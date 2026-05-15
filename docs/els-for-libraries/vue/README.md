@@ -18,8 +18,6 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Create or update the .npmrc file**
 
    Navigate to the root directory of your Vue project and create a `.npmrc` file or update it if it already exists.
@@ -136,8 +134,6 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
    ```
 
    After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for Vue repository.
-
-</ELSSteps>
 
 ## What's Next?
 

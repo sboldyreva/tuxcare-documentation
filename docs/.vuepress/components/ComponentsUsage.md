@@ -112,48 +112,9 @@ With a custom title:
 </ELSPrerequisites>
 ```
 
-## Components: ELSSteps
+## Numbered steps
 
-**Description**:
-
-- Semantic wrapper for numbered installation/setup steps.
-- Write a standard markdown ordered list (`1.`, `2.`, `3.`) inside the tags.
-- Step styling (numbered circles, connector lines) is applied globally via `theme.styl`, so all `<ol>` elements in `.content` pages get the same treatment.
-- The component adds spacing and code-block margin adjustments.
-
-**Props**: None (slot-based).
-
-**Usage example**:
-
-```markdown
-<ELSSteps>
-
-1. Download the install script
-
-
-   ```
-   wget https://repo.els.tuxcare.com/centos6-els/install-centos6-els-repo.sh
-   ```
-
-
-2. Run with your license key
-
-
-   ```
-   sh install-centos6-els-repo.sh --license-key XXXXXXXX
-   ```
-
-
-3. Verify installation
-
-
-   ```
-   yum info els-define
-   ```
-
-
-</ELSSteps>
-```
+Plain markdown ordered lists (`1.`, `2.`, `3.`) automatically render as styled steps (numbered circles and connector lines) on doc pages. No wrapper component is needed — just write a regular ordered list.
 
 ## Components: WhatsNext
 

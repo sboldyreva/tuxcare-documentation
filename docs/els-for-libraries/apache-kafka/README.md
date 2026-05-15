@@ -20,8 +20,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Kafka® provides security p
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Navigate to the build tool directory**
    * Windows
    ```text
@@ -94,9 +92,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Kafka® provides security p
    ]" />
 
    The build tool should be able to identify and resolve dependencies from the TuxCare ELS for Apache Kafka® repository.
-
-</ELSSteps>
-
 
 ## What's Next?
 

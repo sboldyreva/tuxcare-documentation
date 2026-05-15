@@ -21,8 +21,6 @@ Our ELS for Apache Spark™ service is designed to provide solutions for organiz
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Navigate to the build tool directory**
    * Windows
    ```text
@@ -95,9 +93,6 @@ Our ELS for Apache Spark™ service is designed to provide solutions for organiz
    ]" />
 
    The build tool should be able to identify and resolve dependencies from the TuxCare ELS for Apache Spark™ repository.
-
-</ELSSteps>
-
 
 ## Resolved CVEs in ELS for Apache Spark™
 

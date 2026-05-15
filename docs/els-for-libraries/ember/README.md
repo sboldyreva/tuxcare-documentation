@@ -18,8 +18,6 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Create or update the .npmrc file**
 
    Navigate to the root directory of your Ember.js project and create a `.npmrc` file or update it if it already exists.
@@ -322,8 +320,6 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
    ```
 
    After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS registry.
-
-</ELSSteps>
 
 ## What's Next?
 

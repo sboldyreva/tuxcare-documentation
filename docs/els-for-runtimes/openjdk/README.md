@@ -26,8 +26,6 @@ Endless Lifecycle Support (ELS) from TuxCare provides security fixes for OpenJDK
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Download the installer script
 
    ```text
@@ -74,4 +72,3 @@ Endless Lifecycle Support (ELS) from TuxCare provides security fixes for OpenJDK
    java -version
    ```
 
-</ELSSteps>

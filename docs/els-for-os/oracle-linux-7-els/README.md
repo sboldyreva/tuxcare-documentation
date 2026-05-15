@@ -11,8 +11,6 @@
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Download the install script
 
    ```
@@ -55,13 +53,9 @@
    Description : OEL7 Server els-release file
    ```
 
-</ELSSteps>
-
 **UEKR6 repository**
 
 The installation script **does not automatically add** the TuxCare UEKR6 repository. If you plan to use the `kernel-uek` package on your Oracle Linux 7 system, you need to enable the TuxCare UEKR6 repository manually.
-<ELSSteps>
-
 1. Use an editor of your choice to edit the `/etc/yum.repos.d/oraclelinux7-els.repo` file
 
    ```
@@ -76,8 +70,6 @@ The installation script **does not automatically add** the TuxCare UEKR6 reposit
    baseurl = https://repo.tuxcare.com/oraclelinux7-els/\$elstoken/UEKR6/\$basearch/
    enabled = 1
    ```
-</ELSSteps>
-
 ## What's Next?
 
 <WhatsNext hide-title>

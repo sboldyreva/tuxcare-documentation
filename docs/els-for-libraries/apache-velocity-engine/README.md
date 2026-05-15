@@ -20,8 +20,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Velocity Engine™ provides
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Navigate to the build tool directory**
    * Windows
    ```text
@@ -94,8 +92,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Velocity Engine™ provides
    ]" />
 
    The build tool should be able to identify and resolve dependencies from the TuxCare ELS for Apache Velocity Engine™ repository.
-
-</ELSSteps>
 
 ## What's Next?
 

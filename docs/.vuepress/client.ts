@@ -19,7 +19,6 @@ import ELSTechnology from "./components/ELSTechnology.vue";
 import ELSRTechnology from "./components/ELSRTechnology.vue";
 import ELSOSSelector from "./components/ELSOSSelector.vue";
 import ELSPrerequisites from "./components/ELSPrerequisites.vue";
-import ELSSteps from "./components/ELSSteps.vue";
 import WhatsNext from "./components/WhatsNext.vue";
 import ELSApplication from "./components/ELSApplication.vue";
 import GlobalCopyCode from "./components/GlobalCopyCode.vue";
@@ -57,7 +56,6 @@ export default defineClientConfig({
         app.component("ELSRTechnology", ELSRTechnology);
         app.component("ELSOSSelector", ELSOSSelector);
         app.component("ELSPrerequisites", ELSPrerequisites);
-        app.component("ELSSteps", ELSSteps);
         app.component("WhatsNext", WhatsNext);
         app.component("ELSApplication", ELSApplication);
         app.component("ELSBadge", ELSBadge);

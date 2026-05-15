@@ -34,8 +34,6 @@ Other versions upon request.
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Locate your project
 
    Ensure you are in a directory that contains a valid .NET project — the folder must include a `.csproj` file:
@@ -110,8 +108,6 @@ Other versions upon request.
    ```
 
    :::
-
-</ELSSteps>
 
 ## Resolved CVEs
 

@@ -16,8 +16,6 @@ If you have already installed a package with a `tuxcare.1` suffix and want to up
 
 If you have already installed a TuxCare-patched package and want to upgrade to a newer release, update the version string in your `composer.json` file or run the `composer require` command with the new version.
 
-<ELSSteps>
-
 1. Update the required version
 
    Replace `VENDOR/PACKAGE` with the package name and `VERSION-pN+tuxcare` with the version listed in your TuxCare Nexus account:
@@ -33,8 +31,6 @@ If you have already installed a TuxCare-patched package and want to upgrade to a
    ```text
    composer update
    ```
-
-</ELSSteps>
 
 **Check the exact version listed in your TuxCare Nexus account to ensure you receive the most recent patched release.**
 

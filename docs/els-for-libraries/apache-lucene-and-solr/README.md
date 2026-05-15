@@ -21,8 +21,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Lucene® and Apache Solr pr
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Navigate to the build tool directory**
    * Windows
    ```text
@@ -112,9 +110,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Lucene® and Apache Solr pr
    ]" />
 
    The build tool should be able to identify and resolve dependencies from the TuxCare ELS for Apache Lucene® / Apache Solr repository.
-
-</ELSSteps>
-
 
 ## Resolved CVEs
 

@@ -30,8 +30,6 @@ Apache Tomcat® is also available for installation as a library for Maven and Gr
 
 ## Linux Installation
 
-<ELSSteps>
-
 1. **Prepare a `tomcat` group**
 
    Create a `tomcat` group:
@@ -190,8 +188,6 @@ Check logs for detailed error information:
   ```text
   C:\Tomcat\logs\catalina.[date].log
   ```
-
-</ELSSteps>
 
 ## What's next?
 

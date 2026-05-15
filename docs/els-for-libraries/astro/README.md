@@ -16,8 +16,6 @@ Endless Lifecycle Support (ELS) for Astro from TuxCare provides security fixes f
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Create or update the .npmrc file**
 
    Navigate to the root directory of your Astro project and create a `.npmrc` file or update it if it already exists.
@@ -163,8 +161,6 @@ Endless Lifecycle Support (ELS) for Astro from TuxCare provides security fixes f
    ```
 
    After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for Astro repository.
-
-</ELSSteps>
 
 ## Resolved CVEs
 

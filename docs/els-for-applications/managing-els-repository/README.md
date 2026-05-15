@@ -4,8 +4,6 @@ This page provides instructions for upgrading to newer TuxCare-patched applicati
 
 ## Upgrading to a newer TuxCare version
 
-<ELSSteps>
-
 1. **Log in to the Nexus repository**
 
    Log in to [nexus.repo.tuxcare.com](https://nexus.repo.tuxcare.com) using your credentials.
@@ -21,8 +19,6 @@ This page provides instructions for upgrading to newer TuxCare-patched applicati
 4. **Verify and start using**
 
    Confirm the new version is installed correctly and run your application as usual.
-
-</ELSSteps>
 
 If you encounter any issues, please contact [TuxCare support](https://tuxcare.com/support-portal/).
 

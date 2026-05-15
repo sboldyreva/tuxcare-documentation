@@ -16,8 +16,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Jackson provides security patches 
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Navigate to the build tool directory**
    * Windows
    ```text
@@ -90,9 +88,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Jackson provides security patches 
    ]" />
 
    The build tool should be able to identify and resolve dependencies from the TuxCare ELS for Jackson repository.
-
-</ELSSteps>
-
 
 ## What's Next?
 

@@ -11,8 +11,6 @@
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Download the install script
 
    ```
@@ -53,8 +51,6 @@
    License     : GPLv2
    Description : CentOS Server simulate els release files
    ```
-
-</ELSSteps>
 
 ## What's Next?
 

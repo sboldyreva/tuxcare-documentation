@@ -68,8 +68,6 @@ Other libraries upon request.
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. **Navigate to the build tool directory**
 
    * Windows
@@ -154,8 +152,6 @@ Other libraries upon request.
    ]" />
 
    The build tool should be able to identify and resolve dependencies from the TuxCare ELS for Java Libraries repository.
-
-</ELSSteps>
 
 ## Resolved CVEs in ELS for Java Libraries
 

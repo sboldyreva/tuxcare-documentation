@@ -17,8 +17,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Maven provides security pat
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 ## Linux Installation
 
 1. **Download Apache Maven**
@@ -67,8 +65,6 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Maven provides security pat
    ```
 
    The output should display the Maven version and build details.
-
-</ELSSteps>
 
 ## What's Next?
 

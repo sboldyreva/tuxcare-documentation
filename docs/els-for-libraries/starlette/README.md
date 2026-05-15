@@ -32,8 +32,6 @@ Here `USERNAME` and `PASSWORD` are your TuxCare credentials.
 
 This method is recommended if you want to use only ELS-patched Python packages from TuxCare and replace the default PyPI source with the TuxCare ELS repository.
 
-<ELSSteps>
-
 1. Create or update the `pip` configuration file and add the following:
 
    <CodeTabs :tabs="[
@@ -57,13 +55,9 @@ This method is recommended if you want to use only ELS-patched Python packages f
    pip install starlette==0.13.6.post1+tuxcare
    ```
 
-</ELSSteps>
-
 #### Option 3: Add the TuxCare ELS repository as additional (recommended)
 
 If you want to keep using public PyPI and fetch only specific patched packages from TuxCare, use *extra-index-url* instead. In this configuration, make sure to specify the exact patched version, otherwise `pip` may install the version from public PyPI.
-
-<ELSSteps>
 
 1. Create or update the `pip` configuration file and add the following:
 
@@ -81,8 +75,6 @@ If you want to keep using public PyPI and fetch only specific patched packages f
    ```text
    pip install starlette==0.13.6.post1+tuxcare
    ```
-
-</ELSSteps>
 
 ## What's Next?
 

@@ -18,8 +18,6 @@ Other versions upon request.
 
 </ELSPrerequisites>
 
-<ELSSteps>
-
 1. Locate the `auth.json` file
 
    Composer reads credentials from a per-user `auth.json`. Create or edit the file at:
@@ -78,8 +76,6 @@ Other versions upon request.
    Composer will resolve dependencies against the TuxCare repository and install the patched releases.
 
    :::
-
-</ELSSteps>
 
 ### Composer Repository Configuration
 
