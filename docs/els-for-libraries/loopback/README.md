@@ -24,7 +24,7 @@ Endless Lifecycle Support (ELS) for LoopBack from TuxCare provides security fixe
 
    **Example:**
 
-   ```text
+   ```
    my-loopback-project/
    ├── node_modules/
    ├── package.json
@@ -36,7 +36,7 @@ Endless Lifecycle Support (ELS) for LoopBack from TuxCare provides security fixe
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```text
+   ```
    registry=https://registry.npmjs.org/
    @els-js:registry=https://nexus.repo.tuxcare.com/repository/els_js/
    //nexus.repo.tuxcare.com/repository/els_js/:_auth=${TOKEN}
@@ -54,7 +54,7 @@ Endless Lifecycle Support (ELS) for LoopBack from TuxCare provides security fixe
 
       <template #LoopBack_1.10.0>
 
-      ```text
+      ```
       "dependencies": {
         "loopback": "npm:@els-js/loopback@>=1.10.0-tuxcare.1"
       },
@@ -89,7 +89,7 @@ Endless Lifecycle Support (ELS) for LoopBack from TuxCare provides security fixe
 
       <template #LoopBack_2.42.0>
 
-      ```text
+      ```
       "dependencies": {
         "loopback": "npm:@els-js/loopback@>=2.42.0-tuxcare.1"
       },
@@ -106,13 +106,13 @@ Endless Lifecycle Support (ELS) for LoopBack from TuxCare provides security fixe
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```text
+   ```
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```text
+   ```
    npm install
    ```
 
@@ -122,7 +122,7 @@ Endless Lifecycle Support (ELS) for LoopBack from TuxCare provides security fixe
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```text
+   ```
    npm list
    ```
 

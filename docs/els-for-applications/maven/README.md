@@ -25,7 +25,7 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Maven provides security pat
 
    Download from TuxCare via the terminal using your credentials. For example, Maven 3.8.1:
 
-   ```text
+   ```
    curl -u USERNAME:PASSWORD -O https://nexus.repo.tuxcare.com/repository/els_java/org/apache/maven/apache-maven/3.8.1-tuxcare.1/apache-maven-3.8.1-tuxcare.1-bin.tar.gz
    ```
 
@@ -33,7 +33,7 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Maven provides security pat
 
 2. **Extract the archive**
 
-   ```text
+   ```
    sudo mkdir -p /opt/maven
    sudo tar -xvzf apache-maven-3.8.1-tuxcare.1-bin.tar.gz -C /opt/maven
    ```
@@ -42,7 +42,7 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Maven provides security pat
 
    Run the Maven binary from the extracted directory.
 
-   ```text
+   ```
    /opt/maven/apache-maven-3.8.1-tuxcare.1/bin/mvn --version
    ```
 
@@ -62,7 +62,7 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Maven provides security pat
 
    Open a Command Prompt or PowerShell window and run the following command.
 
-   ```text
+   ```
    C:\Maven\apache-maven-3.8.1-tuxcare.1\bin\mvn --version
    ```
 

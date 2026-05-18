@@ -24,7 +24,7 @@ Endless Lifecycle Support (ELS) for YUI from TuxCare provides security fixes for
 
    **Example:**
 
-   ```text
+   ```
    my-yui-project/
    ├── node_modules/
    ├── package.json
@@ -36,7 +36,7 @@ Endless Lifecycle Support (ELS) for YUI from TuxCare provides security fixes for
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```text
+   ```
    registry=https://registry.npmjs.org/
    @els-js:registry=https://nexus.repo.tuxcare.com/repository/els_js/
    //nexus.repo.tuxcare.com/repository/els_js/:_auth=${TOKEN}
@@ -54,7 +54,7 @@ Endless Lifecycle Support (ELS) for YUI from TuxCare provides security fixes for
 
       <template #yui_2.9.0>
 
-      ```text
+      ```
       "dependencies": {
         "yui2": "npm:@els-js/yui2@>=2.9.0-tuxcare.1"
       },
@@ -67,7 +67,7 @@ Endless Lifecycle Support (ELS) for YUI from TuxCare provides security fixes for
 
       <template #yui_3.18.1>
 
-      ```text
+      ```
       "overrides": {
         "hoek@0.9.1": "npm:@els-js/hoek@>=0.9.1-tuxcare.1",
         "mime@1.2.11": "npm:@els-js/mime@>=1.2.11-tuxcare.1",
@@ -86,13 +86,13 @@ Endless Lifecycle Support (ELS) for YUI from TuxCare provides security fixes for
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```text
+   ```
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```text
+   ```
    npm install
    ```
 
@@ -102,7 +102,7 @@ Endless Lifecycle Support (ELS) for YUI from TuxCare provides security fixes for
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```text
+   ```
    npm list
    ```
 

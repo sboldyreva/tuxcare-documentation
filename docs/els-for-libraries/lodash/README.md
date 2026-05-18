@@ -24,7 +24,7 @@ Endless Lifecycle Support (ELS) for Lodash from TuxCare provides security fixes 
 
    **Example:**
 
-   ```text
+   ```
    my-lodash-project/
    ├── node_modules/
    ├── package.json
@@ -36,7 +36,7 @@ Endless Lifecycle Support (ELS) for Lodash from TuxCare provides security fixes 
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```text
+   ```
    registry=https://registry.npmjs.org/
    @els-js:registry=https://nexus.repo.tuxcare.com/repository/els_js/
    //nexus.repo.tuxcare.com/repository/els_js/:_auth=${TOKEN}
@@ -58,7 +58,7 @@ Endless Lifecycle Support (ELS) for Lodash from TuxCare provides security fixes 
 
       <template #Lodash_1.3.1>
 
-      ```text
+      ```
       "dependencies": {
         "lodash": "npm:@els-js/lodash@>=1.3.1-tuxcare.1"
       },
@@ -71,7 +71,7 @@ Endless Lifecycle Support (ELS) for Lodash from TuxCare provides security fixes 
 
       <template #Lodash_2.4.2>
 
-      ```text
+      ```
       "dependencies": {
         "lodash": "npm:@els-js/lodash@>=2.4.2-tuxcare.1"
       },
@@ -84,7 +84,7 @@ Endless Lifecycle Support (ELS) for Lodash from TuxCare provides security fixes 
 
       <template #Lodash_3.2.0>
 
-      ```text
+      ```
       "dependencies": {
         "lodash": "npm:@els-js/lodash@>=3.2.0-tuxcare.1"
       },
@@ -97,7 +97,7 @@ Endless Lifecycle Support (ELS) for Lodash from TuxCare provides security fixes 
 
       <template #Lodash_3.10.1>
 
-      ```text
+      ```
       "dependencies": {
         "lodash": "npm:@els-js/lodash@>=3.10.1-tuxcare.1"
       },
@@ -110,7 +110,7 @@ Endless Lifecycle Support (ELS) for Lodash from TuxCare provides security fixes 
 
       <template #Lodash_4.5.0>
 
-      ```text
+      ```
       "dependencies": {
         "lodash": "npm:@els-js/lodash@>=4.5.0-tuxcare.1"
       },
@@ -123,7 +123,7 @@ Endless Lifecycle Support (ELS) for Lodash from TuxCare provides security fixes 
 
       <template #Lodash_4.17.15>
 
-      ```text
+      ```
       "dependencies": {
         "lodash": "npm:@els-js/lodash@>=4.17.15-tuxcare.1"
       },
@@ -136,7 +136,7 @@ Endless Lifecycle Support (ELS) for Lodash from TuxCare provides security fixes 
 
       <template #Lodash_4.17.19>
 
-      ```text
+      ```
       "dependencies": {
         "lodash": "npm:@els-js/lodash@>=4.17.19-tuxcare.1"
       },
@@ -153,14 +153,14 @@ Endless Lifecycle Support (ELS) for Lodash from TuxCare provides security fixes 
 
      Install the Patcher globally and run it. The TuxCare Patcher automatically detects the Lodash version in your `package.json` and updates your `dependencies` and `overrides` to use the corresponding TuxCare `@els-js/*` packages.
 
-     ```text
+     ```
      npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
      tuxcare-patch-js
      ```
 
      The patcher will update your `package.json`, for example, from:
 
-     ```text
+     ```
      "dependencies": {
        "lodash": "^4.17.19"
      }
@@ -168,7 +168,7 @@ Endless Lifecycle Support (ELS) for Lodash from TuxCare provides security fixes 
 
      to:
 
-     ```text
+     ```
      "dependencies": {
        "lodash": "npm:@els-js/lodash@>=4.17.19-tuxcare.1"
      },
@@ -181,13 +181,13 @@ Endless Lifecycle Support (ELS) for Lodash from TuxCare provides security fixes 
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```text
+   ```
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```text
+   ```
    npm install
    ```
 
@@ -197,7 +197,7 @@ Endless Lifecycle Support (ELS) for Lodash from TuxCare provides security fixes 
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```text
+   ```
    npm list
    ```
 

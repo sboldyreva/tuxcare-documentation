@@ -24,7 +24,7 @@ Endless Lifecycle Support (ELS) for Nuxt from TuxCare provides security fixes fo
 
    **Example:**
 
-   ```text
+   ```
    my-nuxt-project/
    ├── node_modules/
    ├── package.json
@@ -36,7 +36,7 @@ Endless Lifecycle Support (ELS) for Nuxt from TuxCare provides security fixes fo
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```text
+   ```
    registry=https://registry.npmjs.org/
    @els-js:registry=https://nexus.repo.tuxcare.com/repository/els_js/
    //nexus.repo.tuxcare.com/repository/els_js/:_auth=${TOKEN}
@@ -54,7 +54,7 @@ Endless Lifecycle Support (ELS) for Nuxt from TuxCare provides security fixes fo
 
       <template #nuxt_2.18.1>
 
-      ```text
+      ```
       "overrides": {
         "braces@2.3.2": "npm:@els-js/braces@>=2.3.2-tuxcare.1",
         "braces@3.0.3": "npm:@els-js/braces@>=3.0.3-tuxcare.1",
@@ -74,7 +74,7 @@ Endless Lifecycle Support (ELS) for Nuxt from TuxCare provides security fixes fo
 
       <template #nuxt_0.10.7>
 
-      ```text
+      ```
       "overrides": {
         "ajv@4.11.8": "npm:@els-js/ajv@>=4.11.8-tuxcare.1",
         "ajv@6.14.0": "npm:@els-js/ajv@>=6.14.0-tuxcare.1",
@@ -101,13 +101,13 @@ Endless Lifecycle Support (ELS) for Nuxt from TuxCare provides security fixes fo
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```text
+   ```
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```text
+   ```
    npm install
    ```
 
@@ -117,7 +117,7 @@ Endless Lifecycle Support (ELS) for Nuxt from TuxCare provides security fixes fo
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```text
+   ```
    npm list
    ```
 

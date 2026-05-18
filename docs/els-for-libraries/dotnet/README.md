@@ -40,13 +40,13 @@ Other versions upon request.
 
    Ensure you are in a directory that contains a valid .NET project — the folder must include a `.csproj` file:
 
-   ```text
+   ```
    dir *.csproj
    ```
 
    If a `.csproj` file is not found, create a new project:
 
-   ```text
+   ```
    dotnet new console -o MyProject
    cd MyProject
    ```
@@ -81,7 +81,7 @@ Other versions upon request.
 
    To verify that the source was added successfully, list all configured NuGet sources:
 
-   ```text
+   ```
    dotnet nuget list source
    ```
 
@@ -89,13 +89,13 @@ Other versions upon request.
 
    Install the TuxCare-maintained release that matches your project:
 
-   ```text
+   ```
    dotnet add package <PACKAGE_NAME> --version <VERSION>
    ```
 
    For example:
 
-   ```text
+   ```
    dotnet add package Newtonsoft.Json --version 12.0.4-tuxcare-els
    ```
 
@@ -105,7 +105,7 @@ Other versions upon request.
 
    If you edited `nuget.config` manually, run `dotnet restore` in your project directory to install packages and resolve dependencies against the TuxCare repository:
 
-   ```text
+   ```
    dotnet restore
    ```
 

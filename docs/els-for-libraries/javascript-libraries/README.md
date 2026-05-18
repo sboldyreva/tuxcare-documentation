@@ -133,7 +133,7 @@ Other libraries upon request.
 
    **Example:**
 
-   ```text
+   ```
    my-javascript-project/
    ├── node_modules/
    ├── package.json
@@ -145,7 +145,7 @@ Other libraries upon request.
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```text
+   ```
    registry=https://registry.npmjs.org/
    @els-js:registry=https://nexus.repo.tuxcare.com/repository/els_js/
    //nexus.repo.tuxcare.com/repository/els_js/:_auth=${TOKEN}
@@ -163,7 +163,7 @@ Other libraries upon request.
 
       Manually update your `package.json` file by replacing your JavaScript library dependencies with the TuxCare packages. This method gives you full control over which packages to update.
 
-      ```text
+      ```
       "dependencies": {
         "cookie": "npm:@els-js/cookie@>=0.4.2-tuxcare.1"
       },
@@ -176,7 +176,7 @@ Other libraries upon request.
 
       Install the Patcher globally and run it. The TuxCare Patcher automatically detects the JavaScript library versions in your `package.json` and updates your `dependencies` and `overrides` to use the corresponding TuxCare `@els-js/*` packages.
 
-      ```text
+      ```
       npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
       tuxcare-patch-js
       ```
@@ -185,13 +185,13 @@ Other libraries upon request.
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```text
+   ```
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```text
+   ```
    npm install
    ```
 
@@ -201,7 +201,7 @@ Other libraries upon request.
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```text
+   ```
    npm list
    ```
 

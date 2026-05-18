@@ -22,7 +22,7 @@ If you have already installed a TuxCare-patched package and want to upgrade to a
 
    Replace `VENDOR/PACKAGE` with the package name and `VERSION-pN+tuxcare` with the version listed in your TuxCare Nexus account:
 
-   ```text
+   ```
    composer require VENDOR/PACKAGE:VERSION-pN+tuxcare
    ```
 
@@ -30,7 +30,7 @@ If you have already installed a TuxCare-patched package and want to upgrade to a
 
    Run `composer update` to resolve dependencies and install the new release:
 
-   ```text
+   ```
    composer update
    ```
 
@@ -50,7 +50,7 @@ To upgrade to a newer TuxCare release (for example, from `version.post1+tuxcare`
 
 To upgrade to a newer TuxCare release (for example, from `tuxcare.1` to `tuxcare.3`), remove `node_modules`, clear the npm cache to avoid conflicts, and then run the installation command:
 
-```text
+```
 rm -rf node_modules package-lock.json && npm cache clean --force
 npm install
 ```
@@ -63,13 +63,13 @@ npm install
 
 To upgrade to a newer TuxCare release, update the package in your project:
 
-```text
+```
 dotnet add package <PACKAGE_NAME> --version <NEW_VERSION>
 ```
 
 Then rebuild the project to verify the upgrade:
 
-```text
+```
 dotnet build
 ```
 
@@ -99,7 +99,7 @@ The TuxCare NuGet source is configured per-project in `nuget.config`. Use the `d
 
 * **Add the TuxCare source**
 
-  ```text
+  ```
   dotnet nuget add source "https://nexus.repo.tuxcare.com/repository/<els_dotnet_customerN>/index.json" \
     --name TuxCare \
     --username USERNAME \
@@ -108,13 +108,13 @@ The TuxCare NuGet source is configured per-project in `nuget.config`. Use the `d
 
 * **List configured sources**
 
-  ```text
+  ```
   dotnet nuget list source
   ```
 
   Example output:
 
-  ```text
+  ```
   Registered Sources:
     1.  TuxCare [Enabled]
         https://nexus.repo.tuxcare.com/repository/<els_dotnet_customerN>/index.json
@@ -124,7 +124,7 @@ The TuxCare NuGet source is configured per-project in `nuget.config`. Use the `d
 
 * **Update source credentials**
 
-  ```text
+  ```
   dotnet nuget remove source TuxCare
   dotnet nuget add source "https://nexus.repo.tuxcare.com/repository/<els_dotnet_customerN>/index.json" `
     --name TuxCare `
@@ -134,7 +134,7 @@ The TuxCare NuGet source is configured per-project in `nuget.config`. Use the `d
 
 * **Remove the source**
 
-  ```text
+  ```
   dotnet nuget remove source TuxCare
   ```
 

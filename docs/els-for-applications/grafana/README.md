@@ -35,7 +35,7 @@ TuxCare provides ELS for Grafana as pre-built binaries for the following distrib
 
    <template #Debian_13>
 
-   ```text
+   ```
    curl -u USERNAME:PASSWORD -O https://nexus.repo.tuxcare.com/repository/els-golang/grafana/debian13/grafana-10.4.1-tuxcare.1.tar.gz
    ```
 
@@ -45,7 +45,7 @@ TuxCare provides ELS for Grafana as pre-built binaries for the following distrib
 
    <template #Debian_12>
 
-   ```text
+   ```
    curl -u USERNAME:PASSWORD -O https://nexus.repo.tuxcare.com/repository/els-golang/grafana/debian12/grafana-10.4.1-tuxcare.1.tar.gz
    ```
 
@@ -55,7 +55,7 @@ TuxCare provides ELS for Grafana as pre-built binaries for the following distrib
 
    <template #Alpine_Linux_3.22>
 
-   ```text
+   ```
    curl -u USERNAME:PASSWORD -O https://nexus.repo.tuxcare.com/repository/els-golang/grafana/alpine3_22/grafana-10.4.1-tuxcare.1.tar.gz
    ```
 
@@ -71,7 +71,7 @@ TuxCare provides ELS for Grafana as pre-built binaries for the following distrib
 
    Create an installation directory (for example `/opt/grafana`) and extract.
 
-   ```text
+   ```
    sudo mkdir -p /opt/grafana
    sudo tar -xzf grafana-10.4.1-tuxcare.1.tar.gz -C /opt/grafana --strip-components=1
    ```
@@ -82,7 +82,7 @@ TuxCare provides ELS for Grafana as pre-built binaries for the following distrib
 
    Change to the installation directory and run the binary to confirm the TuxCare ELS build.
 
-   ```text
+   ```
    cd /opt/grafana
    ./bin/grafana-server --version
    ```

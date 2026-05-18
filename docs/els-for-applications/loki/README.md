@@ -35,7 +35,7 @@ TuxCare provides ELS for Loki as pre-built binaries for the following distributi
 
    <template #Debian_13>
 
-   ```text
+   ```
    curl -u USERNAME:PASSWORD -O https://nexus.repo.tuxcare.com/repository/els-golang/loki/debian13/loki-3.1.0-tuxcare.1.tar.gz
    ```
 
@@ -45,7 +45,7 @@ TuxCare provides ELS for Loki as pre-built binaries for the following distributi
 
    <template #Debian_12>
 
-   ```text
+   ```
    curl -u USERNAME:PASSWORD -O https://nexus.repo.tuxcare.com/repository/els-golang/loki/debian12/loki-3.1.0-tuxcare.1.tar.gz
    ```
 
@@ -55,7 +55,7 @@ TuxCare provides ELS for Loki as pre-built binaries for the following distributi
 
    <template #Alpine_Linux_3.22>
 
-   ```text
+   ```
    curl -u USERNAME:PASSWORD -O https://nexus.repo.tuxcare.com/repository/els-golang/loki/alpine3_22/loki-3.1.0-tuxcare.1.tar.gz
    ```
 
@@ -71,7 +71,7 @@ TuxCare provides ELS for Loki as pre-built binaries for the following distributi
 
    Create an installation directory (for example `/opt/loki`) and extract.
 
-   ```text
+   ```
    sudo mkdir -p /opt/loki
    sudo tar -xzf loki-3.1.0-tuxcare.1.tar.gz -C /opt/loki --strip-components=1
    ```
@@ -82,7 +82,7 @@ TuxCare provides ELS for Loki as pre-built binaries for the following distributi
 
    Change to the installation directory and run the binary to confirm the TuxCare ELS build.
 
-   ```text
+   ```
    cd /opt/loki
    ./loki --version
    ```

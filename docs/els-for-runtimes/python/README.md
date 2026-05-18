@@ -88,19 +88,19 @@ alt-python provides a more flexible and convenient environment for working with 
 
    Check that the binary exists and returns the expected version:
 
-   ```text
+   ```
    /opt/alt/<python-version>/bin/python3 -V
    ```
 
    Optionally, verify execution:
 
-   ```text
+   ```
    /opt/alt/<python-version>/bin/python3 -c "print('Hello, World!')"
    ```
 
    To use this version as default in the current shell:
 
-   ```text
+   ```
    export PATH=/opt/alt/<python-version>/bin:$PATH
    python3 -V
    which python3

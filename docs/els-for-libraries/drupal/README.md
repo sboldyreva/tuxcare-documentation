@@ -121,7 +121,7 @@ No special steps are needed. The `^9.5` range matches `9.5.11-p1+tuxcare` direct
 
 Then run:
 
-```text
+```
 composer update drupal/core --with-all-dependencies
 ```
 
@@ -144,7 +144,7 @@ Because `drupal/core-recommended:9.5.11` requires exactly `drupal/core:9.5.11`, 
 
 Then run:
 
-```text
+```
 composer update "drupal/core-*" drupal/core --with-all-dependencies
 ```
 

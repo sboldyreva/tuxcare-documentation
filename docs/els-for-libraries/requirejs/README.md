@@ -24,7 +24,7 @@ Endless Lifecycle Support (ELS) for RequireJS from TuxCare provides security fix
 
    **Example:**
 
-   ```text
+   ```
    my-requirejs-project/
    ├── node_modules/
    ├── package.json
@@ -36,7 +36,7 @@ Endless Lifecycle Support (ELS) for RequireJS from TuxCare provides security fix
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```text
+   ```
    registry=https://registry.npmjs.org/
    @els-js:registry=https://nexus.repo.tuxcare.com/repository/els_js/
    //nexus.repo.tuxcare.com/repository/els_js/:_auth=${TOKEN}
@@ -58,7 +58,7 @@ Endless Lifecycle Support (ELS) for RequireJS from TuxCare provides security fix
 
       <template #requirejs_2.1.22>
 
-      ```text
+      ```
       "dependencies": {
         "requirejs": "npm:@els-js/requirejs@>=2.1.22-tuxcare.1"
       },
@@ -71,7 +71,7 @@ Endless Lifecycle Support (ELS) for RequireJS from TuxCare provides security fix
 
       <template #requirejs_2.3.6>
 
-      ```text
+      ```
       "dependencies": {
         "requirejs": "npm:@els-js/requirejs@>=2.3.6-tuxcare.1"
       },
@@ -88,14 +88,14 @@ Endless Lifecycle Support (ELS) for RequireJS from TuxCare provides security fix
 
      Install the Patcher globally and run it. The TuxCare Patcher automatically detects the RequireJS version in your `package.json` and updates your `dependencies` and `overrides` to use the corresponding TuxCare `@els-js/*` packages.
 
-     ```text
+     ```
      npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
      tuxcare-patch-js
      ```
 
      The patcher will update your `package.json`, for example, from:
 
-     ```text
+     ```
      "dependencies": {
        "requirejs": "^2.3.6"
      }
@@ -103,7 +103,7 @@ Endless Lifecycle Support (ELS) for RequireJS from TuxCare provides security fix
 
      to:
 
-     ```text
+     ```
      "dependencies": {
        "requirejs": "npm:@els-js/requirejs@>=2.3.6-tuxcare.1"
      },
@@ -116,13 +116,13 @@ Endless Lifecycle Support (ELS) for RequireJS from TuxCare provides security fix
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```text
+   ```
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```text
+   ```
    npm install
    ```
 
@@ -132,7 +132,7 @@ Endless Lifecycle Support (ELS) for RequireJS from TuxCare provides security fix
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```text
+   ```
    npm list
    ```
 

@@ -97,13 +97,13 @@ The following steps use the .NET SDK installation as an example. If you are inst
 
    Open **Command Prompt** or **PowerShell** and run:
 
-   ```text
+   ```
    dotnet --version
    ```
 
    Example output:
 
-   ```text
+   ```
    6.0.429
    ```
 
@@ -111,13 +111,13 @@ The following steps use the .NET SDK installation as an example. If you are inst
 
    Create a new console application to confirm everything works:
 
-   ```text
+   ```
    dotnet new console -o MyTestApp
    ```
 
    Example output:
 
-   ```text
+   ```
    Welcome to .NET 6.0!
    ---------------------
    SDK Version: 6.0.429
@@ -134,14 +134,14 @@ The following steps use the .NET SDK installation as an example. If you are inst
 
    Navigate to the folder and run it:
 
-   ```text
+   ```
    cd MyTestApp
    dotnet run
    ```
 
    Expected output:
 
-   ```text
+   ```
    Hello, World!
    ```
 
@@ -153,26 +153,26 @@ The following steps use the .NET SDK installation as an example. If you are inst
 
 * `where.exe dotnet` — locates the dotnet executable on the system:
 
-  ```text
+  ```
   where.exe dotnet
   ```
 
   Example output:
 
-  ```text
+  ```
   C:\Program Files\dotnet\dotnet.exe
   ```
 
 * `dotnet --info` — displays information about installed SDKs, runtimes, and your OS:
 
-  ```text
+  ```
   dotnet --info
   ```
 
   <details>
   <summary>Example output</summary>
 
-  ```text
+  ```
   .NET SDK (reflecting any global.json):
   Version:   6.0.429
   Commit:    ef6f5ce48c
@@ -211,13 +211,13 @@ The following steps use the .NET SDK installation as an example. If you are inst
 
 * `dotnet --list-sdks` — lists all installed SDKs. Uninstall old versions after installing a new one:
 
-  ```text
+  ```
   dotnet --list-sdks
   ```
   
   Example output:
 
-  ```text
+  ```
   6.0.429 [C:\Program Files\dotnet\sdk]
   ```
 

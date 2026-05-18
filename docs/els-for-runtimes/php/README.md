@@ -260,7 +260,7 @@ Replace `alt-package-name` with the specific name of the package you are looking
 
 **Option 3: Through the CLI**
 
-```text
+```
 /opt/alt/php73/usr/bin/php -d "extension=igbinary.so" -m
 ```
 
@@ -271,7 +271,7 @@ Replace `alt-package-name` with the specific name of the package you are looking
 1. Open the `default.ini` file in an editor.
 2. Set the limits as needed:
 
-    ```text
+    ```
     upload_max_filesize=40M
     post_max_size=40M
     memory_limit=256M
@@ -300,7 +300,7 @@ Always include a **trailing slash** at the end of your tokenized URL (e.g. `http
 
 Your tokenized URL provides access to the TuxCare PHP for Windows repository. It contains an authentication token embedded in the URL:
 
-```text
+```
 https://<YOUR-TOKEN>@windows.tuxcare.com/php/
 ```
 
@@ -319,29 +319,29 @@ https://<YOUR-TOKEN>@windows.tuxcare.com/php/
 **Example walkthrough:**
 
 1. Open the repository root:
-   ```text
+   ```
    https://<YOUR-TOKEN>@windows.tuxcare.com/php/
    ```
 2. Click on `7.4.33/`. If the browser navigates to `https://windows.tuxcare.com/php/7.4.33/` and prompts for a password, edit the address bar and add the token:
-   ```text
+   ```
    https://<YOUR-TOKEN>@windows.tuxcare.com/php/7.4.33/
    ```
 3. Click on `tuxcare.els8/`. If prompted again, add the token to the URL:
-   ```text
+   ```
    https://<YOUR-TOKEN>@windows.tuxcare.com/php/7.4.33/tuxcare.els8/
    ```
 4. You see the ZIP files listed. Click on the file to download it directly.
 
 **Downloading files directly.** If you already know which file you need, skip browsing and build the full URL from the repository root, version, release folder, and file name:
 
-```text
+```
 https://<YOUR-TOKEN>@windows.tuxcare.com
   /php/<version>/tuxcare.els<N>/<filename>.zip
 ```
 
 PowerShell:
 
-```text
+```
 $base = "https://<YOUR-TOKEN>@windows.tuxcare.com"
 $file = "/php/7.4.33/tuxcare.els8/" +
   "php-7.4.33-tuxcare-els8-nts-Win32-vc15-x64-signed.zip"
@@ -350,7 +350,7 @@ Invoke-WebRequest -Uri "$base$file" -OutFile "php-7.4.33.zip"
 
 curl:
 
-```text
+```
 BASE="https://<YOUR-TOKEN>@windows.tuxcare.com"
 FILE="/php/7.4.33/tuxcare.els8/\
 php-7.4.33-tuxcare-els8-nts-Win32-vc15-x64-signed.zip"
@@ -371,7 +371,7 @@ curl -O "${BASE}${FILE}"
 
    Navigate to your tokenized URL:
 
-   ```text
+   ```
    https://<YOUR-TOKEN>@windows.tuxcare.com/php/
    ```
 
@@ -381,7 +381,7 @@ curl -O "${BASE}${FILE}"
 
    Inside each version folder you will find subfolders named `tuxcare.elsN/`, where `N` is the TuxCare release number. Always select the subfolder with the **highest** number, as it contains the latest security updates. Each archive follows this naming pattern:
 
-   ```text
+   ```
    php-<version>-tuxcare-els<N>-<thread>-Win32-<vc>-<arch>-signed.zip
    ```
 
@@ -401,7 +401,7 @@ curl -O "${BASE}${FILE}"
 
    Alternatively, use PowerShell:
 
-   ```text
+   ```
    New-Item -ItemType Directory -Path "C:\PHP" -Force
    Expand-Archive `
      -Path "$HOME\Downloads\php-7.4.33-tuxcare-els8-nts-Win32-vc15-x64-signed.zip" `
@@ -414,13 +414,13 @@ curl -O "${BASE}${FILE}"
 
    Create a configuration file from one of the provided templates — copy `php.ini-development` for development or `php.ini-production` for production to `php.ini`:
 
-   ```text
+   ```
    Copy-Item "C:\PHP\php.ini-production" "C:\PHP\php.ini"
    ```
 
    Open `C:\PHP\php.ini` in a text editor, set the extension directory, and enable the extensions your application requires:
 
-   ```text
+   ```
    extension_dir = "C:\PHP\ext"
    extension=curl
    extension=mbstring
@@ -434,7 +434,7 @@ curl -O "${BASE}${FILE}"
 
    Alternatively, use PowerShell (run as Administrator):
 
-   ```text
+   ```
    $currentPath = [System.Environment]::GetEnvironmentVariable("Path", "Machine")
    [System.Environment]::SetEnvironmentVariable("Path", "$currentPath;C:\PHP", "Machine")
    ```
@@ -445,13 +445,13 @@ curl -O "${BASE}${FILE}"
 
    Open **Command Prompt**, **PowerShell**, or **Terminal** and run:
 
-   ```text
+   ```
    php -v
    ```
 
    You should see output like:
 
-   ```text
+   ```
    PHP 7.4.33 (cli) (built: Mar 10 2026 10:12:00)
    Copyright (c) The PHP Group
    Zend Engine v3.4.0, Copyright (c) Zend Technologies
@@ -473,7 +473,7 @@ TuxCare Installer allows you to install and manage ELS PHP versions through a gr
 
    Download the installer using your tokenized URL:
 
-   ```text
+   ```
    https://<YOUR-TOKEN>@windows.tuxcare.com/php/installer/TuxCare.Installer.exe
    ```
 
@@ -511,13 +511,13 @@ TuxCare Installer allows you to install and manage ELS PHP versions through a gr
 
    Open **Command Prompt**, **PowerShell**, or **Terminal** and run:
 
-   ```text
+   ```
    php -v
    ```
 
    You should see output like:
 
-   ```text
+   ```
    PHP 5.6.40 (cli) (built: May 30 2025 15:43:43)
    Copyright (c) 1997-2016 The PHP Group
    Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
@@ -564,7 +564,7 @@ If you have multiple PHP versions installed and want to change the default, upda
 
 Extensions are managed through the `php.ini` file located in your PHP installation directory (e.g. `C:\PHP`). Open it in a text editor and find the extensions section. Remove the semicolon `;` at the beginning of a line to enable an extension, or add `;` to disable it.
 
-```text
+```
 ;extension=curl
 extension=gd2
 ;extension=mbstring
@@ -576,7 +576,7 @@ extension=pdo_mysql
 
 If you're integrating PHP with applications like WordPress, you might need to increase memory and upload size limits. Open the `php.ini` file and set the values as needed:
 
-```text
+```
 upload_max_filesize=40M
 post_max_size=40M
 memory_limit=256M
@@ -618,7 +618,7 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
 
    Download from the [official Saxonica download page](https://www.saxonica.com/download/c.xml). Create a working directory and move the downloaded zip file into it:
 
-   ```text
+   ```
    mkdir saxon && cd saxon
    mv ../SaxonCHE-linux-x86_64-12-9-0.zip .
    ```
@@ -627,14 +627,14 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
 
    Unzip the downloaded file and verify:
 
-   ```text
+   ```
    unzip SaxonCHE-linux-x86_64-12-9-0.zip
    ls
    ```
 
    Example output:
 
-   ```text
+   ```
    SaxonCHE-linux-x86_64-12-9-0  SaxonCHE-linux-x86_64-12-9-0.zip
    ```
 
@@ -642,7 +642,7 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
 
    Starting with version 12.6, `/opt/saxonica/` is the recommended installation path. Navigate into the extracted directory and copy all Saxon files:
 
-   ```text
+   ```
    cd SaxonCHE-linux-x86_64-12-9-0
    sudo mkdir -p /opt/saxonica/
    sudo cp -r SaxonCHE/* /opt/saxonica/
@@ -656,13 +656,13 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
 
    The `LD_LIBRARY_PATH` variable must point to the Saxon libraries:
 
-   ```text
+   ```
    export LD_LIBRARY_PATH="/opt/saxonica/lib:$LD_LIBRARY_PATH"
    ```
 
    To run the Transform, Query, and Validate (EE only) binaries, set the `PATH` variable:
 
-   ```text
+   ```
    export PATH="/opt/saxonica/bin:$PATH"
    ```
 
@@ -680,13 +680,13 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
 
    Install the development package required for compiling PHP extensions:
 
-   ```text
+   ```
    dnf install alt-php82-devel
    ```
 
    Verify that `phpize` is available:
 
-   ```text
+   ```
    ls /opt/alt/php82/usr/bin/phpize
    ```
 
@@ -694,14 +694,14 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
 
    Navigate to the PHP extension source directory within the extracted Saxon archive and run `phpize` to prepare the build:
 
-   ```text
+   ```
    cd php/src/
    /opt/alt/php82/usr/bin/phpize
    ```
 
    Example output:
 
-   ```text
+   ```
    Configuring for:
    PHP Api Version:         20220829
    Zend Module Api No:      20220829
@@ -712,20 +712,20 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
 
    Configure the extension build with Saxon support and link to the Saxon libraries:
 
-   ```text
+   ```
    ./configure --with-saxon --with-php-config=/opt/alt/php82/usr/bin/php-config LDFLAGS="-L/opt/saxonica/lib"
    ```
 
    Compile and install:
 
-   ```text
+   ```
    make
    sudo make install
    ```
 
    Example output:
 
-   ```text
+   ```
    Installing shared extensions:     /opt/alt/php82/usr/lib64/php/modules/
    ```
 
@@ -733,7 +733,7 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
 
    Create a configuration file that tells PHP to load the extension:
 
-   ```text
+   ```
    tee -a /opt/alt/php82/etc/php.d/20-saxon.ini <<EOF
    ; configuration for php Saxon HE/PE/EE module
    extension=saxon.so
@@ -742,13 +742,13 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
 
    Verify that the Saxon extension appears in the list of loaded modules:
 
-   ```text
+   ```
    /opt/alt/php82/usr/bin/php -m | grep saxon
    ```
 
    Example output:
 
-   ```text
+   ```
    saxonc
    ```
 
@@ -756,7 +756,7 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
 
    Run a quick test to confirm the extension works:
 
-   ```text
+   ```
    /opt/alt/php82/usr/bin/php -ddisplay_errors=E_ALL  << 'EOF'
    <?php
      $saxonProc = new Saxon\SaxonProcessor();
@@ -774,7 +774,7 @@ This guide also uses **SaxonC-HE** as an example. Be sure to adjust file names a
 
    Example output:
 
-   ```text
+   ```
    <a/>
    ```
 

@@ -24,7 +24,7 @@ Endless Lifecycle Support (ELS) for Next.js from TuxCare provides security fixes
 
    **Example:**
 
-   ```text
+   ```
    my-nextjs-project/
    ├── node_modules/
    ├── package.json
@@ -36,7 +36,7 @@ Endless Lifecycle Support (ELS) for Next.js from TuxCare provides security fixes
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```text
+   ```
    registry=https://registry.npmjs.org/
    @els-js:registry=https://nexus.repo.tuxcare.com/repository/els_js/
    //nexus.repo.tuxcare.com/repository/els_js/:_auth=${TOKEN}
@@ -54,7 +54,7 @@ Endless Lifecycle Support (ELS) for Next.js from TuxCare provides security fixes
 
       <template #next_12.3.7>
 
-      ```text
+      ```
       "dependencies": {
         "next": "npm:@els-js/next@>=12.3.7-tuxcare.1"
       },
@@ -67,7 +67,7 @@ Endless Lifecycle Support (ELS) for Next.js from TuxCare provides security fixes
 
       <template #next_13.5.11>
 
-      ```text
+      ```
       "dependencies": {
         "next": "npm:@els-js/next@>=13.5.11-tuxcare.1"
       },
@@ -80,7 +80,7 @@ Endless Lifecycle Support (ELS) for Next.js from TuxCare provides security fixes
 
       <template #next_14.2.35>
 
-      ```text
+      ```
       "dependencies": {
         "next": "npm:@els-js/next@>=14.2.35-tuxcare.1"
       },
@@ -93,7 +93,7 @@ Endless Lifecycle Support (ELS) for Next.js from TuxCare provides security fixes
 
       <template #next_16.0.6>
 
-      ```text
+      ```
       "dependencies": {
         "next": "npm:@els-js/next@>=16.0.6-tuxcare.1"
       },
@@ -110,13 +110,13 @@ Endless Lifecycle Support (ELS) for Next.js from TuxCare provides security fixes
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```text
+   ```
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```text
+   ```
    npm install
    ```
 
@@ -126,7 +126,7 @@ Endless Lifecycle Support (ELS) for Next.js from TuxCare provides security fixes
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```text
+   ```
    npm list
    ```
 

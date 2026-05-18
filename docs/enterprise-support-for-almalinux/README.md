@@ -120,19 +120,19 @@ The TuxCare ESU/FIPS packages and repositories are cryptographically signed with
 
 For 9.2:
 
-```text
+```
 # dnf -y install https://repo.tuxcare.com/tuxcare/tuxcare-release-latest-9.2.noarch.rpm
 ```
 
 For 9.6:
 
-```text
+```
 # dnf -y install https://repo.tuxcare.com/tuxcare/tuxcare-release-latest-9.6.noarch.rpm
 ```
 
 The second step is to activate your license on the system. You should run the `tuxctl` tool as root with your ESU license key provided as a command line argument like so:
 
-```text
+```
 # tuxctl --license-key XXXXXXXXXX
 ```
 
@@ -149,7 +149,7 @@ This tool will do the following:
 
 After installation you'll see the following message:
 
-```text
+```
 TuxCare installed successfully
 ```
 
@@ -157,14 +157,14 @@ This means your system is registered and ready to receive updates from TuxCare.
 :::warning
 If during installation something goes wrong then the `tuxctl` tool will show an error message and suggest how to handle it. For example, if your system is already registered you'll receive the following message:
 
-```text
+```
 This server already has a TuxCare token installed
 To force re-registration, please run the script with --force
 ```
 
 Then you will have to run `tuxctl` like this:
 
-```text
+```
 # tuxctl --force -l XXXXXXXXXX
 ```
 
@@ -174,21 +174,21 @@ Then you will have to run `tuxctl` like this:
 
 To check if a server is already activated, you can run `tuxctl` and check for return code 0:
 
-```text
+```
 # tuxctl -v
 Server is registered with token <blah>
 ```
 
 Or if not registered you will get a return code 1:
 
-```text
+```
 # tuxctl -v
 Server is not registered
 ```
 
 If you are decommissioning a server and would like to de-register its license, you can run `tuxctl` like this and check for return code 0:
 
-```text
+```
 # tuxctl -d
 De-registration successful
 ```
@@ -197,7 +197,7 @@ De-registration successful
 
 ESU customers can upgrade between ESU releases, for example from 9.2 to 9.6 by editing the /etc/dnf/vars/tuxcare_releasever file to specify the new version, like so:
 
-```text
+```
 # echo 9.6 > /etc/dnf/vars/tuxcare_releasever
 # dnf upgrade
 ```
@@ -206,7 +206,7 @@ ESU customers can upgrade between ESU releases, for example from 9.2 to 9.6 by e
 
 To uninstall tuxctl, disable the ESU/FIPS functionality and revert to community repo's, you can run the following as root:
 
-```text
+```
 # dnf -y remove tuxcare-release
 
 # fips-mode-setup --disable
@@ -238,13 +238,13 @@ Note that by disabling ESU, you will revert to tracking major version releases i
 
 To completely remove the TuxCare packages, after following the above steps, run the following as root:
 
-```text
+```
 # dnf remove *tuxcare*
 ```
 
 In most cases this will be the end of the uninstallation procedure, however if you see an error message like the following, then you may have to use `grubby` or `grub2-reboot` or simply the grub menu, to reboot into a non-TuxCare kernel first:
 
-```text
+```
 Error:
  Problem: The operation would result in removing the following protected packages: sudo, systemd, kernel-core, dnf
 (try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)
@@ -252,7 +252,7 @@ Error:
 
 Then run the following:
 
-```text
+```
 # dnf downgrade openssl libgcrypt gnutls nettle nss
 # dnf remove kernel*tuxcare*
 # dnf upgrade
@@ -268,7 +268,7 @@ First please ensure you have installed the `tuxcare-release` package as describe
 
 To install the FIPS 140-3 validated ESU packages over the default ones and enable FIPS mode, please run these commands as root:
 
-```text
+```
 # dnf -y upgrade
 # fips-mode-setup --enable
 # reboot
@@ -276,7 +276,7 @@ To install the FIPS 140-3 validated ESU packages over the default ones and enabl
 
 If you wish to only boot into the Active FIPS-validated kernel and not the security patched kernels or updates under CMVP review (only required in very high classification environments) you can use grubby like so:
 
-```text
+```
 # dnf -y install kernel-5.14.0-284.11.1.el9_2.tuxcare.6
 # grubby --set-default=/boot/vmlinuz-5.14.0-284.11.1.el9_2.tuxcare.6.$(uname -i)
 ```
@@ -289,7 +289,7 @@ We also provide multilib i686 packages of the userspace modules in the x86_64 re
 
 Once you've logged in after the reboot, you can run these commands to confirm it worked (note the versions may be slightly different by the time you read this, see [version table](https://tuxcare.com/fips-for-almalinux/)):
 
-```text
+```
 $ fips-mode-setup --check
 FIPS mode is enabled.
 
@@ -412,13 +412,13 @@ argument or through environment or system-wide via configuration files.
   This file specifies the provider list and the order of providers. In non-fips mode this file will contain  
   the following:
 
-  ```text
+  ```
   security.provider.N=SunPKCS11 ${java.home}/lib/security/nss.cfg
   ```
 
   while in FIPS mode:
 
-  ```text
+  ```
   fips.provider.1=SunPKCS11 ${java.home}/conf/security/nss.fips.cfg
   ```
 
@@ -427,7 +427,7 @@ argument or through environment or system-wide via configuration files.
 
 * `(...)/security/nss.fips.cfg`
 
-  ```text
+  ```
   name = NSS-FIPS
   ```
 
@@ -435,7 +435,7 @@ argument or through environment or system-wide via configuration files.
 
   Followed by nss-specific directives
 
-  ```text
+  ```
   nssLibraryDirectory = /usr/lib64
   nssSecmodDirectory = ${fips.nssdb.path}
   nssDbMode = readWrite
@@ -479,7 +479,7 @@ Certain algorithms from NSS (or any other PKCS11 provider) can be blacklisted in
 config file (or by other means of configuring PKCS11). For instance DES based cipher mechanisms  
 can be explicitly blocked using
 
-```text
+```
 disabledMechanisms = {
         CKM_DES_ECB
         CKM_DES_ECB_ENCRYPT_DATA
@@ -510,7 +510,7 @@ Choose **one** of the migrations below (1a or 1b) based on your CentOS ELS versi
 
 **1A. Migrate CentOS 7.9 ELS to AlmaLinux 8.10**
 
-```text
+```
 # update then disable els
 yum -y update
 dnf config-manager --set-disabled centos7*
@@ -528,7 +528,7 @@ You will now be running AlmaLinux 8.10 and can skip ahead to step 2.
 
 **1B. Migrate CentOS Stream 8 ELS to AlmaLinux 8.10**
 
-```text
+```
 # update then disable els
 dnf -y upgrade
 dnf config-manager --set-disabled centos8stream-els
@@ -541,7 +541,7 @@ reboot
 
 **2. Upgrade AlmaLinux 8.10 to 9.2**
 
-```text
+```
 # clean up
 sed -i '/^exclude=.*/d' /etc/yum.conf /etc/dnf/dnf.conf
 dnf -y remove *leapp* elevate-release els-define
@@ -564,7 +564,7 @@ reboot
 
 **3. Enable AlmaLinux 9.2 ESU repositories and FIPS mode**
 
-```text
+```
 # clean up
 sed -i '/^exclude=.*/d' /etc/yum.conf /etc/dnf/dnf.conf
 dnf -y remove *leapp* elevate-release kernel-*.el8*
@@ -650,7 +650,7 @@ If you are a user of our server product AMI's on AWS Marketplace, before you con
 
 If you have the aws cli tool installed on your computer, you can run:
 
-```text
+```
 $ aws sts get-caller-identity --query Account --output text
 
 123456789012
@@ -658,7 +658,7 @@ $ aws sts get-caller-identity --query Account --output text
 
 Alternatively you can make a request to the AWS API from within a running instance, as described [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-identity-documents.html#retrieve-iid), for example using IMDSv1:
 
-```text
+```
 $ curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | grep accountId
 
   "accountId" : "123456789012",
@@ -738,7 +738,7 @@ Similarly to the ESU instructions [above](/enterprise-support-for-almalinux/#ins
 
 If you are unsure, run this to find your exact OS version:
 
-```text
+```
 $ cat /etc/almalinux-release
 
 AlmaLinux release 8.10 (Cerulean Leopard)
@@ -746,7 +746,7 @@ AlmaLinux release 8.10 (Cerulean Leopard)
 
 Or:
 
-```text
+```
 cat /etc/rocky-release
 
 Rocky Linux release 9.6 (Blue Onyx)
@@ -756,19 +756,19 @@ You can browse [https://repo.tuxcare.com/tuxcare/](https://repo.tuxcare.com/tuxc
 
 For 8.10:
 
-```text
+```
 # dnf -y install https://repo.tuxcare.com/tuxcare/tuxcare-release-latest-8.10.noarch.rpm
 ```
 
 For 9.7:
 
-```text
+```
 # dnf -y install https://repo.tuxcare.com/tuxcare/tuxcare-release-latest-9.7.noarch.rpm
 ```
 
 For 10.1:
 
-```text
+```
 # dnf -y install https://repo.tuxcare.com/tuxcare/tuxcare-release-latest-10.1.noarch.rpm
 ```
 
@@ -778,20 +778,20 @@ Be aware that installing tuxcare-release will modify any files that match the wi
 
 The second step is to activate your license on the system. You should run the `tuxctl` tool as root with your Essential Support license key provided as a command line argument like so:
 
-```text
+```
 # tuxctl --license-key XXXXXXXXXX
 ```
 
 :::warning
 If you get a status code 403:
 
-```text
+```
 Errors during downloading metadata for repository 'tuxcare-esu'
 ```
 
 Then you are using an Essential Support license key for an Extended Security Updates release (9.2, 9.6 or 9.10) and can disable the ESU repository using:
 
-```text
+```
 dnf config-manager --set-disabled tuxcare-esu
 ```
 
@@ -802,21 +802,21 @@ ESU customers can find instructions [above](/enterprise-support-for-almalinux/#i
 
 To check if a server is already activated, you can run `tuxctl` and check for return code 0:
 
-```text
+```
 # tuxctl -v
 Server is registered with token <blah>
 ```
 
 Or if not registered you will get a return code 1:
 
-```text
+```
 # tuxctl -v
 Server is not registered
 ```
 
 If you are decommissioning a server and would like to de-register its license, you can run `tuxctl` like this and check for return code 0:
 
-```text
+```
 # tuxctl -d
 De-registration successful
 ```
@@ -825,7 +825,7 @@ De-registration successful
 
 Essential Support customers can upgrade to a new minor version, for example from 9.6 to 9.7 by editing the /etc/dnf/vars/tuxcare_releasever file to specify the new version, like so:
 
-```text
+```
 # echo 9.7 > /etc/dnf/vars/tuxcare_releasever
 # dnf upgrade
 ```

@@ -33,19 +33,19 @@ Endless Lifecycle Support (ELS) for MySQL and Percona Server from TuxCare provid
 
 1. Download the installer script
 
-   ```text
+   ```
    wget https://repo.tuxcare.com/mysql-els/install-mysql-els-repo.sh
    ```
 
 2. Run the installer script with your license key
 
-   ```text
+   ```
    sh install-mysql-els-repo.sh --license-key XXXXXXXX
    ```
 
 3. Verify the repository is enabled
 
-   ```text
+   ```
    yum info els-mysql-release
    ```
 
@@ -55,7 +55,7 @@ Endless Lifecycle Support (ELS) for MySQL and Percona Server from TuxCare provid
 
 To remove the MySQL ELS repository:
 
-```text
+```
 sh install-mysql-els-repo.sh --delete
 ```
 

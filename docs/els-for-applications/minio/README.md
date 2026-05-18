@@ -34,7 +34,7 @@ TuxCare provides ELS for MinIO as pre-built Linux binaries for the following arc
 
    <template #amd64>
 
-   ```text
+   ```
    curl -u USERNAME:PASSWORD -O https://nexus.repo.tuxcare.com/repository/els-golang/minio/minio_linux_amd64-2025.10.15T17.29.55Z-tuxcare.5.tar.gz
    ```
 
@@ -42,7 +42,7 @@ TuxCare provides ELS for MinIO as pre-built Linux binaries for the following arc
 
    <template #arm64>
 
-   ```text
+   ```
    curl -u USERNAME:PASSWORD -O https://nexus.repo.tuxcare.com/repository/els-golang/minio/minio_linux_arm64-2025.10.15T17.29.55Z-tuxcare.5.tar.gz
    ```
 
@@ -56,7 +56,7 @@ TuxCare provides ELS for MinIO as pre-built Linux binaries for the following arc
 
    Create an installation directory (for example `/opt/minio`) and extract.
 
-   ```text
+   ```
    sudo mkdir -p /opt/minio
    sudo tar -xzf minio_linux_amd64-2025.10.15T17.29.55Z-tuxcare.5.tar.gz -C /opt/minio --strip-components=1
    ```
@@ -67,7 +67,7 @@ TuxCare provides ELS for MinIO as pre-built Linux binaries for the following arc
 
    Change to the installation directory and run the binary to confirm the TuxCare ELS build.
 
-   ```text
+   ```
    cd /opt/minio
    ./minio --version
    ```
