@@ -68,7 +68,7 @@ Requires basic authorization with read only user permissions.
 
 **Response:**
 
-```json
+```text
 {
     "count": 42,
     "limit": 10,
@@ -116,7 +116,7 @@ Registers host by provided key and hostname.
 
 **Success response (200):**
 
-```json
+```text
 {
     "server_id": "some-server-id"
 }
@@ -124,7 +124,7 @@ Registers host by provided key and hostname.
 
 **Error response (400):**
 
-```json
+```text
 {
     "error": "error code" # invalid-key | key-limit-reached
 }
@@ -157,7 +157,7 @@ Endpoint requires at least one parameter `hostname`, `ip` or `server_id`.
 
 Response contains number of deleted servers.
 
-```json
+```text
 {
     "result": 1
 }
@@ -192,7 +192,7 @@ Requires basic authorization with admin user permissions.
 
 Response contains number of deleted servers.
 
-```json
+```text
 {
     "result": 1200
 }
@@ -224,7 +224,7 @@ Requires write permissions and accepts basic authorization.
 
 **Response:**
 
-```json
+```text
 {
   "result": {
     "name": "test-feed",
@@ -251,7 +251,7 @@ Requires read permissions and accepts basic authorization.
 
 **Response:**
 
-```json
+```text
 {
   "result": [
     {
@@ -278,7 +278,7 @@ Requires write permissions and accepts basic authorization.
 
 **Response:**
 
-```json
+```text
 {
   "result": 1  // number of deleted records, 0 if there is no such feed.
 }
@@ -309,7 +309,7 @@ Requires write permissions and accepts basic authorization.
 
 **Response:**
 
-```json
+```text
 {
   "result": {
     "key": "key",
@@ -336,7 +336,7 @@ Requires read permissions and accepts basic authorization.
 
 **Response:**
 
-```json
+```text
 {
   "result": [
     {
@@ -364,7 +364,7 @@ Requires write permissions and accepts basic authorization.
 
 **Response:**
 
-```json
+```text
 {
   "result": 1  // number of deleted records, 0 if there is no such key.
 }
@@ -394,7 +394,7 @@ Requires read permissions and accepts basic authorization.
 
 **Response:**
 
-```json
+```text
 {
   "result": [
     {
@@ -436,7 +436,7 @@ Requires write permissions and accepts basic authorization.
 
 **Response:**
 
-```json
+```text
 {
   "result": "ok"
 }
@@ -460,7 +460,7 @@ Requires read permissions and accepts basic authorization.
 
 **Response:**
 
-```json
+```text
 {
   "result": [
     {
@@ -497,7 +497,7 @@ These parameters can also be provided in the JSON body with the header `Content-
 
 **Response:**
 
-```json
+```text
 {
   "result": "ok"
 }
@@ -519,7 +519,7 @@ Integrating ePortal API access with Ansible is now possible. Rather than calling
 
 Unregister KernelCare agent through API playbook:
 
-```json
+```text
 - hosts: kernelcare
   vars:
     eportal_srv: http://eportal.address.here[:port if needed]
@@ -536,7 +536,7 @@ Unregister KernelCare agent through API playbook:
 
 Example:
 
-```json
+```text
 - hosts: kernelcare
   vars:
     eportal_srv: http://192.168.246.110
@@ -553,7 +553,7 @@ Example:
 
 Example of server tagging:
 
-```json
+```text
 - hosts: kernelcare
   vars:
     eportal_srv: http://192.168.246.110
@@ -594,7 +594,7 @@ Having tighter integration with automation tools like Chef has always been a goa
 
 Unregister KernelCare agent through API recipe:
 
-```json
+```text
 eportal_url = "EPORTAL URL"
 eportal_user = "EPORTAL API USER NAME"
 eportal_password = "EPORTAL API USER PASSWORD"
@@ -614,7 +614,7 @@ end
 
 Example (kernelcare-unregister-api.rb):
 
-```json
+```text
 eportal_url = "http://192.168.246.110"
 eportal_user = "api-user"
 eportal_password = "dummy"
@@ -632,7 +632,7 @@ end
 
 Example of server tagging (kernelcare-tag-server.rb):
 
-```json
+```text
 eportal_url = "http://192.168.246.110"
 eportal_api_key = "Lgk5-qWeBypejSEc6nYmalGbv11Kh_OyWi2_vigrTro"
 tags = "staging;location:Boston"
@@ -660,7 +660,7 @@ chef-apply kernelcare-unregister-api.rb
 
 Output:
 
-```json
+```text
 Recipe: (chef-apply cookbook)::(chef-apply recipe)
   * http_request[kernelcare-unregister-api] action post
     - http_request[kernelcare-unregister-api] POST to http://192.168.246.110/admin/api/delete_server?ip=192.168.246.40
