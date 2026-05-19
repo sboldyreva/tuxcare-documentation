@@ -198,13 +198,94 @@ th, td
   border-radius 6px
   font-size 12px
 
-:not(.language-text) > code
+// Inline code only — explicitly exclude <pre><code> so Prism-highlighted
+// blocks keep their own color/background instead of inheriting dark-blue.
+:not(pre):not(.language-text) > code
   color: #1f3f5b
   padding: 0.25rem 0.5rem
   margin: 0
   font-size: .85em
   background-color: rgba(27,31,35,.05)
   border-radius: 3px
+
+// Light code-block surface, shared by every language-* wrapper and the
+// fade mask below so the right-edge gradient blends with the block.
+:root
+  --code-bg-color: #f6f8fa
+
+div[class*="language-"]
+  background-color var(--code-bg-color)
+  border-radius 6px
+
+div[class*="language-"] > pre
+  background-color transparent
+  color #24292e
+  padding 1rem
+
+div[class*="language-"] > pre > code
+  background-color transparent
+  color inherit
+
+// Light Prism token palette (GitHub-light inspired). Applied only inside
+// code blocks so inline <code> and inline highlighted text are unaffected.
+div[class*="language-"]
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata
+    color #6a737d
+    font-style italic
+
+  .token.punctuation
+    color #24292e
+
+  .token.namespace
+    opacity .7
+
+  .token.property,
+  .token.tag,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol,
+  .token.deleted
+    color #005cc5
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted
+    color #032f62
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string
+    color #d73a49
+
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword
+    color #d73a49
+
+  .token.function,
+  .token.class-name
+    color #6f42c1
+
+  .token.regex,
+  .token.important,
+  .token.variable
+    color #e36209
+
+  .token.important,
+  .token.bold
+    font-weight bold
+
+  .token.italic
+    font-style italic
 
 badge[type="warning"]
   display: inline-block
@@ -310,7 +391,7 @@ div[class*="language-"]
   bottom 14px                              // keep scrollbar fully visible
   width 90px
   pointer-events none
-  background linear-gradient(to right, rgba(40, 44, 52, 0) 0%, var(--code-bg-color, #282c34) 55%)
+  background linear-gradient(to right, rgba(246, 248, 250, 0) 0%, var(--code-bg-color, #f6f8fa) 55%)
   z-index 5
   border-top-right-radius 6px
   opacity 1

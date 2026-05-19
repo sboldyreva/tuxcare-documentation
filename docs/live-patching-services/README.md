@@ -434,7 +434,7 @@ The automated setup method is supported on RPM-based distributions (RHEL, CentOS
 
 2. Run the setup script as root:
 
-```text
+```bash
 $ /usr/share/kcare/secure_boot/setup_kcare_certs.sh
 ```
 
@@ -452,13 +452,13 @@ If you need to set up the certificate manually or are using an older KernelCare 
 
 1. The latest KernelCare Agent package contains a public certificate at `/usr/libexec/kcare/kernelcare_pub.der`. For older versions, download it to that location:
 
-```text
+```bash
 curl -o /usr/libexec/kcare/kernelcare_pub.der https://patches.kernelcare.com/kernelcare_pub.der
 ```
 
 2. Use `mokutil` as root to add this MOK to the UEFI firmware:
 
-```text
+```bash
 $ mokutil --import /usr/libexec/kcare/kernelcare_pub.der
  input password:
  input password again:
@@ -492,13 +492,13 @@ Finally, the firmware will ask you to reboot.
 
 After completing either setup method and rebooting, verify the certificate was enrolled successfully:
 
-```text
+```bash
 $ mokutil --list-enrolled | egrep -i 'SHA1|Issuer'
 ```
 
 In some cases, the enrolled key may not appear in the mokutil output but can be verified with:
 
-```text
+```bash
 $ dmesg | grep -i 'cloud linux'
 [   0.722149] EFI: Loaded cert 'Cloud Linux Software, Inc: Kernel Module Signing Key: 12ff0613c0f80cfba3b2f8eba71ebc27c5a76170' linked to '.system_keyring'
 ```
@@ -1235,7 +1235,7 @@ The automated setup method is supported on RPM-based distributions (RHEL, CentOS
 
 2. Run the setup script as root:
 
-```text
+```bash
 $ /usr/share/kcare/secure_boot/setup_kcare_certs.sh
 ```
 
@@ -1253,13 +1253,13 @@ If you need to set up the certificate manually or are using an older KernelCare 
 
 1. The latest KernelCare Agent package contains a public certificate at `/usr/libexec/kcare/kernelcare_pub.der`. For older versions, download it to that location:
 
-```text
+```bash
 curl -o /usr/libexec/kcare/kernelcare_pub.der https://patches.kernelcare.com/kernelcare_pub.der
 ```
 
 2. Use `mokutil` as root to add this MOK to the UEFI firmware:
 
-```text
+```bash
 $ mokutil --import /usr/libexec/kcare/kernelcare_pub.der
  input password:
  input password again:
@@ -1293,13 +1293,13 @@ Finally, the firmware will ask you to reboot.
 
 After completing either setup method and rebooting, verify the certificate was enrolled successfully:
 
-```text
+```bash
 $ mokutil --list-enrolled | egrep -i 'SHA1|Issuer'
 ```
 
 In some cases, the enrolled key may not appear in the mokutil output but can be verified with:
 
-```text
+```bash
 $ dmesg | grep -i 'cloud linux'
 [   0.722149] EFI: Loaded cert 'Cloud Linux Software, Inc: Kernel Module Signing Key: 12ff0613c0f80cfba3b2f8eba71ebc27c5a76170' linked to '.system_keyring'
 ```

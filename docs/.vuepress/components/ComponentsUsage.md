@@ -73,7 +73,7 @@
 
 **Usage example**:
 
-```text
+```markdown
 <ELSOSSelector />
 ```
 
@@ -90,7 +90,7 @@
 
 **Usage example**:
 
-```text
+```markdown
 <ELSPrerequisites>
 
 * A valid TuxCare ELS [license key](https://tuxcare.com/extended-lifecycle-support/)
@@ -102,7 +102,7 @@
 
 With a custom title:
 
-```text
+```markdown
 <ELSPrerequisites>
 <template #title>Before you begin</template>
 
@@ -125,7 +125,7 @@ With a custom title:
 
 **Usage example**:
 
-```text
+```markdown
 <ELSSteps>
 
 1. Download the install script
@@ -172,7 +172,7 @@ With a custom title:
 
 **Usage example** (basic):
 
-```text
+```markdown
 <WhatsNext>
 
 * 🔒 [OVAL security stream](https://security.tuxcare.com/oval/...) — OpenSCAP-compatible vulnerability data
@@ -184,7 +184,7 @@ With a custom title:
 
 **Usage example** (with version tabs):
 
-```text
+```markdown
 <WhatsNext :versions="['CentOS 8.4', 'CentOS 8.5']">
 
 * [8.4] 🔒 [OVAL security stream](https://security.tuxcare.com/oval/els_os/centos8.4els/oval.xml) — OpenSCAP-compatible vulnerability data
@@ -196,7 +196,7 @@ With a custom title:
 
 **Usage example** (with custom title and image icons):
 
-```text
+```markdown
 <WhatsNext>
 <template #title>Related resources</template>
 
@@ -262,7 +262,7 @@ Where:
 
 - Basic usage (show all CVEs including "None" severity):
 
-  ```text
+  ```markdown
   <ClientOnly>
     <ResolvedCveTable project="spring-els" />
   </ClientOnly>
@@ -270,7 +270,7 @@ Where:
 
 - Hide "None" severity CVEs:
 
-  ```text
+  ```markdown
   <ClientOnly>
     <ResolvedCveTable project="apache-tomcat" :hide_none="true" />
   </ClientOnly>
@@ -278,7 +278,7 @@ Where:
 
 - For Apache Kafka:
 
-  ```text
+  ```markdown
   <ClientOnly>
     <ResolvedCveTable project="apache-kafka" />
   </ClientOnly>
