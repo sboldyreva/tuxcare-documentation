@@ -208,10 +208,10 @@ th, td
   background-color: rgba(27,31,35,.05)
   border-radius: 3px
 
-// Light code-block surface, shared by every language-* wrapper and the
-// fade mask below so the right-edge gradient blends with the block.
+// Dark code-block surface (Atom One Dark) — shared by every language-*
+// wrapper and the fade mask below so the right-edge gradient blends in.
 :root
-  --code-bg-color: #f6f8fa
+  --code-bg-color: #282c34
 
 div[class*="language-"]
   background-color var(--code-bg-color)
@@ -219,25 +219,25 @@ div[class*="language-"]
 
 div[class*="language-"] > pre
   background-color transparent
-  color #24292e
+  color #abb2bf
   padding 1rem
 
 div[class*="language-"] > pre > code
   background-color transparent
   color inherit
 
-// Light Prism token palette (GitHub-light inspired). Applied only inside
-// code blocks so inline <code> and inline highlighted text are unaffected.
+// One Dark token palette. Applied only inside code blocks so inline
+// <code> and inline highlighted text are unaffected.
 div[class*="language-"]
   .token.comment,
   .token.prolog,
   .token.doctype,
   .token.cdata
-    color #6a737d
+    color #5c6370
     font-style italic
 
   .token.punctuation
-    color #24292e
+    color #abb2bf
 
   .token.namespace
     opacity .7
@@ -249,7 +249,7 @@ div[class*="language-"]
   .token.constant,
   .token.symbol,
   .token.deleted
-    color #005cc5
+    color #d19a66
 
   .token.selector,
   .token.attr-name,
@@ -257,28 +257,28 @@ div[class*="language-"]
   .token.char,
   .token.builtin,
   .token.inserted
-    color #032f62
+    color #98c379
 
   .token.operator,
   .token.entity,
   .token.url,
   .language-css .token.string,
   .style .token.string
-    color #d73a49
+    color #56b6c2
 
   .token.atrule,
   .token.attr-value,
   .token.keyword
-    color #d73a49
+    color #c678dd
 
   .token.function,
   .token.class-name
-    color #6f42c1
+    color #61afef
 
   .token.regex,
   .token.important,
   .token.variable
-    color #e36209
+    color #e06c75
 
   .token.important,
   .token.bold
@@ -391,7 +391,7 @@ div[class*="language-"]
   bottom 14px                              // keep scrollbar fully visible
   width 90px
   pointer-events none
-  background linear-gradient(to right, rgba(246, 248, 250, 0) 0%, var(--code-bg-color, #f6f8fa) 55%)
+  background linear-gradient(to right, rgba(40, 44, 52, 0) 0%, var(--code-bg-color, #282c34) 55%)
   z-index 5
   border-top-right-radius 6px
   opacity 1
