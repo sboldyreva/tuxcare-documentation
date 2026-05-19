@@ -208,10 +208,10 @@ th, td
   background-color: rgba(27,31,35,.05)
   border-radius: 3px
 
-// Dark code-block surface (Atom One Dark) — shared by every language-*
-// wrapper and the fade mask below so the right-edge gradient blends in.
+// Dark code-block surface — shared by every language-* wrapper and the
+// fade mask below so the right-edge gradient blends in.
 :root
-  --code-bg-color: #282c34
+  --code-bg-color: #2d2d2d
 
 div[class*="language-"]
   background-color var(--code-bg-color)
@@ -219,7 +219,7 @@ div[class*="language-"]
 
 div[class*="language-"] > pre
   background-color transparent
-  color #abb2bf
+  color #ccc
   padding 1rem
 
 div[class*="language-"] > pre > code
@@ -237,7 +237,7 @@ div[class*="language-"]
     font-style italic
 
   .token.punctuation
-    color #abb2bf
+    color #ccc
 
   .token.namespace
     opacity .7
@@ -391,7 +391,7 @@ div[class*="language-"]
   bottom 14px                              // keep scrollbar fully visible
   width 90px
   pointer-events none
-  background linear-gradient(to right, rgba(40, 44, 52, 0) 0%, var(--code-bg-color, #282c34) 55%)
+  background linear-gradient(to right, rgba(45, 45, 45, 0) 0%, var(--code-bg-color, #2d2d2d) 55%)
   z-index 5
   border-top-right-radius 6px
   opacity 1
