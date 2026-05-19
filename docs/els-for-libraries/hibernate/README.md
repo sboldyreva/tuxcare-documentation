@@ -21,17 +21,17 @@ TuxCare's Endless Lifecycle Support (ELS) for Hibernate provides security patche
 
 1. **Navigate to the build tool directory**
    * Windows
-   ```
+   ```text
    Maven: C:\Users\{username}\.m2
    Gradle: C:\Users\{username}\.gradle
    ```
    * macOS
-   ```
+   ```text
    Maven: /Users/{username}/.m2
    Gradle: /Users/{username}/.gradle
    ```
    * Linux
-   ```
+   ```text
    Maven: /home/{username}/.m2
    Gradle: /home/{username}/.gradle
    ```

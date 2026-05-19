@@ -97,7 +97,7 @@ alt-nodejs provides a more flexible and convenient environment for working with 
 
    Activate the desired version and check it returns the expected version:
 
-   ```
+   ```text
    source /opt/alt/alt-nodejs<version>/enable
    node -v
    ```

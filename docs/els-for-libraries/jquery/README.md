@@ -24,7 +24,7 @@ Endless Lifecycle Support (ELS) for jQuery from TuxCare provides security fixes 
 
    **Example:**
 
-   ```
+   ```text
    my-jquery-project/
    ├── node_modules/
    ├── package.json
@@ -36,7 +36,7 @@ Endless Lifecycle Support (ELS) for jQuery from TuxCare provides security fixes 
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```
+   ```text
    registry=https://registry.npmjs.org/
    @els-js:registry=https://nexus.repo.tuxcare.com/repository/els_js/
    //nexus.repo.tuxcare.com/repository/els_js/:_auth=${TOKEN}
@@ -58,14 +58,14 @@ Endless Lifecycle Support (ELS) for jQuery from TuxCare provides security fixes 
 
      Install the Patcher globally and run it. The TuxCare Patcher automatically detects the jQuery version in your `package.json` and updates your `dependencies` and `overrides` to use the corresponding TuxCare `@els-js/*` packages.
 
-     ```
+     ```text
      npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
      tuxcare-patch-js
      ```
 
      The patcher will update your `package.json`, for example, from:
 
-     ```
+     ```text
      "dependencies": {
        "jquery": "^1.12.4"
      }
@@ -73,7 +73,7 @@ Endless Lifecycle Support (ELS) for jQuery from TuxCare provides security fixes 
 
      to:
 
-     ```
+     ```text
      "dependencies": {
        "jquery": "npm:@els-js/jquery@>=1.12.4-tuxcare.1"
      },
@@ -86,7 +86,7 @@ Endless Lifecycle Support (ELS) for jQuery from TuxCare provides security fixes 
 
       <template #jQuery_1.8.2>
 
-      ```
+      ```text
       "dependencies": {
         "jquery": "npm:@els-js/jquery@>=1.8.2-tuxcare.1"
       },
@@ -99,7 +99,7 @@ Endless Lifecycle Support (ELS) for jQuery from TuxCare provides security fixes 
 
       <template #jQuery_1.12.4>
 
-      ```
+      ```text
       "dependencies": {
         "jquery": "npm:@els-js/jquery@>=1.12.4-tuxcare.1"
       },
@@ -112,7 +112,7 @@ Endless Lifecycle Support (ELS) for jQuery from TuxCare provides security fixes 
 
       <template #jQuery_2.2.4>
 
-      ```
+      ```text
       "dependencies": {
         "jquery": "npm:@els-js/jquery@>=2.2.4-tuxcare.1"
       },
@@ -125,7 +125,7 @@ Endless Lifecycle Support (ELS) for jQuery from TuxCare provides security fixes 
 
       <template #jQuery_3.4.1>
 
-      ```
+      ```text
       "dependencies": {
         "jquery": "npm:@els-js/jquery@>=3.4.1-tuxcare.1"
       },
@@ -142,13 +142,13 @@ Endless Lifecycle Support (ELS) for jQuery from TuxCare provides security fixes 
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```
+   ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```
+   ```text
    npm install
    ```
 
@@ -158,7 +158,7 @@ Endless Lifecycle Support (ELS) for jQuery from TuxCare provides security fixes 
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```
+   ```text
    npm list
    ```
 

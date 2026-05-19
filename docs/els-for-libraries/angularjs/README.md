@@ -24,7 +24,7 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
    **Example:**
 
-   ```
+   ```text
    my-angularjs-project/
    ├── node_modules/
    ├── package.json
@@ -36,7 +36,7 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```
+   ```text
    registry=https://registry.npmjs.org/
    @els-angularjs:registry=https://nexus.repo.tuxcare.com/repository/els_angularjs/
    //nexus.repo.tuxcare.com/repository/els_angularjs/:_auth=${TOKEN}
@@ -54,7 +54,7 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
       <template #AngularJS_1.4.4>
 
-      ```
+      ```text
       "dependencies": {
           "angular": "npm:@els-angularjs/angular@>=1.4.4-tuxcare.1"
       },
@@ -67,7 +67,7 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
       <template #AngularJS_1.5.11>
 
-      ```
+      ```text
       "dependencies": {
           "angular": "npm:@els-angularjs/angular@>=1.5.11-tuxcare.1"
       },
@@ -80,7 +80,7 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
       <template #AngularJS_1.6.10>
 
-      ```
+      ```text
       "dependencies": {
           "angular": "npm:@els-angularjs/angular@>=1.6.10-tuxcare.1"
       },
@@ -93,7 +93,7 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
       <template #AngularJS_1.7.9>
 
-      ```
+      ```text
       "dependencies": {
           "angular": "npm:@els-angularjs/angular@>=1.7.9-tuxcare.1"
       },
@@ -106,7 +106,7 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
       <template #AngularJS_1.8.2>
 
-      ```
+      ```text
       "dependencies": {
           "angular": "npm:@els-angularjs/angular@>=1.8.2-tuxcare.1"
       },
@@ -119,7 +119,7 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
       <template #AngularJS_1.8.3>
 
-      ```
+      ```text
       "dependencies": {
           "angular": "npm:@els-angularjs/angular@>=1.8.3-tuxcare.1"
       },
@@ -136,13 +136,13 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```
+   ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```
+   ```text
    npm install
    ```
 
@@ -152,7 +152,7 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```
+   ```text
    npm list
    ```
 

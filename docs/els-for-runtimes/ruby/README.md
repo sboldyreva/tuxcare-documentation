@@ -87,13 +87,13 @@ alt-ruby provides a more flexible and convenient environment for working with di
 
    Check that the binary exists and returns the expected version:
 
-   ```
+   ```text
    /opt/alt/<ruby-version>/bin/ruby -v
    ```
 
    Optionally, add it to `PATH` to use it as default:
 
-   ```
+   ```text
    export PATH=/opt/alt/<ruby-version>/bin:$PATH
    ruby -v
    which ruby

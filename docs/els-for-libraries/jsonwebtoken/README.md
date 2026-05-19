@@ -24,7 +24,7 @@ Endless Lifecycle Support (ELS) for JSON Web Token from TuxCare provides securit
 
    **Example:**
 
-   ```
+   ```text
    my-jsonwebtoken-project/
    ├── node_modules/
    ├── package.json
@@ -36,7 +36,7 @@ Endless Lifecycle Support (ELS) for JSON Web Token from TuxCare provides securit
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```
+   ```text
    registry=https://registry.npmjs.org/
    @els-js:registry=https://nexus.repo.tuxcare.com/repository/els_js/
    //nexus.repo.tuxcare.com/repository/els_js/:_auth=${TOKEN}
@@ -58,7 +58,7 @@ Endless Lifecycle Support (ELS) for JSON Web Token from TuxCare provides securit
 
       <template #JSON_Web_Token_0.4.0>
 
-      ```
+      ```text
       "dependencies": {
         "jsonwebtoken": "npm:@els-js/jsonwebtoken@>=0.4.0-tuxcare.1"
       },
@@ -71,7 +71,7 @@ Endless Lifecycle Support (ELS) for JSON Web Token from TuxCare provides securit
 
       <template #JSON_Web_Token_0.4.1>
 
-      ```
+      ```text
       "dependencies": {
         "jsonwebtoken": "npm:@els-js/jsonwebtoken@>=0.4.1-tuxcare.1"
       },
@@ -84,7 +84,7 @@ Endless Lifecycle Support (ELS) for JSON Web Token from TuxCare provides securit
 
       <template #JSON_Web_Token_8.5.1>
 
-      ```
+      ```text
       "dependencies": {
         "jsonwebtoken": "npm:@els-js/jsonwebtoken@>=8.5.1-tuxcare.1"
       },
@@ -101,14 +101,14 @@ Endless Lifecycle Support (ELS) for JSON Web Token from TuxCare provides securit
 
      Install the Patcher globally and run it. The TuxCare Patcher automatically detects the JSON Web Token version in your `package.json` and updates your `dependencies` and `overrides` to use the corresponding TuxCare `@els-js/*` packages.
 
-     ```
+     ```text
      npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
      tuxcare-patch-js
      ```
 
      The patcher will update your `package.json`, for example, from:
 
-     ```
+     ```text
      "dependencies": {
        "jsonwebtoken": "^8.5.1"
      }
@@ -116,7 +116,7 @@ Endless Lifecycle Support (ELS) for JSON Web Token from TuxCare provides securit
 
      to:
 
-     ```
+     ```text
      "dependencies": {
        "jsonwebtoken": "npm:@els-js/jsonwebtoken@>=8.5.1-tuxcare.1"
      },
@@ -129,13 +129,13 @@ Endless Lifecycle Support (ELS) for JSON Web Token from TuxCare provides securit
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```
+   ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```
+   ```text
    npm install
    ```
 
@@ -145,7 +145,7 @@ Endless Lifecycle Support (ELS) for JSON Web Token from TuxCare provides securit
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```
+   ```text
    npm list
    ```
 

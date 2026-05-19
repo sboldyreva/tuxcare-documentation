@@ -36,7 +36,7 @@ Apache Tomcat® is also available for installation as a library for Maven and Gr
 
    Create a `tomcat` group:
 
-   ```
+   ```text
    sudo groupadd tomcat
    ```
 
@@ -44,7 +44,7 @@ Apache Tomcat® is also available for installation as a library for Maven and Gr
 
    Create a new user as a member of the `tomcat` group, with a home directory of `/opt/tomcat` and the login shell set to `/bin/false`.
 
-   ```
+   ```text
    sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
    ```
 
@@ -52,7 +52,7 @@ Apache Tomcat® is also available for installation as a library for Maven and Gr
 
    Download from TuxCare using your credentials. For example, Apache Tomcat® 8.5.100:
 
-   ```
+   ```text
    curl -u USERNAME:PASSWORD -O https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.3/tomcat-8.5.100-tuxcare.3.tar.gz
    ```
 
@@ -62,13 +62,13 @@ Apache Tomcat® is also available for installation as a library for Maven and Gr
 
    * Create the `/opt/tomcat` directory:
 
-   ```
+   ```text
    sudo mkdir -p /opt/tomcat
    ```
 
    * Extract the archive into it:
 
-   ```
+   ```text
    sudo tar -xvzf tomcat-8.5.100-tuxcare.3.tar.gz -C /opt/tomcat --strip-components=1
    ```
 
@@ -76,26 +76,26 @@ Apache Tomcat® is also available for installation as a library for Maven and Gr
 
    * Change to the installation directory:
 
-   ```
+   ```text
    cd /opt/tomcat
    ```
 
    * Change ownership of the installation to the `tomcat` group:
 
-   ```
+   ```text
    sudo chgrp -R tomcat /opt/tomcat
    ```
 
    * Give the `tomcat` group read access to `conf` and its contents, and execute access to the `conf` directory:
 
-   ```
+   ```text
    sudo chmod -R g+r conf
    sudo chmod g+x conf
    ```
 
    * Give the `tomcat` user write access to `webapps`, `work`, `temp`, and `logs`:
 
-   ```
+   ```text
    sudo chown -R tomcat webapps/ work/ temp/ logs/
    ```
 
@@ -103,7 +103,7 @@ Apache Tomcat® is also available for installation as a library for Maven and Gr
 
    * Add the following line at the end of your `~/.bashrc` file, updating the path if needed.
 
-   ```
+   ```text
    export CATALINA_HOME=/opt/tomcat
    ```
 
@@ -113,19 +113,19 @@ Apache Tomcat® is also available for installation as a library for Maven and Gr
 
    * Reload the shell configuration:
 
-   ```
+   ```text
    source ~/.bashrc
    ```
 
    * Confirm the variable is set:
 
-   ```
+   ```text
    echo $CATALINA_HOME
    ```
 
 7. **Start Apache Tomcat®**
 
-   ```
+   ```text
    sudo -u tomcat /opt/tomcat/bin/startup.sh
    ```
 
@@ -135,13 +135,13 @@ Apache Tomcat® is also available for installation as a library for Maven and Gr
 
    * Or check from the terminal (successful output is HTML from Tomcat®):
 
-   ```
+   ```text
    curl http://localhost:8080
    ```
 
 9. **Stop Apache Tomcat®**
 
-   ```
+   ```text
    sudo -u tomcat /opt/tomcat/bin/shutdown.sh
    ```
 
@@ -181,13 +181,13 @@ Check logs for detailed error information:
 
 * **Linux:**
 
-  ```
+  ```text
   /opt/tomcat/logs/catalina.out
   ```
 
 * **Windows:**
 
-  ```
+  ```text
   C:\Tomcat\logs\catalina.[date].log
   ```
 

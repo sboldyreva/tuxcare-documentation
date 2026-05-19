@@ -434,7 +434,7 @@ The automated setup method is supported on RPM-based distributions (RHEL, CentOS
 
 2. Run the setup script as root:
 
-```
+```text
 $ /usr/share/kcare/secure_boot/setup_kcare_certs.sh
 ```
 
@@ -452,13 +452,13 @@ If you need to set up the certificate manually or are using an older KernelCare 
 
 1. The latest KernelCare Agent package contains a public certificate at `/usr/libexec/kcare/kernelcare_pub.der`. For older versions, download it to that location:
 
-```
+```text
 curl -o /usr/libexec/kcare/kernelcare_pub.der https://patches.kernelcare.com/kernelcare_pub.der
 ```
 
 2. Use `mokutil` as root to add this MOK to the UEFI firmware:
 
-```
+```text
 $ mokutil --import /usr/libexec/kcare/kernelcare_pub.der
  input password:
  input password again:
@@ -492,13 +492,13 @@ Finally, the firmware will ask you to reboot.
 
 After completing either setup method and rebooting, verify the certificate was enrolled successfully:
 
-```
+```text
 $ mokutil --list-enrolled | egrep -i 'SHA1|Issuer'
 ```
 
 In some cases, the enrolled key may not appear in the mokutil output but can be verified with:
 
-```
+```text
 $ dmesg | grep -i 'cloud linux'
 [   0.722149] EFI: Loaded cert 'Cloud Linux Software, Inc: Kernel Module Signing Key: 12ff0613c0f80cfba3b2f8eba71ebc27c5a76170' linked to '.system_keyring'
 ```
@@ -758,13 +758,13 @@ KernelCare Enterprise is compatible with 64-bit versions of CloudLinuxOS/CentOS 
 
 To install KernelCare Enterprise, run the following as root:
 
-```
+```text
 # curl -s -L https://kernelcare.com/installer | bash
 ```
 
 or:
 
-```
+```text
 # wget -qq -O - https://kernelcare.com/installer | bash
 ```
 
@@ -772,7 +772,7 @@ If you are using an IP-based license, nothing else is required to be done.
 
 If you are using a key-based license, run:
 
-```
+```text
 # kcarectl --register <KEY>
 ```
 
@@ -780,13 +780,13 @@ Where `KEY` is the registration key code string provided when you sign up for pu
 
 If you are experiencing a `Key limit reached` error after the end of the trial period, you should first unregister the server by running:
 
-```
+```text
 # kcarectl --unregister
 ```
 
 To check if patches applied, run:
 
-```
+```text
 # kcarectl --info
 ```
 
@@ -794,19 +794,19 @@ The software will automatically check for new patches every 4 hours.
 
 If you would like to run update manually:
 
-```
+```text
 # kcarectl --update
 ```
 
 To check current kernel compatibility with KernelCare, use the following [script](https://raw.githubusercontent.com/iseletsk/kernelchecker/master/py/kc-compat.py) by running:
 
-```
+```text
 $ curl -s -L https://kernelcare.com/checker | python
 ```
 
 or:
 
-```
+```text
 $ wget -qq -O - https://kernelcare.com/checker | python
 ```
 
@@ -816,25 +816,25 @@ To update the agent package to the latest version use:
 
 * For rpm-based distributions (CentOS, RedHat, etc):
 
-```
+```text
 # yum install -y kernelcare
 ```
 
 or:
 
-```
+```text
 # dnf install -y kernelcare
 ```
 
 * For apt-based distributions (Debian, Ubuntu, etc):
 
-```
+```text
 # apt-get install kernelcare
 ```
 
 or:
 
-```
+```text
 # apt install kernelcare
 ```
 
@@ -844,25 +844,25 @@ To uninstall KernelCare Enterprise, run the following as root:
 
 * For CloudLinux, CentOS, RHEL, Virtuozzo, OpenVZ:
 
-```
+```text
 # yum remove kernelcare
 ```
 
 or:
 
-```
+```text
 # dnf remove kernelcare
 ```
 
 * For Ubuntu, Debian, Proxmox VE:
 
-```
+```text
 # apt-get remove kernelcare
 ```
 
 or:
 
-```
+```text
 # apt purge kernelcare
 ```
 
@@ -880,7 +880,7 @@ Download the script here: [https://patches.kernelcare.com/ksplice2kcare](https:/
 
 Run the command:
 
-```
+```text
 # bash ksplice2kcare <KERNELCARE_KEY>
 ```
 
@@ -888,7 +888,7 @@ The key can be created/retrieved in KernelCare Enterprise Keys section of CLN.
 
 If you want to use IP based licenses, run:
 
-```
+```text
 # bash ksplice2kcare IP
 ```
 
@@ -910,13 +910,13 @@ KernelCare Enterprise is not compatible with Canonical Livepatch and should not 
 
 To disable automatic updates, edit the file `/etc/sysconfig/kcare/kcare.conf`
 
-```
+```text
 AUTO_UPDATE=False
 ```
 
 To check the updated 'effective' version, run:
 
-```
+```text
 # kcarectl --uname
 ```
 
@@ -924,7 +924,7 @@ We provide a convenience script `/usr/bin/kcare-uname` that has same syntax as `
 
 To see applied patches, run:
 
-```
+```text
 # kcarectl --patch-info
 ```
 
@@ -991,7 +991,7 @@ Print certain system information. Default is `-s`
 
 This tool collects essential information about the KernelCare environment and sends it to the support team.
 
-```
+```text
 # kcarectl --doctor
 
 Generating report...
@@ -1061,13 +1061,13 @@ KernelCare Enterprise Extra patchset includes all the security fixes from Kernel
 
 To enable extra patches and apply updates, run:
 
-```
+```text
 # kcarectl --set-patch-type extra --update
 ```
 
 To enable extra patches without an update, run:
 
-```
+```text
 # kcarectl --set-patch-type extra
 ```
 
@@ -1075,13 +1075,13 @@ The 'extra' patch will be applied on the next automatic update.
 
 To see details, run:
 
-```
+```text
 # kcarectl --patch-info
 ```
 
 You should see something similar to:
 
-```
+```text
 OS: centos6
 kernel: kernel-2.6.32-696.6.3.el6
 time: 2017-07-31 22:46:22
@@ -1114,7 +1114,7 @@ kpatch-patch-url: https://bugs.centos.org/view.php?id=13499
 
 To enable Symlink Owner Match Protection, add `fs.enforce_symlinksifowner=1` to `/etc/sysconfig/kcare/sysctl.conf` and run:
 
-```
+```text
 # sysctl -p /etc/sysconfig/kcare/sysctl.conf
 ```
 
@@ -1175,7 +1175,7 @@ If your scanner produces incorrect results due to not being KernelCare aware, we
 
 If you are using a scanner agent the defaults usually work and you can configure the scanner interface like so:
 
-```
+```text
 # kcare-scanner-interface init
 
 Resetting.
@@ -1185,7 +1185,7 @@ Done.
 
 If you are using SSH credentials-based scanning, then you can configure the scanner interface like so - where user1 and user2 are the usernames your vulnerability scanner will ssh/sudo as:
 
-```
+```text
 # kcare-scanner-interface init user1 user2
 
 Resetting.
@@ -1197,7 +1197,7 @@ Done.
 
 To disable the scanner interface run:
 
-```
+```text
 # kcare-scanner-interface disable
 ```
 
@@ -1211,7 +1211,7 @@ sudo is not installed by default on some distributions like CentOS 6 but is the 
 
 OpenSCAP is an open source vulnerability scanner and compliance tool and it can be used to scan a system protected by KernelCare Enterprise. The following commands show how to use OpenSCAP to produce a vulnerability report for a system.
 
-```
+```text
 $ source /etc/os-release
 $ wget https://patches.kernelcare.com/oval/com.kernelcare.${ID}.${VERSION_ID}.xml
 $ oscap oval eval --report report.htm com.kernelcare.${ID}.${VERSION_ID}.xml
@@ -1235,7 +1235,7 @@ The automated setup method is supported on RPM-based distributions (RHEL, CentOS
 
 2. Run the setup script as root:
 
-```
+```text
 $ /usr/share/kcare/secure_boot/setup_kcare_certs.sh
 ```
 
@@ -1253,13 +1253,13 @@ If you need to set up the certificate manually or are using an older KernelCare 
 
 1. The latest KernelCare Agent package contains a public certificate at `/usr/libexec/kcare/kernelcare_pub.der`. For older versions, download it to that location:
 
-```
+```text
 curl -o /usr/libexec/kcare/kernelcare_pub.der https://patches.kernelcare.com/kernelcare_pub.der
 ```
 
 2. Use `mokutil` as root to add this MOK to the UEFI firmware:
 
-```
+```text
 $ mokutil --import /usr/libexec/kcare/kernelcare_pub.der
  input password:
  input password again:
@@ -1293,13 +1293,13 @@ Finally, the firmware will ask you to reboot.
 
 After completing either setup method and rebooting, verify the certificate was enrolled successfully:
 
-```
+```text
 $ mokutil --list-enrolled | egrep -i 'SHA1|Issuer'
 ```
 
 In some cases, the enrolled key may not appear in the mokutil output but can be verified with:
 
-```
+```text
 $ dmesg | grep -i 'cloud linux'
 [   0.722149] EFI: Loaded cert 'Cloud Linux Software, Inc: Kernel Module Signing Key: 12ff0613c0f80cfba3b2f8eba71ebc27c5a76170' linked to '.system_keyring'
 ```
@@ -1324,14 +1324,14 @@ As long as your servers have access to the Internet, even behind NAT - you will 
 
 Generally, KernelCare requires connection to only two servers to work:
 
-```
+```text
 cln.cloudlinux.com
 patches.kernelcare.com
 ```
 
 An additional address is used for KernelCare agent installation/update:
 
-```
+```text
 repo.cloudlinux.com
 ```
 
@@ -1343,7 +1343,7 @@ If your servers don't have direct Internet access but can gain access to the Int
 
 Make sure you have environment settings for proxy setup, and everything else will be the same as if servers were directly connected to the Internet:
 
-```
+```text
 # export http_proxy=http://proxy.domain.com:port
 # export https_proxy=http://proxy.domain.com:port
 ```
@@ -1352,14 +1352,14 @@ Make sure you have environment settings for proxy setup, and everything else wil
 Settings defined by `export` are case-insensitive, so the example above could be as follows for certain software:
 :::
 
-```
+```text
 # export HTTP_PROXY=http://proxy.domain.com:port
 # export HTTPS_PROXY=http://proxy.domain.com:port
 ```
 
 You can define these settings in the KernelCare config `/etc/sysconfig/kcare/kcare.conf`, for example:
 
-```
+```text
 $ cat /etc/sysconfig/kcare/kcare.conf
 
 AUTO_UPDATE=True
@@ -1406,7 +1406,7 @@ As long as your servers have access to the Internet, even behind NAT - you will 
 
 Generally, KernelCare requires connection to only two servers to work:
 
-```
+```text
 cln.cloudlinux.com
 patches.kernelcare.com
 ```
@@ -1419,7 +1419,7 @@ If your servers don't have direct Internet access but can gain access to the Int
 
 Make sure you have environment settings for your proxy setup, and everything else will be the same as if the servers were directly connected to the Internet:
 
-```
+```text
 # export http_proxy=http://proxy.domain.com:port
 # export https_proxy=http://proxy.domain.com:port
 ```
@@ -1440,19 +1440,19 @@ KernelCare agent has a tiny RAM footprint - binary patches usually require less 
 
 To install KernelCare, run:
 
-```
+```text
 # curl -s -L https://kernelcare.com/installer | bash
 ```
 
 or:
 
-```
+```text
 # wget -qq -O - https://kernelcare.com/installer | bash
 ```
 
 If you are using IP-based license, nothing else required to be done. If you are using key-based license, run:
 
-```
+```text
 # kcarectl --register <KEY>
 ```
 
@@ -1473,7 +1473,7 @@ Systems protected by KernelCare can be monitored by means of CloudLinux Network 
 
 In either case, you can check whether the latest available patch has been applied by running the following command on a system protected by KernelCare:
 
-```
+```text
 # kcarectl --check
 ```
 
@@ -1491,7 +1491,7 @@ If one of your instances degraded, once you start another instance based on EBS 
 If you set up a new server instead, re-register KernelCare on the new server.
 If you decide to uninstall patches, run the command:
 
-```
+```text
 # kcarectl --unload
 ```
 
@@ -1499,13 +1499,13 @@ Or to completely remove the kernelcare package run one of the following commands
 
 * on RPM-based systems:
 
-```
+```text
 # yum remove kernelcare
 ```
 
 * or on DEB-based systems:
 
-```
+```text
 # apt-get remove kernelcare
 ```
 
@@ -1534,7 +1534,7 @@ You should provide a separate key for each environment and set them to a particu
 
 The date in the Sticky tag field can be any date from May 28, 2018 up to one day before today. To use the Sticky tag feature on the servers to be patched, run:
 
-```
+```text
 $ kcarectl --set-sticky-patch=KEY
 ```
 
@@ -1552,7 +1552,7 @@ We offer unlimited, 24x7x365 support. Submit a direct support request using [thi
 
 * We answer all support questions within one business day and most within a couple of hours. To expedite the support, run the following command on your server (as root):
 
-```
+```text
 # kcarectl --doctor
 ```
 
@@ -1643,13 +1643,13 @@ You can control and get the status of SMT with the kernel's `sysfs` interface. T
 
 If you cannot find the `/sys/devices/system/cpu/smt` directory, this means your running kernel does not support SMT. In this case, you need to apply KernelCare patches so the SMT controls become available to your system. Use the `kcarectrl` command:
 
-```
+```text
 # kcarectl --update
 
 Kernel is safe
 ```
 
-```
+```text
 # ls -l /sys/devices/system/cpu/smt
 
 -r--r--r-- 1 root root 4096 May 17 13:06 active
@@ -1680,19 +1680,19 @@ Here are some commands to control SMT support (root permissions are required):
 
 ##### Check the SMT state
 
-```
+```text
 $ cat /sys/devices/system/cpu/smt/active
 ```
 
 ##### Enable SMT
 
-```
+```text
 # echo on > /sys/devices/system/cpu/smt/control
 ```
 
 ##### Disable SMT
 
-```
+```text
 # echo off > /sys/devices/system/cpu/smt/control
 ```
 
@@ -1730,7 +1730,7 @@ This article is subject to change and will be updated with instructions for othe
 Example shown for Debian 9
 :::
 
-```
+```text
 $ cd <a temporary directory, e.g. /tmp>
 $ mkdir firmware
 $ cd firmware
@@ -1739,7 +1739,7 @@ $ wget http://security.debian.org/debian-security/pool/updates/non-free/i/intel-
 
 3. Check the downloaded package
 
-```
+```text
 $ md5sum intel-microcode_3.20190514.1~deb9u1_amd64.deb
 
 c7bc9728634137453e0f4821fb6bb436  intel-microcode_3.20190514.1~deb9u1_amd64.deb
@@ -1749,13 +1749,13 @@ A list of checksums is on [the Debian packages download page](https://packages.d
 
 4. Unpack the package
 
-```
+```text
 $ dpkg -x intel-microcode_3.20190514.1~deb9u1_amd64.deb
 ```
 
 5. Check the unpacked files
 
-```
+```text
 $ ls -l
 
 total 1896
@@ -1767,13 +1767,13 @@ drwxr-xr-x 3 root root   19 May 15 04:18 usr
 
 6. Create a backup of existing microcode:
 
-```
+```text
 # test -d /lib/firmware/intel-ucode/ && mv /lib/firmware/intel-ucode/ /lib/firmware/intel-ucode.backup
 ```
 
 7. Copy the new microcode and check it
 
-```
+```text
 # cp -r lib/firmware/intel-ucode/ /lib/firmware/
 # ls -l /lib/firmware/ | grep intel-ucode
 
@@ -1783,7 +1783,7 @@ drwxr-xr-x  2 root root 4096 May 16 20:54 intel-ucode.backup
 
 8. Check the current microcode version
 
-```
+```text
 # dmesg | grep microcode
 
 [ 2.254717] microcode: sig=0x306a9, pf=0x10, revision=0x12
@@ -1792,7 +1792,7 @@ drwxr-xr-x  2 root root 4096 May 16 20:54 intel-ucode.backup
 
 9. (Optional) Double check the current microcode versions (revisions per core)
 
-```
+```text
 $ grep microcode /proc/cpuinfo
 
 microcode : 0x12
@@ -1803,7 +1803,7 @@ microcode : 0x12
 
 10. Check the microcode reload file exists
 
-```
+```text
 $ ls -l /sys/devices/system/cpu/microcode/reload
 
 --w------- 1 root root 4096 May 17 11:54 /sys/devices/system/cpu/microcode/reload
@@ -1811,13 +1811,13 @@ $ ls -l /sys/devices/system/cpu/microcode/reload
 
 11. Force the kernel to load the new microcode
 
-```
+```text
 # echo 1 > /sys/devices/system/cpu/microcode/reload
 ```
 
 12. Check the new microcode
 
-```
+```text
 # dmesg | grep microcode
 
 [ 2.254717] microcode: sig=0x306a9, pf=0x10, revision=0x12
@@ -1831,7 +1831,7 @@ $ ls -l /sys/devices/system/cpu/microcode/reload
 
 13. (Optional) Double check the new microcode version (revisions per core)
 
-```
+```text
 $ grep microcode /proc/cpuinfo
 
 microcode : 0x21
@@ -1846,7 +1846,7 @@ For RHEL-based distributions, you can use the `microcode_ctl utility` to update 
 
 1. Get the latest microcode by updating the `microcode_ctl` package
 
-```
+```text
 # yum update microcode_ctl
 ```
 
@@ -1854,25 +1854,25 @@ For RHEL-based distributions, you can use the `microcode_ctl utility` to update 
 
 Create a `force-late-intel-06-4f-01` inside the firmware directory.
 
-```
+```text
 # touch /lib/firmware/`uname -r`/force-late-intel-06-4f-01
 ```
 
 3. Run the microcode update
 
-```
+```text
 # /usr/libexec/microcode_ctl/update_ucode
 ```
 
 4. Force the kernel to load the new microcode
 
-```
+```text
 # echo 1 > /sys/devices/system/cpu/microcode/reload
 ```
 
 5. Check the new microcode
 
-```
+```text
 # dmesg | grep microcode
 
 [ 2.254717] microcode: sig=0x306a9, pf=0x10, revision=0x12
@@ -1886,7 +1886,7 @@ Create a `force-late-intel-06-4f-01` inside the firmware directory.
 
 6. (Optional) Double check the new microcode version (revisions per core)
 
-```
+```text
 $ grep microcode /proc/cpuinfo
 
 microcode : 0x21
@@ -1899,13 +1899,13 @@ microcode : 0x21
 
 1. Get the latest microcode by updating the `microcode_ctl` package
 
-```
+```text
 # yum update microcode_ctl
 ```
 
 2. If `yum update microcode_ctl` outputs the following:
 
-```
+```text
 Package(s) microcode_ctl available, but not installed.
 No Packages marked for Update
 ```
@@ -1914,13 +1914,13 @@ you need to install the package manually.
 
 3. To install `microcode_ctl` package, run the command:
 
-```
+```text
 # yum install microcode_ctl
 ```
 
 The command should output:
 
-```
+```text
 Installed:
   microcode_ctl.x86_64 2:1.17-33.11.el6_10
 
@@ -1929,7 +1929,7 @@ Complete!
 
 4. Check CPU microcode version:
 
-```
+```text
 $ grep microcode /proc/cpuinfo
 
 microcode       : 9
@@ -1940,13 +1940,13 @@ microcode       : 9
 
 5. Try to update microcode
 
-```
+```text
 # microcode_ctl -u
 ```
 
 If you see the output:
 
-```
+```text
 microcode_ctl: writing microcode (length: 2370560)
 microcode_ctl: cannot open /dev/cpu/microcode for writing errno=2 (No such file or directory)
 ```
@@ -1955,19 +1955,19 @@ You need to load driver microcode.
 
 6. Load driver microcode
 
-```
+```text
 # modprobe microcode
 ```
 
 7. Try to update microcode again:
 
-```
+```text
 # microcode_ctl -u
 ```
 
 If you see the output:
 
-```
+```text
 microcode_ctl: writing microcode (length: 2370560)
 microcode_ctl: microcode successfully written to /dev/cpu/microcode
 ```
@@ -1976,7 +1976,7 @@ then the update is successful.
 
 8. Check version:
 
-```
+```text
 $ grep microcode /proc/cpuinfo
 
 microcode       : 17
@@ -2007,7 +2007,7 @@ To get the KernelCare activation key from the extended Plesk license key, you wi
 
 3. Find the following abstract:
 
-  ```
+  ```text
   <!--Key body-->
   <aps-3:key-body core:encoding="base64" core:type="binary">YOUR_BASE64_ENCODED_LICENSE_KEY==</aps-3:key-body>
   <!--Information about additional key-->
@@ -2018,7 +2018,7 @@ The new license key should have the following format: `xxxxxxxxxxxxxxxx`. It wil
 
 5. Use the new key decoded to activate the service:
 
-  ```
+  ```text
   # kcarectl --register DECODED_KEY_HERE
   ```
 
@@ -2044,25 +2044,25 @@ Userspace processes patching feature is available in the KernelCare package.
 
 To apply the available patches to all userspace processes, run the following command:
 
-```
+```text
 # kcarectl --lib-update
 ```
 
 To gather information about what processes were patched, run the following command:
 
-```
+```text
 # kcarectl --lib-info
 ```
 
 To gather information about applied patches, run the following command:
 
-```
+```text
 # kcarectl --lib-patch-info
 ```
 
 To unpatch all processes, run the following command:
 
-```
+```text
 # kcarectl --lib-unload
 ```
 
@@ -2072,7 +2072,7 @@ Applying a live patch may clash with software such as anti-viruses that detect o
 
 The format of the file is as follows. Patterns should be specified line by line prefixed with pattern type and a colon. Comments start with a hash (#). For example:
 
-```
+```text
  # Symantec Antivirus
  path: /opt/Symantec/*
  filename:symcfgd
@@ -2084,14 +2084,14 @@ Specifying `path` means that the whole path to binary will be taken into account
 
 Wildcards are also supported:
 
-```
+```text
  filename:docker*
  path:/usr/libexec/docker/docker-*
 ```
 
 Also POSIX regular expressions could be used as follows:
 
-```
+```text
  regex:/usr/bin/[[:alnum:]]+
 ```
 
@@ -2099,7 +2099,7 @@ Also POSIX regular expressions could be used as follows:
 
 Userspace patching cron job is disabled by default. To enable it, run the following command:
 
-```
+```text
 # libcare-cron init
 ```
 
@@ -2123,7 +2123,7 @@ The LibCare tools heavily use the `ptrace` syscall, and if `auditd` is configure
 
 **Note**: no such rule is provided for EL6 due to old `autditd` restrictions. There is a command that will add such a rule at runtime:
 
-```
+```text
 # auditctl -l | grep kcare | cut -d' ' -f2- | xargs -t -L1 -r auditctl -d && pgrep libcare-server | \
     xargs -t -n1 -i auditctl -A exit,never -F arch=b64 -S ptrace -F pid="{}" -k kcarever | \
     xargs -t -n1 -i auditctl -A exit,never -F arch=b64 -S ptrace -F pid="{}" -k kcare
@@ -2149,13 +2149,13 @@ This activity diagram shows how UChecker works:
 
 To scan your systems, run the following command:
 
-```
+```text
 $ curl -s -L https://kernelcare.com/uchecker | sudo python
 ```
 
 You will receive the following output:
 
-```
+```text
 [*] Process httpd[15516] linked to the `libc-2.17.so` that is not up to date.
 
 You may want to update libraries above and restart corresponding processes.
@@ -2175,7 +2175,7 @@ To see verbose output, you can choose a logging level: `ERROR`, `WARNING`, `INFO
 
 For example:
 
-```
+```text
 $ curl -s -L https://kernelcare.com/uchecker | sudo LOGLEVEL=debug python
 ```
 
@@ -2203,25 +2203,25 @@ can refer the [PatchSet Deployment](https://docs.tuxcare.com/eportal/#patchset-d
 
 To update the default feed, run the following command:
 
-```
+```text
 # kc.eportal qemu update
 ```
 
 To update the `test` feed, run the following command:
 
-```
+```text
 # kc.eportal qemu update --feed test
 ```
 
 To update all auto-feeds, run the following command:
 
-```
+```text
 # kc.eportal qemu auto-update
 ```
 
 ##### CLI to deploy patchset from archive
 
-```
+```text
 $ kc.eportal qemu deploy --help
 usage: kc.eportal qemu deploy [-h] [--feed FEED] [--disabled] archive
 
@@ -2236,7 +2236,7 @@ optional arguments:
 
 For example:
 
-```
+```text
 # kc.eportal qemu deploy --feed test /tmp/U20210818_01-qemu.tar.bz2
 ```
 
@@ -2250,7 +2250,7 @@ This document is made for developers of vulnerability scanners to correctly repo
 
 KernelCare provides "effective kernel" information in
 
-```
+```text
 /proc/kcare/effective_version
 ```
 
@@ -2272,13 +2272,13 @@ KernelCare provides two files listing the vulnerabilities the currently installe
 
 The list of vulnerabilities addressed by Kernel live patches is available at:
 
-```
+```text
 /proc/kcare/cvelist
 ```
 
 The list of vulnerabilities addressed by system live patching (LibCare, QEMUCare, etc.) is available at:
 
-```
+```text
 /var/cache/kcare/libcare_cvelist
 ```
 

@@ -24,7 +24,7 @@ Endless Lifecycle Support (ELS) for react-router from TuxCare provides security 
 
    **Example:**
 
-   ```
+   ```text
    my-react-router-project/
    ├── node_modules/
    ├── package.json
@@ -36,7 +36,7 @@ Endless Lifecycle Support (ELS) for react-router from TuxCare provides security 
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```
+   ```text
    registry=https://registry.npmjs.org/
    @els-js:registry=https://nexus.repo.tuxcare.com/repository/els_js/
    //nexus.repo.tuxcare.com/repository/els_js/:_auth=${TOKEN}
@@ -58,7 +58,7 @@ Endless Lifecycle Support (ELS) for react-router from TuxCare provides security 
 
       <template #react_router_6.3.0>
 
-      ```
+      ```text
       "dependencies": {
         "react-router": "npm:@els-js/react-router@>=6.3.0-tuxcare.1"
       },
@@ -71,7 +71,7 @@ Endless Lifecycle Support (ELS) for react-router from TuxCare provides security 
 
       <template #react_router_7.5.1>
 
-      ```
+      ```text
       "dependencies": {
         "react-router": "npm:@els-js/react-router@>=7.5.1-tuxcare.1"
       },
@@ -88,14 +88,14 @@ Endless Lifecycle Support (ELS) for react-router from TuxCare provides security 
 
      Install the Patcher globally and run it. The TuxCare Patcher automatically detects the react-router version in your `package.json` and updates your `dependencies` and `overrides` to use the corresponding TuxCare `@els-js/*` packages.
 
-     ```
+     ```text
      npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
      tuxcare-patch-js
      ```
 
      The patcher will update your `package.json`, for example, from:
 
-     ```
+     ```text
      "dependencies": {
        "react-router": "^7.5.1"
      }
@@ -103,7 +103,7 @@ Endless Lifecycle Support (ELS) for react-router from TuxCare provides security 
 
      to:
 
-     ```
+     ```text
      "dependencies": {
        "react-router": "npm:@els-js/react-router@>=7.5.1-tuxcare.1"
      },
@@ -116,13 +116,13 @@ Endless Lifecycle Support (ELS) for react-router from TuxCare provides security 
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```
+   ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```
+   ```text
    npm install
    ```
 
@@ -132,7 +132,7 @@ Endless Lifecycle Support (ELS) for react-router from TuxCare provides security 
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```
+   ```text
    npm list
    ```
 

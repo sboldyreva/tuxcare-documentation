@@ -30,19 +30,19 @@ Endless Lifecycle Support (ELS) from TuxCare provides security fixes for OpenJDK
 
 1. Download the installer script
 
-   ```
+   ```text
    wget https://repo.tuxcare.com/openjdk-els/install-openjdk-els-repo.sh
    ```
 
 2. Run the installer script with your license key
 
-   ```
+   ```text
    sh install-openjdk-els-repo.sh --license-key XXXXXXXXXXX
    ```
 
 3. Verify the repository is enabled
 
-   ```
+   ```text
    yum repolist | grep openjdk-els
    ```
 
@@ -52,7 +52,7 @@ Endless Lifecycle Support (ELS) from TuxCare provides security fixes for OpenJDK
 
    <template #8>
 
-   ```
+   ```text
    yum install java-1.8.0-openjdk
    ```
 
@@ -60,7 +60,7 @@ Endless Lifecycle Support (ELS) from TuxCare provides security fixes for OpenJDK
 
    <template #11>
 
-   ```
+   ```text
    yum install java-11-openjdk
    ```
 
@@ -70,7 +70,7 @@ Endless Lifecycle Support (ELS) from TuxCare provides security fixes for OpenJDK
 
 5. Verify the installation
 
-   ```
+   ```text
    java -version
    ```
 

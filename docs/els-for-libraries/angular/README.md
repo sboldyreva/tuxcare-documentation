@@ -27,7 +27,7 @@ Angular versions from 4 to 19 are supported.
 
    **Example:**
 
-   ```
+   ```text
    my-angular-project/
    ├── src/
    ├── angular.json
@@ -40,7 +40,7 @@ Angular versions from 4 to 19 are supported.
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```
+   ```text
    registry=https://registry.npmjs.org/
    @els-angular:registry=https://nexus.repo.tuxcare.com/repository/els_angular/
    //nexus.repo.tuxcare.com/repository/els_angular/:_auth=${TOKEN}
@@ -134,7 +134,7 @@ Angular versions from 4 to 19 are supported.
 
       <template #Angular_16>
 
-      ```
+      ```text
       "dependencies": {
         "@angular/animations": "npm:@els-angular/angular-animations@>=16.2.12-tuxcare.1",
         "@angular/common": "npm:@els-angular/angular-common@>=16.2.12-tuxcare.1",
@@ -185,7 +185,7 @@ Angular versions from 4 to 19 are supported.
 
       <template #Angular_15>
 
-      ```
+      ```text
       "dependencies": {
         "@angular/animations": "npm:@els-angular/angular-animations@>=15.2.10-tuxcare.1",
         "@angular/common": "npm:@els-angular/angular-common@>=15.2.10-tuxcare.1",
@@ -237,7 +237,7 @@ Angular versions from 4 to 19 are supported.
 
       <template #Angular_14>
 
-      ```
+      ```text
       "dependencies": {
         "@angular/animations": "npm:@els-angular/angular-animations@>=14.3.0-tuxcare.1",
         "@angular/common": "npm:@els-angular/angular-common@>=14.3.0-tuxcare.1",
@@ -290,7 +290,7 @@ Angular versions from 4 to 19 are supported.
 
       <template #Angular_13>
 
-      ```
+      ```text
       "dependencies": {
         "@angular/animations": "npm:@els-angular/angular-animations@>=13.4.0-tuxcare.1",
         "@angular/common": "npm:@els-angular/angular-common@>=13.4.0-tuxcare.1",
@@ -344,7 +344,7 @@ Angular versions from 4 to 19 are supported.
 
       <template #Angular_12>
 
-      ```
+      ```text
       "dependencies": {
         "@angular/animations": "npm:@els-angular/angular-animations@>=12.2.17-tuxcare.1",
         "@angular/common": "npm:@els-angular/angular-common@>=12.2.17-tuxcare.1",
@@ -408,7 +408,7 @@ Angular versions from 4 to 19 are supported.
 
       <template #Angular_11>
 
-      ```
+      ```text
       "dependencies": {
         "@angular/animations": "npm:@els-angular/angular-animations@>=11.2.14-tuxcare.1",
         "@angular/common": "npm:@els-angular/angular-common@>=11.2.14-tuxcare.1",
@@ -475,7 +475,7 @@ Angular versions from 4 to 19 are supported.
 
       <template #Angular_10>
 
-      ```
+      ```text
       "dependencies": {
         "@angular/animations": "npm:@els-angular/angular-animations@>=10.2.5-tuxcare.1",
         "@angular/common": "npm:@els-angular/angular-common@>=10.2.5-tuxcare.1",
@@ -552,7 +552,7 @@ Angular versions from 4 to 19 are supported.
 
       <template #Angular_9>
 
-       ```
+       ```text
        "dependencies": {
          "@angular/animations": "npm:@els-angular/angular-animations@>=9.1.13-tuxcare.1",
          "@angular/common": "npm:@els-angular/angular-common@>=9.1.13-tuxcare.1",
@@ -629,7 +629,7 @@ Angular versions from 4 to 19 are supported.
 
       <template #Angular_8>
 
-      ```
+      ```text
       "dependencies": {
         "@angular/animations": "npm:@els-angular/angular-animations@>=8.2.14-tuxcare.1",
         "@angular/common": "npm:@els-angular/angular-common@>=8.2.14-tuxcare.1",
@@ -673,7 +673,7 @@ Angular versions from 4 to 19 are supported.
 
       <template #Angular_7>
 
-      ```
+      ```text
       "dependencies": {
         "@angular/animations": "npm:@els-angular/angular-animations@>=7.2.16-tuxcare.1",
         "@angular/common": "npm:@els-angular/angular-common@>=7.2.16-tuxcare.1",
@@ -717,7 +717,7 @@ Angular versions from 4 to 19 are supported.
 
       <template #Angular_6>
 
-      ```
+      ```text
       "dependencies": {
         "@angular/animations": "npm:@els-angular/angular-animations@>=6.1.10-tuxcare.1",
         "@angular/common": "npm:@els-angular/angular-common@>=6.1.10-tuxcare.1",
@@ -761,7 +761,7 @@ Angular versions from 4 to 19 are supported.
 
       <template #Angular_5>
 
-      ```
+      ```text
       "dependencies": {
         "@angular/animations": "npm:@els-angular/angular-animations@>=5.2.11-tuxcare.1",
         "@angular/common": "npm:@els-angular/angular-common@>=5.2.11-tuxcare.1",
@@ -803,7 +803,7 @@ Angular versions from 4 to 19 are supported.
 
       <template #Angular_4>
 
-      ```
+      ```text
       "dependencies": {
         "@angular/animations": "npm:@els-angular/angular-animations@>=4.4.7-tuxcare.1",
         "@angular/common": "npm:@els-angular/angular-common@>=4.4.7-tuxcare.1",
@@ -850,13 +850,13 @@ Angular versions from 4 to 19 are supported.
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```
+   ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```
+   ```text
    npm install
    ```
 
@@ -866,7 +866,7 @@ Angular versions from 4 to 19 are supported.
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```
+   ```text
    npm list
    ```
 

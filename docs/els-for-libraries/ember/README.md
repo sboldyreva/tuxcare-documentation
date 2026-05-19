@@ -26,7 +26,7 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
    **Example:**
 
-   ```
+   ```text
    my-ember-project/
    ├── node_modules/
    ├── package.json
@@ -38,7 +38,7 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```
+   ```text
    registry=https://registry.npmjs.org/
    @els-js:registry=https://nexus.repo.tuxcare.com/repository/els_js/
    //nexus.repo.tuxcare.com/repository/els_js/:_auth=${TOKEN}
@@ -56,7 +56,7 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
       <template #ember_0.2.7>
 
-      ```
+      ```text
       "dependencies": {
         "body-parser": "npm:@els-js/body-parser@>=1.8.4-tuxcare.1",
         "chownr": "npm:@els-js/chownr@>=0.0.2-tuxcare.1",
@@ -139,7 +139,7 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
       * **Option 1: Manual update**
 
-        ```
+        ```text
         "dependencies": {
           "terser": "npm:@els-js/terser@>=3.17.0-tuxcare.1",
           "rollup": "npm:@els-js/rollup@>=0.41.6-tuxcare.1",
@@ -158,14 +158,14 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
       * **Option 2: TuxCare Patcher (Automated)**
 
-        ```
+        ```text
         npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
         tuxcare-patch-js
         ```
 
         The patcher will update your `package.json`, for example, from:
 
-        ```
+        ```text
         "dependencies": {
           "terser": "3.17.0",
           "rollup": "0.41.6",
@@ -177,7 +177,7 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
         to:
 
-        ```
+        ```text
         "dependencies": {
           "terser": "npm:@els-js/terser@>=3.17.0-tuxcare.1",
           "rollup": "npm:@els-js/rollup@>=0.41.6-tuxcare.1",
@@ -200,7 +200,7 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
       * **Option 1: Manual update**
 
-        ```
+        ```text
         "dependencies": {
           "rollup": "npm:@els-js/rollup@>=0.57.1-tuxcare.1",
           "markdown-it": "npm:@els-js/markdown-it@>=13.0.2-tuxcare.1",
@@ -217,14 +217,14 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
         Install the Patcher globally and run it. The TuxCare Patcher updates your `package.json` so these library versions use the corresponding TuxCare `@els-js/*` packages.
 
-        ```
+        ```text
         npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
         tuxcare-patch-js
         ```
 
         The patcher will update your `package.json`, for example, from:
 
-        ```
+        ```text
         "dependencies": {
           "rollup": "0.57.1",
           "markdown-it": "13.0.2",
@@ -234,7 +234,7 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
         to:
 
-        ```
+        ```text
         "dependencies": {
           "rollup": "npm:@els-js/rollup@>=0.57.1-tuxcare.1",
           "markdown-it": "npm:@els-js/markdown-it@>=13.0.2-tuxcare.1",
@@ -253,7 +253,7 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
       * **Option 1: Manual update**
 
-        ```
+        ```text
         "dependencies": {
           "@babel/runtime": "npm:@els-js/babel-runtime@>=7.12.18-tuxcare.1",
           "tmp": "npm:@els-js/tmp@>=0.0.28-tuxcare.1"
@@ -266,14 +266,14 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
       * **Option 2: TuxCare Patcher (Automated)**
 
-        ```
+        ```text
         npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
         tuxcare-patch-js
         ```
 
         The patcher will update your `package.json`, for example, from:
 
-        ```
+        ```text
         "dependencies": {
           "@babel/runtime": "7.12.18",
           "tmp": "0.0.28"
@@ -282,7 +282,7 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
         to:
 
-        ```
+        ```text
         "dependencies": {
           "@babel/runtime": "npm:@els-js/babel-runtime@>=7.12.18-tuxcare.1",
           "tmp": "npm:@els-js/tmp@>=0.0.28-tuxcare.1"
@@ -301,13 +301,13 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```
+   ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```
+   ```text
    npm install
    ```
 
@@ -317,7 +317,7 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```
+   ```text
    npm list
    ```
 

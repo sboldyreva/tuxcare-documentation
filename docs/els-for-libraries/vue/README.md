@@ -26,7 +26,7 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
 
    **Example:**
 
-   ```
+   ```text
    my-vue-project/
    ├── node_modules/
    ├── package.json
@@ -38,7 +38,7 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
 
    Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
-   ```
+   ```text
    registry=https://registry.npmjs.org/
    @els-vue:registry=https://nexus.repo.tuxcare.com/repository/els_vue/
    //nexus.repo.tuxcare.com/repository/els_vue/:_auth=${TOKEN}
@@ -60,7 +60,7 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
 
       <template #2.7.16>
 
-      ```
+      ```text
       "dependencies": {
         "vue": "npm:@els-vue/vue@>=2.7.16-tuxcare.1",
         "@vue/server-renderer": "npm:@els-vue/vue-server-renderer@>=2.7.16-tuxcare.1",
@@ -77,7 +77,7 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
 
       <template #2.6.14>
 
-      ```
+      ```text
       "dependencies": {
         "vue": "npm:@els-vue/vue@>=2.6.14-tuxcare.1",
         "@vue/server-renderer": "npm:@els-vue/vue-server-renderer@>=2.6.14-tuxcare.1",
@@ -94,7 +94,7 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
 
       <template #2.6.11>
 
-      ```
+      ```text
       "dependencies": {
         "vue": "npm:@els-vue/vue@>=2.6.11-tuxcare.1",
         "@vue/server-renderer": "npm:@els-vue/vue-server-renderer@>=2.6.11-tuxcare.1",
@@ -115,13 +115,13 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
-   ```
+   ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
    Install dependencies:
 
-   ```
+   ```text
    npm install
    ```
 
@@ -131,7 +131,7 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
 
    Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
-   ```
+   ```text
    npm list
    ```
 

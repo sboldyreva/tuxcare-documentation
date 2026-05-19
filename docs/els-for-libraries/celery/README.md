@@ -22,7 +22,7 @@ Other versions upon request.
 
 You can install or upgrade a package directly using the ELS repository with your credentials:
 
-```
+```text
 pip install --upgrade \
   -i https://USERNAME:PASSWORD@nexus.repo.tuxcare.com/repository/els_python/simple \
   celery
@@ -49,13 +49,13 @@ This method is recommended if you want to use only ELS-patched Python packages f
 
 2. Run the command to install the latest package version:
 
-   ```
+   ```text
    pip install --upgrade celery
    ```
 
    Or install a specific patched TuxCare version, for example:
 
-   ```
+   ```text
    pip install celery==5.1.2.post1+tuxcare
    ```
 
@@ -80,7 +80,7 @@ If you want to keep using public PyPI and fetch only specific patched packages f
 
 2. Run the command to install a specific patched TuxCare version, for example:
 
-   ```
+   ```text
    pip install celery==5.1.2.post1+tuxcare
    ```
 
