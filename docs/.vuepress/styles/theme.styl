@@ -194,10 +194,6 @@ th, td
     .custom-layout
       padding-top 0
 
-.language-text
-  border-radius 6px
-  font-size 12px
-
 // Inline code only — explicitly exclude <pre><code> so Prism-highlighted
 // blocks keep their own color/background instead of inheriting dark-blue.
 :not(pre):not(.language-text) > code
@@ -209,13 +205,16 @@ th, td
   border-radius: 3px
 
 // Dark code-block surface — shared by every language-* wrapper and the
-// fade mask below so the right-edge gradient blends in.
+// fade mask below so the right-edge gradient blends in. Font-size matches
+// what .language-text used to set so bash/json/etc render at the same
+// size as the existing text blocks.
 :root
   --code-bg-color: #2d2d2d
 
 div[class*="language-"]
   background-color var(--code-bg-color)
   border-radius 6px
+  font-size 12px
 
 div[class*="language-"] > pre
   background-color transparent
@@ -225,6 +224,7 @@ div[class*="language-"] > pre
 div[class*="language-"] > pre > code
   background-color transparent
   color inherit
+  font-size inherit
 
 // One Dark token palette. Applied only inside code blocks so inline
 // <code> and inline highlighted text are unaffected.
