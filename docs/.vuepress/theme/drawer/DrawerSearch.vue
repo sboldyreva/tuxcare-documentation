@@ -158,6 +158,25 @@ async function queryGlobalSearch(query, n_results=10) {
   }
 }
 
+// Drop backend hits that do not actually contain any query token in their
+// title or preview. The backend ranks results, but does not always filter
+// noise, so we gate on token presence to avoid showing irrelevant cards
+// next to relevant ones.
+function filterByRelevance(hits, query) {
+  const tokens = query
+    .toLowerCase()
+    .split(/\s+/)
+    .map((t) => t.trim())
+    .filter((t) => t.length > 0);
+
+  if (tokens.length === 0) return hits;
+
+  return hits.filter((hit) => {
+    const haystack = `${hit.title || ""} ${hit.preview || ""}`.toLowerCase();
+    return tokens.some((token) => haystack.includes(token));
+  });
+}
+
 const loading = ref(false); // Reactive variable for loading state
 
 const performSearch = async () => {
@@ -165,7 +184,7 @@ const performSearch = async () => {
   const data = await queryGlobalSearch(props.modelValue, MAX_HITS_PER_PAGE);
   loading.value = false; // Set loading to false when search finishes
   if (data) {
-    const hits = parseDocs(data);
+    const hits = filterByRelevance(parseDocs(data), props.modelValue);
     emit('result', hits);
     emit('openDrawer');
   }

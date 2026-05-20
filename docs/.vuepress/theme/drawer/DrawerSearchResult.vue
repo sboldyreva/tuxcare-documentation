@@ -19,6 +19,7 @@
   </section>
   <div v-else>
     <p v-if="!modelValue.length" class="no_results">Please type your search query, then press Enter or click the search button.</p>
+    <p v-else class="no_results">No relevant results found for "{{ modelValue }}".</p>
   </div>
 </template>
 
