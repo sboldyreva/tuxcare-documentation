@@ -153,42 +153,6 @@ Endless Lifecycle Support (ELS) for JSON Web Token from TuxCare provides securit
 
 </ELSSteps>
 
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for JSON Web Token from TuxCare versions:
-
-<TableTabs label="Choose JSON Web Token version: " >
-
-<template #JSON_Web_Token_0.4.0>
-
-| CVE ID         |  CVE Type  | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: |:----------:|:--------:|:------------------:|:------------------:|
-| CVE-2015-9235  | Direct     | Critical | jsonwebtoken       | < 4.2.2            |
-
-  </template>
-
-<template #JSON_Web_Token_0.4.1>
-
-| CVE ID         |  CVE Type  | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: |:----------:|:--------:|:------------------:|:------------------:|
-| CVE-2015-9235  | Direct     | Critical | jsonwebtoken       | < 4.2.2            |
-
-  </template>
-
-<template #JSON_Web_Token_8.5.1>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2022-23541 | Direct   | Medium   | jsonwebtoken       | < 8.5.1            |
-| CVE-2022-23540 | Direct   | High     | jsonwebtoken       | < 8.5.1            |
-| CVE-2022-23539 | Direct   | High     | jsonwebtoken       | < 8.5.1            |
-
-  </template>
-
-</TableTabs>
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
 ## What's Next?
 
 <WhatsNext hide-title>

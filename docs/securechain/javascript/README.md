@@ -19,7 +19,7 @@ SecureChain delivers verified, signed, continuously patched JavaScript packages 
    In the root directory of your project, create or edit `.npmrc` to point npm at the SecureChain registry and provide your token:
 
    ```text
-   registry=https://nexus.repo.tuxcare.com/repository/securechain-js/
+   registry=https://nexus.repo.tuxcare.com/repository/securechain-js/@securechain-js/
    //nexus.repo.tuxcare.com/repository/securechain-js/:_auth=<TOKEN>
    always-auth=true
    ```
@@ -28,13 +28,17 @@ SecureChain delivers verified, signed, continuously patched JavaScript packages 
    Replace `<TOKEN>` with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
    :::
 
-2. Install a SecureChain package
+2. Install your dependencies
 
-   SecureChain packages are published under the `@securechain-js` scope. Install them with their fully qualified name and version:
+   Run this command from the project root directory, where the package.json file containing your dependencies is located:
 
    ```text
-   npm install @securechain-js/<package>@<version>
+   npm install
    ```
+
+   You can keep the package names and versions in `package.json` as they are. 
+   
+   `npm` is now pointed at SecureChain from the previous step, so the packages are pulled automatically from the TuxCare Nexus.
 
    For the list of available packages and versions, visit TuxCare [Nexus](https://nexus.repo.tuxcare.com/#browse/browse:securechain-js).
 
@@ -50,7 +54,7 @@ If `npm install` resolves to the public registry instead of SecureChain, use the
    npm config get registry
    ```
 
-   The output must be `https://nexus.repo.tuxcare.com/repository/securechain-js/`. If it returns `https://registry.npmjs.org/`, npm is not reading your project `.npmrc` - check that you are running npm from the project root and that no user-level `~/.npmrc` is overriding it.
+   The output must be `https://nexus.repo.tuxcare.com/repository/securechain-js/@securechain-js/`. If it returns `https://registry.npmjs.org/`, npm is not reading your project `.npmrc` - check that you are running npm from the project root and that no user-level `~/.npmrc` is overriding it.
 
 * **Confirm authentication and connectivity**
 

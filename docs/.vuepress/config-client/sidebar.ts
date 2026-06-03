@@ -325,10 +325,6 @@ export default {
                     icon: '/images/phpspreadsheet.webp',
                 },
                 {
-                    path: '/els-for-libraries/ratchet/',
-                    icon: '/images/ratchet.webp',
-                },
-                {
                     path: '/els-for-libraries/google-protobuf/',
                     icon: '/images/php-logo.webp',
                 },

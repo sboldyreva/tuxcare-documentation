@@ -94,17 +94,13 @@ TuxCare's Endless Lifecycle Support (ELS) for Protobuf provides security patches
 </ELSSteps>
 
 
-## Resolved CVEs in ELS for Protocol Buffers
-
-<ClientOnly>
-  <ResolvedCveTable project="protobuf" />
-</ClientOnly>
-
 ## What's Next?
 
 <WhatsNext hide-title>
 
-* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=Protobuf) — Patched versions and changelogs
+* ![](/images/eye.webp) [CVE Tracker](https://tuxcare.com/cve-tracker/?product=Protocol+Buffers) — Track vulnerability fixes and updates
+* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=Protocol+Buffers) — Patched versions and changelogs
+* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=Protocol+Buffers) — Full list of product parts covered by ELS
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_java/com.google.protobuf/) — Vulnerability Exploitability eXchange feed
 * ![](/images/unlock-alt.webp) [Source code](/els-for-libraries/managing-els-repository/#javaSources) — Access source JARs in Nexus
 * ![](/images/bolt.webp) [Package updates](/els-for-libraries/managing-els-repository/#java) — Update an installed package to a newer TuxCare release

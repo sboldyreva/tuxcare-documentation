@@ -153,40 +153,6 @@ Endless Lifecycle Support (ELS) for node-fetch from TuxCare provides security fi
 
 </ELSSteps>
 
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for node-fetch from TuxCare versions:
-
-<TableTabs label="Choose node-fetch version: " >
-
-<template #node-fetch_1.6.3>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2022-0235  | Direct   | High     | node-fetch         | < 2.6.7, >= 3.0.0 < 3.1.1 |
-
-  </template>
-
-<template #node-fetch_1.7.3>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2022-0235  | Direct   | High     | node-fetch         | < 2.6.7, >= 3.0.0 < 3.1.1 |
-
-  </template>
-
-<template #node-fetch_2.6.1>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2022-0235  | Direct   | High     | node-fetch         | < 2.6.7, >= 3.0.0 < 3.1.1 |
-
-  </template>
-
-</TableTabs>
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
 ## What's Next?
 
 <WhatsNext hide-title>

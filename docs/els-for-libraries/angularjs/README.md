@@ -160,38 +160,13 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
 </ELSSteps>
 
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for AngularJS from TuxCare versions:
-
-|     CVE ID     | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: | :------: | :----------------: | :-----------------: |
-| CVE-2019-10768 |  Direct  | Critical |      AngularJS     |        <1.7.9       |
-| CVE-2024-21490 |  Direct  |   High   |      AngularJS     |       >=1.3.0       |
-|  CVE-2025-4690 |  Direct  |  Medium  |  Angular Sanitize  |       >=0.0.0       |
-|  CVE-2025-4690 |  Direct  |  Medium  |      AngularJS     |       >=0.0.0       |
-|  CVE-2025-2336 |  Direct  |  Medium  |      AngularJS     |       >=1.3.1       |
-|  CVE-2025-2336 |  Direct  |  Medium  |  Angular Sanitize  |       >=1.3.1       |
-|  CVE-2025-0716 |  Direct  |  Medium  |      AngularJS     |       >=0.0.0       |
-|  CVE-2024-8373 |  Direct  |  Medium  |      AngularJS     |       >=0.0.0       |
-|  CVE-2024-8372 |  Direct  |  Medium  |      AngularJS     |     >=1.3.0-rc.4    |
-| CVE-2024-33665 |  Direct  |  Medium  |  Angular Translate |       <2.19.1       |
-| CVE-2023-26118 |  Direct  |  Medium  |      AngularJS     |       >=1.4.9       |
-| CVE-2023-26117 |  Direct  |  Medium  |      AngularJS     |       >=1.0.0       |
-| CVE-2023-26116 |  Direct  |  Medium  |      AngularJS     |       >=1.2.21      |
-| CVE-2022-25869 |  Direct  |  Medium  |      AngularJS     |       >=0.0.0       |
-| CVE-2022-25844 |  Direct  |  Medium  |      AngularJS     |       >=1.7.0       |
-|  CVE-2020-7676 |  Direct  |  Medium  |      AngularJS     |        <1.8.0       |
-| GHSA-5cp4-xmrw-59wf |  Direct  |  Medium  |      AngularJS     |        <1.8.0       |
-| GHSA-28hp-fgcr-2r4h |  Direct  |  Medium  |      AngularJS     |        <1.6.0       |
-| CVE-2019-14863 |  Direct  |  Medium  |      AngularJS     |       <=1.4.14      |
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
 ## What's Next?
 
 <WhatsNext hide-title>
 
+* ![](/images/eye.webp) [CVE Tracker](https://tuxcare.com/cve-tracker/?product=Angular) — Track vulnerability fixes and updates
+* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=Angular) — Patched versions and changelogs
+* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=Angular) — Full list of product parts covered by ELS
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/angular/) — Vulnerability Exploitability eXchange feed
 * ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:angularjs) — Software Bill of Materials (Nexus, credentials required)
 * ![](/images/bolt.webp) [Package updates](/els-for-libraries/managing-els-repository/#JavaScript) — Update an installed package to a newer TuxCare release

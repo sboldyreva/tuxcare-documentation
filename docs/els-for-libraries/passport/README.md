@@ -119,16 +119,6 @@ Endless Lifecycle Support (ELS) for passport from TuxCare provides security fixe
 
 </ELSSteps>
 
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for passport from TuxCare versions:
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2022-25896 | Direct   | Medium   | passport           | < 0.6.0            |
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
 ## What's Next?
 
 <WhatsNext hide-title>

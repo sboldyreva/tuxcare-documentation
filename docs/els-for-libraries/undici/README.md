@@ -140,32 +140,6 @@ Endless Lifecycle Support (ELS) for undici from TuxCare provides security fixes 
 
 </ELSSteps>
 
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for undici from TuxCare versions:
-
-<TableTabs label="Choose undici version: " >
-
-<template #undici_5.28.5>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2026-22036 | Direct   | High     | undici            | < 6.23.0, >= 7.0.0 < 7.18.2 |
-
-  </template>
-
-<template #undici_5.29.0>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2026-22036 | Direct   | High     | undici            | < 6.23.0, >= 7.0.0 < 7.18.2 |
-
-  </template>
-
-</TableTabs>
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
 ## What's Next?
 
 <WhatsNext hide-title>

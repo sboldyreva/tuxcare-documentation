@@ -119,16 +119,6 @@ Endless Lifecycle Support (ELS) for koa from TuxCare provides security fixes for
 
 </ELSSteps>
 
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for koa from TuxCare versions:
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2025-32379 | Direct   | Medium   | koa                | < 2.16.1, < 3.0.0-alpha.5 |
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
 ## What's Next?
 
 <WhatsNext hide-title>

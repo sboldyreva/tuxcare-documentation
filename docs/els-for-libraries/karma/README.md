@@ -140,34 +140,6 @@ Endless Lifecycle Support (ELS) for karma from TuxCare provides security fixes f
 
 </ELSSteps>
 
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for karma from TuxCare versions:
-
-<TableTabs label="Choose karma version: " >
-
-<template #karma_4.1.0>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2021-23495 | Direct   | Medium   | karma             | < 6.3.16           |
-| CVE-2022-0437  | Direct   | Medium   | karma             | < 6.3.14           |
-
-  </template>
-
-<template #karma_5.0.9>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2021-23495 | Direct   | Medium   | karma             | < 6.3.16           |
-| CVE-2022-0437  | Direct   | Medium   | karma             | < 6.3.14           |
-
-  </template>
-
-</TableTabs>
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
 ## What's Next?
 
 <WhatsNext hide-title>

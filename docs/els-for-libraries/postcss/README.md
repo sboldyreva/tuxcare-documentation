@@ -166,41 +166,6 @@ Endless Lifecycle Support (ELS) for PostCSS from TuxCare provides security fixes
 
 </ELSSteps>
 
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for PostCSS from TuxCare versions:
-
-<TableTabs label="Choose PostCSS version: " >
-
-<template #postcss_6.0.23>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2021-23382 | Direct   | High     | postcss           | < 8.2.13           |
-| CVE-2023-44270 | Direct   | Medium   | postcss           | < 8.4.31           |
-
-  </template>
-
-<template #postcss_7.0.39>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2023-44270 | Direct   | Medium   | postcss           | < 8.4.31           |
-
-  </template>
-
-<template #postcss_8.3.6>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2023-44270 | Direct   | Medium   | postcss           | < 8.4.31           |
-
-  </template>
-
-</TableTabs>
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
 ## What's Next?
 
 <WhatsNext hide-title>

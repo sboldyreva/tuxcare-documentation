@@ -153,17 +153,6 @@ Endless Lifecycle Support (ELS) for webpack-dev-server from TuxCare provides sec
 
 </ELSSteps>
 
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for webpack-dev-server from TuxCare versions:
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2025-30359 | Direct   | Medium   | webpack-dev-server | < 5.2.1            |
-| CVE-2025-30360 | Direct   | High     | webpack-dev-server | < 5.2.1            |
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
 ## What's Next?
 
 <WhatsNext hide-title>

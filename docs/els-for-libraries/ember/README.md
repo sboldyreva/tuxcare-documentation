@@ -4,7 +4,7 @@ Endless Lifecycle Support (ELS) for Ember.js from TuxCare provides security fixe
 
 ## Supported Ember.js Versions
 
-* Ember.js 0.2.7, 2.18.2, 3.28.6, 4.12.13
+* Ember.js 0.2.7, 1.13.11, 2.18.2, 3.28.6, 4.12.13
 
 ## Installation
 
@@ -132,6 +132,47 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
         "xmldom@0.1.31": "npm:@els-js/xmldom@>=0.1.31-tuxcare.1"
       }
       ```
+
+      </template>
+
+      <template #ember_1.13.11>
+
+      * **Option 1: Manual update**
+
+        ```text
+        "dependencies": {
+          "ember-cli": "npm:@els-js/ember-cli@>=1.13.11-tuxcare.1"
+        },
+        "overrides": {
+          "ember-cli@1.13.11": "npm:@els-js/ember-cli@>=1.13.11-tuxcare.1"
+        }
+        ```
+
+      * **Option 2: TuxCare Patcher (Automated)**
+
+        ```text
+        npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
+        tuxcare-patch-js
+        ```
+
+        The patcher will update your `package.json`, for example, from:
+
+        ```text
+        "dependencies": {
+          "ember-cli": "1.13.11"
+        }
+        ```
+
+        to:
+
+        ```text
+        "dependencies": {
+          "ember-cli": "npm:@els-js/ember-cli@>=1.13.11-tuxcare.1"
+        },
+        "overrides": {
+          "ember-cli@1.13.11": "npm:@els-js/ember-cli@>=1.13.11-tuxcare.1"
+        }
+        ```
 
       </template>
 

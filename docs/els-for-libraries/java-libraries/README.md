@@ -164,12 +164,6 @@ Other libraries upon request.
 
 </ELSSteps>
 
-## Resolved CVEs in ELS for Java Libraries
-
-<ClientOnly>
-  <ResolvedCveTable project="java-libraries" />
-</ClientOnly>
-
 ## What's Next?
 
 <WhatsNext hide-title>

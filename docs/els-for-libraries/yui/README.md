@@ -110,40 +110,6 @@ Endless Lifecycle Support (ELS) for YUI from TuxCare provides security fixes for
 
 </ELSSteps>
 
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for YUI from TuxCare versions:
-
-<TableTabs label="Choose YUI version: " >
-
-<template #yui_2.9.0>
-
-|    CVE ID     | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-|:-------------:|:--------:|:--------:|:------------------:|:-------------------:|
-| CVE-2012-5881 | Direct   | Medium   | yui                | >= 2.4.0 <= 2.9.0  |
-
-</template>
-
-<template #yui_3.18.1>
-
-|    CVE ID     | CVE Type  | Severity | Affected Libraries | Vulnerable Versions |
-|:-------------:|:---------:|:--------:|:------------------:|:-------------------:|
-| CVE-2018-3728 | Transitive | High     | hoek               | < 4.2.0, >= 5.0.0 < 5.0.3 |
-| CVE-2020-36604 | Transitive | High     | hoek               | < 8.5.1, >= 9.0 < 9.0.3 |
-| CVE-2017-16138 | Transitive | High     | mime               | < 1.4.1, >= 2.0.1 < 2.0.3 |
-| GHSA-xc7v-wxcw-j472 | Transitive | High     | tunnel-agent       | < 0.6.0 |
-| CVE-2022-24999 | Transitive | High     | qs                 | - |
-| CVE-2017-1000048 | Transitive | High     | qs                 | - |
-| CVE-2022-29167 | Transitive | High     | hawk               | < 9.0.1 |
-| CVE-2016-2515 | Transitive | High     | hawk               | 3.1.2, 4.1.0 |
-| CVE-2025-7783 | Transitive | Critical | form-data          | - |
-
-</template>
-
-</TableTabs>
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
 ## What's Next?
 
 <WhatsNext hide-title>

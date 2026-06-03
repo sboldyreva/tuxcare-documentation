@@ -119,17 +119,6 @@ Endless Lifecycle Support (ELS) for react-pdf from TuxCare provides security fix
 
 </ELSSteps>
 
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for react-pdf from TuxCare versions:
-
-| CVE ID         | CVE Type   | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :--------: |:--------:|:------------------:| :----------------: |
-| CVE-2024-34342 | Direct     | High     | react-pdf          | -                  |
-| CVE-2024-4367  | Transitive | High     | pdfjs-dist         | < 126.0            |
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
 ## What's Next?
 
 <WhatsNext hide-title>

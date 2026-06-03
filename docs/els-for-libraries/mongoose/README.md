@@ -153,42 +153,6 @@ Endless Lifecycle Support (ELS) for Mongoose from TuxCare provides security fixe
 
 </ELSSteps>
 
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for Mongoose from TuxCare versions:
-
-<TableTabs label="Choose Mongoose version: " >
-
-  <template #Mongoose_5.13.23>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:|:-------------------:|
-| CVE-2025-23061 | Direct   | Critical | mongoose           | < 8.9.5            |
-| CVE-2024-53900 | Direct   | Critical | mongoose           | < 6.13.5, ≥ 7.0.1 < 7.8.3, ≥ 8.0.1 < 8.8.3 |
-
-  </template>
-
-  <template #Mongoose_6.12.2>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:|:-------------------:|
-| CVE-2025-23061 | Direct   | Critical | mongoose           | < 8.9.5            |
-| CVE-2024-53900 | Direct   | Critical | mongoose           | < 6.13.5, ≥ 7.0.1 < 7.8.3, ≥ 8.0.1 < 8.8.3 |
-
-  </template>
-
-  <template #Mongoose_7.8.8>
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:|:-------------------:|
-| CVE-2025-23061 | Direct   | Critical | mongoose           | < 8.9.5            |
-
-  </template>
-
-</TableTabs>
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
 ## What's Next?
 
 <WhatsNext hide-title>

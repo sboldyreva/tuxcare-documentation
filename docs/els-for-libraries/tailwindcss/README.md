@@ -119,17 +119,6 @@ Endless Lifecycle Support (ELS) for tailwindcss from TuxCare provides security f
 
 </ELSSteps>
 
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for tailwindcss from TuxCare versions:
-
-| CVE ID         | CVE Type  | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :-------: |:--------:|:------------------:| :----------------: |
-| CVE-2021-23382 | Transitive | High     | postcss            | < 7.0.36, >= 8.0.0 < 8.2.13 |
-| CVE-2023-44270 | Transitive | Medium   | postcss            | < 8.4.31            |
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
 ## What's Next?
 
 <WhatsNext hide-title>

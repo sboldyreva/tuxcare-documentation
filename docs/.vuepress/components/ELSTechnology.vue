@@ -713,7 +713,7 @@ const techData = [
       },
       {
         name: "Ember.js",
-        versions: "0.2.7 | 2.18.2 | 3.28.6 | 4.12.13",
+        versions: "0.2.7 | 1.13.11 | 2.18.2 | 3.28.6 | 4.12.13",
         link: "./ember/",
       },
       {
@@ -1797,11 +1797,6 @@ const techData = [
         name: "Protobuf",
         versions: "3.24.4",
         link: "./google-protobuf/",
-      },
-      {
-        name: "Ratchet",
-        versions: "0.3.6",
-        link: "./ratchet/",
       },
       {
         name: "Saloon",

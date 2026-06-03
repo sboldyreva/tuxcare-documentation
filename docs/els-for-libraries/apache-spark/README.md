@@ -99,12 +99,6 @@ Our ELS for Apache Spark™ service is designed to provide solutions for organiz
 </ELSSteps>
 
 
-## Resolved CVEs in ELS for Apache Spark™
-
-<ClientOnly>
-  <ResolvedCveTable project="apache-spark" />
-</ClientOnly>
-
 ## What's Next?
 
 <WhatsNext hide-title>
