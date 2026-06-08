@@ -57,29 +57,23 @@ onMounted(() => {
   color: #1b1f27;
 }
 
-/* Anchor affordance: the "#" is hidden until the header is hovered, then
-   reveals and enlarges. The heading text itself is left unchanged so no
-   highlight lingers after the mouse leaves. */
+/* Anchor affordance: hidden until the header is hovered, like header anchors. */
 .prereqs-header h4 :deep(a.prereq-anchor) {
   opacity: 0;
-  display: inline-block;
-  float: none;
   margin-left: 0.35em;
   font-weight: 700;
   color: #0B5CAD;
   text-decoration: none;
-  transform: scale(1);
-  transform-origin: left center;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition: opacity 0.15s ease;
 }
 
 .prereqs-header h4:hover {
   cursor: pointer;
+  color: #0B5CAD;
 }
 
 .prereqs-header h4:hover :deep(a.prereq-anchor) {
   opacity: 1;
-  transform: scale(1.4);
 }
 
 .prereqs-body :deep(ul) {
