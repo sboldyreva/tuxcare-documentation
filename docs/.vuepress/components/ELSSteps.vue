@@ -85,16 +85,6 @@ onMounted(() => {
   opacity: 1;
 }
 
-/* Hover hint on the step itself: title grows slightly and changes color. */
-.els-steps-body :deep(ol > li > p:first-child) {
-  transition: color 0.15s ease, font-size 0.15s ease;
-}
-
-.els-steps-body :deep(ol > li:hover > p:first-child) {
-  color: #0B5CAD;
-  font-size: 1.05rem;
-}
-
 .els-steps-body :deep(ol > li:last-child) {
   border-left-color: transparent;
   padding-bottom: 0;
@@ -116,6 +106,12 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   line-height: 1;
+  transition: background 0.15s ease;
+}
+
+/* Hover hint on the step: the number badge changes color. */
+.els-steps-body :deep(ol > li:hover::before) {
+  background: #0B5CAD;
 }
 
 .els-steps-body :deep(ol > li > p:first-child) {
