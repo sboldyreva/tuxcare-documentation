@@ -71,28 +71,24 @@ onMounted(() => {
   scroll-margin-top: 6rem;
 }
 
-/* Anchor affordance: hidden until the step is hovered, like header anchors. */
+/* Anchor affordance: hidden until the step is hovered, like header anchors.
+   On hover the "#" enlarges as a clickable hint. */
 .els-steps-body :deep(ol > li > p:first-child > a.els-step-anchor) {
   opacity: 0;
+  display: inline-block;
+  float: none;
   margin-left: 0.35em;
   font-weight: 700;
   color: #0B5CAD;
   text-decoration: none;
-  transition: opacity 0.15s ease;
+  transform: scale(1);
+  transform-origin: left center;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
 .els-steps-body :deep(ol > li:hover > p:first-child > a.els-step-anchor) {
   opacity: 1;
-}
-
-/* Hover hint on the step itself: title grows slightly and changes color. */
-.els-steps-body :deep(ol > li > p:first-child) {
-  transition: color 0.15s ease, font-size 0.15s ease;
-}
-
-.els-steps-body :deep(ol > li:hover > p:first-child) {
-  color: #0B5CAD;
-  font-size: 1.05rem;
+  transform: scale(1.4);
 }
 
 .els-steps-body :deep(ol > li:last-child) {
@@ -116,6 +112,13 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   line-height: 1;
+  transform: scale(1);
+  transition: transform 0.15s ease;
+}
+
+/* Hover hint on the step: the number badge enlarges. */
+.els-steps-body :deep(ol > li:hover::before) {
+  transform: scale(1.2);
 }
 
 .els-steps-body :deep(ol > li > p:first-child) {
