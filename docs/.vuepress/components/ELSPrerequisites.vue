@@ -1,13 +1,43 @@
 <template>
-  <div class="prereqs">
+  <div ref="rootRef" class="prereqs">
     <div class="prereqs-header">
-      <h4><slot name="title">Prerequisites</slot></h4>
+      <h4 ref="headingRef"><slot name="title">Prerequisites</slot></h4>
     </div>
     <div class="prereqs-body">
       <slot />
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { onMounted, ref } from 'vue';
+import { slugify, uniqueId, collectUsedIds } from '../utils/slugify';
+
+const rootRef = ref<HTMLElement | null>(null);
+const headingRef = ref<HTMLElement | null>(null);
+
+function anchorPrerequisites() {
+  const heading = headingRef.value;
+  if (!heading || heading.id) return;
+
+  const used = collectUsedIds();
+  const id = uniqueId(slugify(heading.textContent ?? '') || 'prerequisites', used);
+  heading.id = id;
+
+  const anchor = document.createElement('a');
+  anchor.className = 'header-anchor prereq-anchor';
+  anchor.setAttribute('href', `#${id}`);
+  anchor.setAttribute('aria-hidden', 'true');
+  anchor.setAttribute('tabindex', '-1');
+  anchor.textContent = '#';
+  heading.appendChild(anchor);
+}
+
+onMounted(() => {
+  // Run after VuePress has assigned heading ids.
+  setTimeout(anchorPrerequisites, 0);
+});
+</script>
 
 <style scoped>
 .prereqs {
@@ -16,6 +46,8 @@
   background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 100%);
   padding: 1.25rem 1.5rem;
   margin: 1.5rem 0;
+  /* Land below the fixed navbar when navigated to via the section anchor. */
+  scroll-margin-top: 6rem;
 }
 
 .prereqs-header h4 {
@@ -23,6 +55,25 @@
   font-size: 1rem;
   font-weight: 700;
   color: #1b1f27;
+}
+
+/* Anchor affordance: hidden until the header is hovered, like header anchors. */
+.prereqs-header h4 :deep(a.prereq-anchor) {
+  opacity: 0;
+  margin-left: 0.35em;
+  font-weight: 700;
+  color: #0B5CAD;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.prereqs-header h4:hover {
+  cursor: pointer;
+  color: #0B5CAD;
+}
+
+.prereqs-header h4:hover :deep(a.prereq-anchor) {
+  opacity: 1;
 }
 
 .prereqs-body :deep(ul) {

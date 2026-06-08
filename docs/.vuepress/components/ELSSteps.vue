@@ -1,10 +1,50 @@
 <template>
   <div class="els-steps">
-    <div class="els-steps-body">
+    <div ref="bodyRef" class="els-steps-body">
       <slot />
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { onMounted, ref } from 'vue';
+import { slugify, uniqueId, collectUsedIds } from '../utils/slugify';
+
+const bodyRef = ref<HTMLElement | null>(null);
+
+function anchorSteps() {
+  const body = bodyRef.value;
+  if (!body) return;
+
+  // Seed from ids already on the page so step anchors never collide with
+  // heading anchors or other <ELSSteps> blocks on the same page.
+  const used = collectUsedIds();
+
+  // Top-level steps only — leave nested sub-steps (ol ol > li) un-anchored.
+  body.querySelectorAll<HTMLLIElement>(':scope > ol > li').forEach((li) => {
+    if (li.id) return; // already processed
+
+    const titleEl = li.querySelector('p');
+    const title = titleEl?.textContent ?? li.textContent ?? '';
+    const id = uniqueId(slugify(title) || 'step', used);
+    li.id = id;
+
+    const anchor = document.createElement('a');
+    anchor.className = 'header-anchor els-step-anchor';
+    anchor.setAttribute('href', `#${id}`);
+    anchor.setAttribute('aria-hidden', 'true');
+    anchor.setAttribute('tabindex', '-1');
+    anchor.textContent = '#';
+    // Inline with the step title when present, else at the end of the step.
+    (titleEl ?? li).appendChild(anchor);
+  });
+}
+
+onMounted(() => {
+  // Run after VuePress has assigned heading ids.
+  setTimeout(anchorSteps, 0);
+});
+</script>
 
 <style scoped>
 .els-steps {
@@ -27,6 +67,32 @@
   margin-bottom: 0;
   border-left: 2px solid #e0e3e8;
   margin-left: 0.9rem;
+  /* Land below the fixed navbar when navigated to via a step anchor. */
+  scroll-margin-top: 6rem;
+}
+
+/* Anchor affordance: hidden until the step is hovered, like header anchors. */
+.els-steps-body :deep(ol > li > p:first-child > a.els-step-anchor) {
+  opacity: 0;
+  margin-left: 0.35em;
+  font-weight: 700;
+  color: #0B5CAD;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.els-steps-body :deep(ol > li:hover > p:first-child > a.els-step-anchor) {
+  opacity: 1;
+}
+
+/* Hover hint on the step itself: title grows slightly and changes color. */
+.els-steps-body :deep(ol > li > p:first-child) {
+  transition: color 0.15s ease, font-size 0.15s ease;
+}
+
+.els-steps-body :deep(ol > li:hover > p:first-child) {
+  color: #0B5CAD;
+  font-size: 1.05rem;
 }
 
 .els-steps-body :deep(ol > li:last-child) {
