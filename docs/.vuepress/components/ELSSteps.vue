@@ -37,6 +37,15 @@ function anchorSteps() {
     anchor.textContent = '#';
     // Inline with the step title when present, else at the end of the step.
     (titleEl ?? li).appendChild(anchor);
+
+    // Transparent overlay over the number badge so clicking the number also
+    // navigates to the step's anchor and updates the URL.
+    const numberLink = document.createElement('a');
+    numberLink.className = 'els-step-number';
+    numberLink.setAttribute('href', `#${id}`);
+    numberLink.setAttribute('aria-hidden', 'true');
+    numberLink.setAttribute('tabindex', '-1');
+    li.appendChild(numberLink);
   });
 }
 
@@ -76,6 +85,7 @@ onMounted(() => {
   opacity: 0;
   margin-left: 0.35em;
   font-weight: 700;
+  font-size: 1.4em;
   color: #0B5CAD;
   text-decoration: none;
   transition: opacity 0.15s ease;
@@ -83,6 +93,17 @@ onMounted(() => {
 
 .els-steps-body :deep(ol > li:hover > p:first-child > a.els-step-anchor) {
   opacity: 1;
+}
+
+/* Transparent overlay over the number badge — makes the number clickable. */
+.els-steps-body :deep(ol > li > a.els-step-number) {
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .els-steps-body :deep(ol > li:last-child) {

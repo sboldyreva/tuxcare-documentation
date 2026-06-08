@@ -62,6 +62,7 @@ onMounted(() => {
   opacity: 0;
   margin-left: 0.35em;
   font-weight: 700;
+  font-size: 1.4em;
   color: #0B5CAD;
   text-decoration: none;
   transition: opacity 0.15s ease;
