@@ -30,7 +30,8 @@ function anchorPrerequisites() {
   anchor.setAttribute('aria-hidden', 'true');
   anchor.setAttribute('tabindex', '-1');
   anchor.textContent = '#';
-  heading.appendChild(anchor);
+  // On the left of the heading wording, vertically aligned with it.
+  heading.insertBefore(anchor, heading.firstChild);
 }
 
 onMounted(() => {
@@ -60,12 +61,12 @@ onMounted(() => {
 /* Anchor affordance: hidden until the header is hovered, like header anchors. */
 .prereqs-header h4 :deep(a.prereq-anchor) {
   opacity: 0;
-  /* Override the global header-anchor float so the # sits inline after the
-     wording instead of being pushed to the far left. */
+  /* Override the global header-anchor float so the # sits inline to the left
+     of the wording and stays vertically aligned with it. */
   float: none;
   display: inline;
   vertical-align: middle;
-  margin-left: 0.35em;
+  margin-right: 0.35em;
   font-weight: 700;
   font-size: 1.4em;
   line-height: 1;

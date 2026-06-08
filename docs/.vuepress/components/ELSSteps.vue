@@ -35,8 +35,9 @@ function anchorSteps() {
     anchor.setAttribute('aria-hidden', 'true');
     anchor.setAttribute('tabindex', '-1');
     anchor.textContent = '#';
-    // Inline with the step title when present, else at the end of the step.
-    (titleEl ?? li).appendChild(anchor);
+    // On the left of the step title (prepended), vertically aligned with it.
+    const target = titleEl ?? li;
+    target.insertBefore(anchor, target.firstChild);
 
     // Transparent overlay over the number badge so clicking the number also
     // navigates to the step's anchor and updates the URL.
@@ -83,12 +84,12 @@ onMounted(() => {
 /* Anchor affordance: hidden until the step is hovered, like header anchors. */
 .els-steps-body :deep(ol > li > p:first-child > a.els-step-anchor) {
   opacity: 0;
-  /* Override the global header-anchor float so the # sits inline after the
-     wording instead of being pushed to the far left. */
+  /* Override the global header-anchor float so the # sits inline to the left
+     of the wording and stays vertically aligned with it. */
   float: none;
   display: inline;
   vertical-align: middle;
-  margin-left: 0.35em;
+  margin-right: 0.35em;
   font-weight: 700;
   font-size: 1.4em;
   line-height: 1;
