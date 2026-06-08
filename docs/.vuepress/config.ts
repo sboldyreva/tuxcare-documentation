@@ -2,17 +2,14 @@ import { defineUserConfig, viteBundler } from "vuepress";
 import theme from "./theme";
 import plugins from "./config-user/plugins";
 import headFunctions from "./headFunctions";
+import { slugify } from "./utils/slugify";
 
 export default defineUserConfig({
   theme,
   markdown: {
     anchor: {
-    slugify: str =>
-      str
-        .replace(/®/g, '')
-        .replace(/™/g, '')
-        .toLowerCase()
-        .replace(/\s+/g, '-')
+      // Shared rule: strip punctuation/signs (, . ? ! ' etc.) from anchor urls.
+      slugify,
     },
     headers: {
       level: [2, 3, 4, 5],

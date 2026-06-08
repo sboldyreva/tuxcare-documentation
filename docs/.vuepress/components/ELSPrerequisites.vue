@@ -60,9 +60,15 @@ onMounted(() => {
 /* Anchor affordance: hidden until the header is hovered, like header anchors. */
 .prereqs-header h4 :deep(a.prereq-anchor) {
   opacity: 0;
+  /* Override the global header-anchor float so the # sits inline after the
+     wording instead of being pushed to the far left. */
+  float: none;
+  display: inline;
+  vertical-align: middle;
   margin-left: 0.35em;
   font-weight: 700;
   font-size: 1.4em;
+  line-height: 1;
   color: #0B5CAD;
   text-decoration: none;
   transition: opacity 0.15s ease;

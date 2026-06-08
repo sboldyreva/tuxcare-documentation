@@ -83,9 +83,15 @@ onMounted(() => {
 /* Anchor affordance: hidden until the step is hovered, like header anchors. */
 .els-steps-body :deep(ol > li > p:first-child > a.els-step-anchor) {
   opacity: 0;
+  /* Override the global header-anchor float so the # sits inline after the
+     wording instead of being pushed to the far left. */
+  float: none;
+  display: inline;
+  vertical-align: middle;
   margin-left: 0.35em;
   font-weight: 700;
   font-size: 1.4em;
+  line-height: 1;
   color: #0B5CAD;
   text-decoration: none;
   transition: opacity 0.15s ease;
