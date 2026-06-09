@@ -67,6 +67,10 @@ onMounted(() => {
   width: 0.7rem;
   padding-right: 0;
   margin-left: 0;
+  /* Match the heading's line-height so the floated # is vertically centered
+     with the wording instead of topping out above it. */
+  line-height: inherit;
+  margin-top: 0;
   transition: opacity 0.15s ease;
 }
 
