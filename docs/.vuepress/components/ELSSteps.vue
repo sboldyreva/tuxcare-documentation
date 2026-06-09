@@ -82,19 +82,10 @@ onMounted(() => {
 }
 
 /* Anchor affordance: hidden until the step is hovered, like header anchors. */
+/* Reveal on hover only — let the global a.header-anchor rule handle the look
+   (size, float-left, padding) so step anchors match h2 heading anchors. */
 .els-steps-body :deep(ol > li > p:first-child > a.els-step-anchor) {
   opacity: 0;
-  /* Override the global header-anchor float so the # sits inline to the left
-     of the wording and stays vertically aligned with it. */
-  float: none;
-  display: inline;
-  vertical-align: middle;
-  margin-right: 0.35em;
-  font-weight: 700;
-  font-size: 1.4em;
-  line-height: 1;
-  color: #0B5CAD;
-  text-decoration: none;
   transition: opacity 0.15s ease;
 }
 
