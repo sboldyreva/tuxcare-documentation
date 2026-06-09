@@ -90,10 +90,10 @@ onMounted(() => {
   width: 0.7rem;
   padding-right: 0;
   margin-left: 0;
-  /* Match the title's line-height and nudge down so the floated # starts at
-     the same level as the wording instead of riding above it. */
+  /* Inherit the title's 2rem line-height so the floated # centers at the same
+     level as the (vertically centered) wording. No extra margin-top needed. */
   line-height: inherit;
-  margin-top: 0.2rem;
+  margin-top: 0;
   transition: opacity 0.15s ease;
 }
 
