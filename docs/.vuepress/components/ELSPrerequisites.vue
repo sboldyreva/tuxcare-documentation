@@ -58,17 +58,19 @@ onMounted(() => {
   color: #1b1f27;
 }
 
-/* Anchor affordance: hidden until the header is hovered, like header anchors. */
-/* Reveal on hover only — let the global a.header-anchor rule handle the look
-   (size, float-left, padding) so this matches h2 heading anchors. */
+/* Reveal on hover only. Slightly bigger than the default header-anchor, a
+   smaller gap, and pulled into the left gutter so the wording (and the list
+   below) start at the same left edge. */
 .prereqs-header h4 :deep(a.prereq-anchor) {
   opacity: 0;
+  font-size: 1em;
+  padding-right: 0.15em;
+  margin-left: -1.1em;
   transition: opacity 0.15s ease;
 }
 
 .prereqs-header h4:hover {
   cursor: pointer;
-  color: #0B5CAD;
 }
 
 .prereqs-header h4:hover :deep(a.prereq-anchor) {
