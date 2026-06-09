@@ -90,10 +90,10 @@ onMounted(() => {
   width: 0.7rem;
   padding-right: 0;
   margin-left: 0;
-  /* Match the title's line-height so the floated # is vertically centered
-     with the wording instead of topping out above it. */
+  /* Match the title's line-height and nudge down so the floated # starts at
+     the same level as the wording instead of riding above it. */
   line-height: inherit;
-  margin-top: 0;
+  margin-top: 0.2rem;
   transition: opacity 0.15s ease;
 }
 
@@ -153,6 +153,10 @@ onMounted(() => {
   font-weight: 600;
   color: #0d1a26;
   margin-top: 0;
+  /* Match the number badge height so the wording sits at the badge's vertical
+     middle (where the number is) instead of at its top. */
+  min-height: 2rem;
+  line-height: 2rem;
 }
 
 .els-steps-body :deep(ol > li > p) {
