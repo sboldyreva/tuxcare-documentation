@@ -59,10 +59,11 @@ onMounted(() => {
 }
 
 /* The anchor floats left at its natural position with a fixed width and a
-   minimal gap; the body list below is indented to match (see .prereqs-body). */
+   minimal gap; the body list below is indented to match (see .prereqs-body).
+   font-size in rem (not em) keeps it identical to the ELSSteps anchor. */
 .prereqs-header h4 :deep(a.prereq-anchor) {
   opacity: 0;
-  font-size: 1em;
+  font-size: 1rem;
   width: 0.7rem;
   padding-right: 0;
   margin-left: 0;

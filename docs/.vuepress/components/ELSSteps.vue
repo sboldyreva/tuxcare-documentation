@@ -72,7 +72,7 @@ onMounted(() => {
 .els-steps-body :deep(ol > li) {
   counter-increment: step-counter;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
   padding-bottom: 1.25rem;
   margin-bottom: 0;
   border-left: 2px solid #e0e3e8;
@@ -82,10 +82,11 @@ onMounted(() => {
 }
 
 /* The anchor floats left at its natural position (no negative margin, so it
-   never overlaps the number badge) with a fixed width and a minimal gap. */
+   never overlaps the number badge), with a fixed width and a minimal gap.
+   font-size in rem (not em) keeps it identical to the prerequisites anchor. */
 .els-steps-body :deep(ol > li > p:first-child > a.els-step-anchor) {
   opacity: 0;
-  font-size: 1em;
+  font-size: 1rem;
   width: 0.7rem;
   padding-right: 0;
   margin-left: 0;
@@ -97,10 +98,11 @@ onMounted(() => {
 }
 
 /* Indent the step's body content (everything below the title) by the anchor's
-   reserved width so it aligns with the title wording. Exclude the absolutely
-   positioned number-overlay link. */
+   reserved width so it aligns with the title wording. margin-left (not padding)
+   so code blocks move as a whole and their background aligns too. Exclude the
+   absolutely positioned number-overlay link. */
 .els-steps-body :deep(ol > li > *:not(:first-child):not(a)) {
-  padding-left: 0.7rem;
+  margin-left: 0.7rem;
 }
 
 /* Transparent overlay over the number badge — makes the number clickable. */
@@ -174,7 +176,10 @@ onMounted(() => {
 
 .els-steps-body :deep(div[class*="language-"]),
 .els-steps-body :deep(.code-with-copy) {
-  margin: 0.5rem 0;
+  /* top/bottom only — left indent comes from the body-content rule above so
+     the code block aligns with the step wording. */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .els-steps-body :deep(:not(pre) > code) {
