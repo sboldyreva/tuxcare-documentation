@@ -58,14 +58,14 @@ onMounted(() => {
   color: #1b1f27;
 }
 
-/* Reveal on hover only. Slightly bigger than the default header-anchor, a
-   smaller gap, and pulled into the left gutter so the wording (and the list
-   below) start at the same left edge. */
+/* The anchor floats left at its natural position with a fixed width and a
+   minimal gap; the body list below is indented to match (see .prereqs-body). */
 .prereqs-header h4 :deep(a.prereq-anchor) {
   opacity: 0;
   font-size: 1em;
-  padding-right: 0.15em;
-  margin-left: -1.1em;
+  width: 0.7rem;
+  padding-right: 0;
+  margin-left: 0;
   transition: opacity 0.15s ease;
 }
 
@@ -75,6 +75,12 @@ onMounted(() => {
 
 .prereqs-header h4:hover :deep(a.prereq-anchor) {
   opacity: 1;
+}
+
+/* Indent the body by the anchor's reserved width so the list aligns with the
+   "Prerequisites" wording, which the floated anchor pushes right. */
+.prereqs-body {
+  padding-left: 0.7rem;
 }
 
 .prereqs-body :deep(ul) {

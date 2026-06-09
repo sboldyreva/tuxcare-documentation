@@ -81,20 +81,26 @@ onMounted(() => {
   scroll-margin-top: 6rem;
 }
 
-/* Anchor affordance: hidden until the step is hovered, like header anchors. */
-/* Reveal on hover only. Slightly bigger than the default header-anchor, a
-   smaller gap, and pulled into the left gutter so the title wording lines up
-   with the rest of the step's content below it. */
+/* The anchor floats left at its natural position (no negative margin, so it
+   never overlaps the number badge) with a fixed width and a minimal gap. */
 .els-steps-body :deep(ol > li > p:first-child > a.els-step-anchor) {
   opacity: 0;
   font-size: 1em;
-  padding-right: 0.15em;
-  margin-left: -1.1em;
+  width: 0.7rem;
+  padding-right: 0;
+  margin-left: 0;
   transition: opacity 0.15s ease;
 }
 
 .els-steps-body :deep(ol > li:hover > p:first-child > a.els-step-anchor) {
   opacity: 1;
+}
+
+/* Indent the step's body content (everything below the title) by the anchor's
+   reserved width so it aligns with the title wording. Exclude the absolutely
+   positioned number-overlay link. */
+.els-steps-body :deep(ol > li > *:not(:first-child):not(a)) {
+  padding-left: 0.7rem;
 }
 
 /* Transparent overlay over the number badge — makes the number clickable. */
