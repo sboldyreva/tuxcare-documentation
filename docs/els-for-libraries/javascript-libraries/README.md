@@ -161,7 +161,7 @@ Other libraries upon request.
 
 ## Use Case: Production Setup
 
-<ELSBadge heading>Linux</ELSBadge>
+<ELSBadge>Linux</ELSBadge>
 
 ## Installation
 
