@@ -159,6 +159,10 @@ Endless Lifecycle Support (ELS) for Libraries from TuxCare provides security fix
 
 Other libraries upon request.
 
+## Use Case: Production Setup
+
+<ELSBadge heading>Linux</ELSBadge>
+
 ## Installation
 
 <ELSBadge heading>Docker compatible</ELSBadge>
