@@ -14,5 +14,9 @@ export default [
         {
         text: "Privacy Policy",
         url: "https://tuxcare.com/privacy-policies-hub/privacy-policy/"
+    },
+    {
+        text: "Cookie Declaration",
+        url: "/cookie-declaration/"
     }
 ]
