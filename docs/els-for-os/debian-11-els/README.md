@@ -61,6 +61,7 @@
 
 </ELSSteps>
 
+<!-- TODO: enable once the links below are ready
 ## What's Next?
 
 <WhatsNext hide-title>
@@ -73,3 +74,4 @@
 * ![](/images/wrench.webp) [Managing the ELS repository](/els-for-os/managing-els-repository/) — Updates, local mirror, and other repository operations
 
 </WhatsNext>
+-->
