@@ -119,6 +119,30 @@ The steps below use Apache Tomcat® 8.5.100 as an example. The same flow applies
 
 If `gpg` reports `BAD signature`, or cannot find the matching public key, treat the artifact as an integrity violation: stop the installation and re-obtain the artifact and signature from TuxCare over a trusted channel.
 
+### Other application artifacts
+
+Applications delivered as Go binaries — **Grafana**, **Loki**, and **MinIO** — are published to the `els-golang` Nexus repository. The verification model is identical; only the repository path and file layout differ (Grafana and Loki are organized in per-OS subdirectories, while MinIO encodes the OS/architecture in the file name).
+
+For example, to obtain and verify a Grafana build for Debian 13:
+
+```text
+# Artifact and its detached signature
+curl -u USERNAME:PASSWORD -fsSL -O \
+  https://nexus.repo.tuxcare.com/repository/els-golang/grafana/debian13/grafana-10.4.1-tuxcare.1.tar.gz
+curl -u USERNAME:PASSWORD -fsSL -O \
+  https://nexus.repo.tuxcare.com/repository/els-golang/grafana/debian13/grafana-10.4.1-tuxcare.1.tar.gz.asc
+
+# Verify authenticity and integrity (signature first, then artifact)
+gpg --verify grafana-10.4.1-tuxcare.1.tar.gz.asc grafana-10.4.1-tuxcare.1.tar.gz
+```
+
+Substitute the path for the artifact you are verifying, for example:
+
+* **Loki** — `els-golang/loki/debian13/loki-3.1.0-tuxcare.1.tar.gz`
+* **MinIO** — `els-golang/minio/minio_linux_amd64-<version>-tuxcare.N.tar.gz`
+
+As with the Java artifacts, a `Good signature` line means the build is authentic and unmodified; any other result is an [integrity violation](#integrity-violation-events).
+
 ## Integrity Violation Events
 
 For compliance with regulations such as the EU Cyber Resilience Act (CRA), an administrator must be able to detect and retain evidence when an integrity check fails — not just discover it by chance while watching a terminal. This section defines what counts as an integrity violation for ELS for Open-Source Applications and shows how to capture these events in a dedicated log.
