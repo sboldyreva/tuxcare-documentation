@@ -829,6 +829,10 @@ PHP extensions are modules that extend the functionality of the PHP programming 
 
 The PHP core includes many built-in extensions that provide basic functionality, such as working with databases, string processing, working with images, and others. However, to support more specific tasks and third-party libraries, you can use additional PHP extensions.
 
+:::tip
+The extensions list below applies to ELS PHP for **Linux**. It does not apply to ELS PHP for Windows. For Windows, see [Extensions](#extensions) in the Windows installation section.
+:::
+
 <TableTabs>
 
   <template #PHP_5.2_extensions>
