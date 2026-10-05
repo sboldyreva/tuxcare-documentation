@@ -6,7 +6,7 @@
  * in headless Chromium (Playwright) and runs axe-core on each one at a desktop
  * (1366px) and a mobile (390px) viewport. A few keyboard smoke checks guard
  * the theme's keyboard fixes (skip link, Products menu, search drawer, home
- * cards) against regressions.
+ * hub links) against regressions.
  *
  * Result:
  *   - serious/critical axe violations  -> fail (exit 1)
@@ -278,15 +278,15 @@ const KEYBOARD_CHECKS = [
     },
   },
   {
-    name: "Home cards are real links (<a href>)",
+    name: "Home hub tasks and products are real links (<a href>)",
     async run(page) {
       await open(page, "/");
       const res = await page.evaluate(() => {
-        const cards = [...document.querySelectorAll(".docs-card-container")];
-        return { cards: cards.length, linked: cards.filter((c) => c.querySelector("a[href]")).length };
+        const items = [...document.querySelectorAll(".home-tasks__item, .home-product")];
+        return { items: items.length, linked: items.filter((c) => c.querySelector("a[href]")).length };
       });
-      if (!res.cards) throw new Error("no .docs-card-container on the home page");
-      if (res.linked !== res.cards) throw new Error(`${res.cards - res.linked} of ${res.cards} home cards have no <a href>`);
+      if (!res.items) throw new Error("no .home-tasks__item / .home-product on the home page");
+      if (res.linked !== res.items) throw new Error(`${res.items - res.linked} of ${res.items} home hub items have no <a href>`);
     },
   },
 ];

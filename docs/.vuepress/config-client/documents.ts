@@ -1,10 +1,5 @@
 export default [
     {
-        title: "TuxCare",
-        description: "TuxCare services automate, simplify, and enhance Linux operations, giving organizations more flexibility in managing Linux distro choices and versions, significant maintenance cost reductions, and greatly enhanced security and compliance postures.",
-        link: "/tuxcare/",
-    },
-    {
         title: "TuxCare Radar",
         description: "Rather than relying on the conventional scoring mechanisms of legacy scanning solutions, TuxCare Radar takes a holistic, comprehensive approach to reveal the actual real-world risk that vulnerabilities pose.",
         link: "/radar/",

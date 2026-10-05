@@ -3,7 +3,7 @@
     <a class="skip-link" href="#main-content">Skip to content</a>
     <HeaderLayout :isMobileWidth="isMobileWidth"/>
     <main id="main-content" role="main" tabindex="-1">
-      <DocsCardsWrapper/>
+      <HomeHub/>
     </main>
     <Footer/>
     <div class="sr-only" aria-live="polite" aria-atomic="true">{{ announcement }}</div>
@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import DocsCardsWrapper from "../cards/DocsCardsWrapper.vue";
+import HomeHub from "../home/HomeHub.vue";
 import Footer from "../footer/Footer.vue";
 import HeaderLayout from '../header/HeaderLayout.vue'
 import {inject, onMounted, onUnmounted, ref} from "vue";

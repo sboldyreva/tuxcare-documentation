@@ -727,14 +727,6 @@ export default {
             ]
         },
     ],
-    '/tuxcare/': [
-        {
-            collapsable: false,
-            children: [
-                "/tuxcare/",
-            ]
-        },
-    ],
     '/tuxcare-cln/': [
         {
             collapsable: false,
