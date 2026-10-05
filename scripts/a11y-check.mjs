@@ -278,14 +278,14 @@ const KEYBOARD_CHECKS = [
     },
   },
   {
-    name: "Home hub tasks and products are real links (<a href>)",
+    name: "Home hub products are real links (<a href>)",
     async run(page) {
       await open(page, "/");
       const res = await page.evaluate(() => {
-        const items = [...document.querySelectorAll(".home-tasks__item, .home-product")];
+        const items = [...document.querySelectorAll(".home-product")];
         return { items: items.length, linked: items.filter((c) => c.querySelector("a[href]")).length };
       });
-      if (!res.items) throw new Error("no .home-tasks__item / .home-product on the home page");
+      if (!res.items) throw new Error("no .home-product on the home page");
       if (res.linked !== res.items) throw new Error(`${res.items - res.linked} of ${res.items} home hub items have no <a href>`);
     },
   },

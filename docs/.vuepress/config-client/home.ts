@@ -4,6 +4,7 @@
 export type HomeLink = { text: string; link: string };
 
 export type HomeProduct = {
+    task: string;
     title: string;
     link: string;
     description: string;
@@ -16,52 +17,43 @@ export type HomeGroup = {
 };
 
 export const intro =
-    "Live patching, end-of-life security fixes and long-term support for Linux and open source. Pick a task or a product to get started.";
-
-export const tasks: (HomeLink & { product: string })[] = [
-    { text: "Patch Linux kernels without rebooting", product: "KernelCare", link: "/live-patching-services/" },
-    { text: "Keep an end-of-life Linux server patched", product: "ELS for Operating Systems", link: "/els-for-os/" },
-    { text: "Stay on an end-of-life runtime", product: "ELS for Runtimes", link: "/els-for-runtimes/" },
-    { text: "Patch end-of-life libraries in your build", product: "ELS for Language Ecosystems", link: "/els-for-libraries/" },
-    { text: "Secure end-of-life databases and applications", product: "ELS for Applications", link: "/els-for-applications/" },
-    { text: "Use signed, verified open-source packages", product: "SecureChain", link: "/securechain/" },
-    { text: "Run AlmaLinux or Rocky Linux with long-term support and FIPS", product: "Enterprise Support", link: "/enterprise-support-for-almalinux/" },
-    { text: "Prioritize vulnerabilities by real-world risk", product: "TuxCare Radar", link: "/radar/" },
-    { text: "Manage live patching on-premises", product: "ePortal", link: "/eportal/" },
-    { text: "Manage licenses and subscriptions", product: "Subscription Management Portal", link: "/tuxcare-cln/" },
-];
+    "Live patching, end-of-life security fixes and long-term support for Linux and open source. Find your task below to get to the right product.";
 
 export const groups: HomeGroup[] = [
     {
         title: "Live Patching",
         products: [
             {
+                task: "Patch Linux kernels without rebooting",
                 title: "KernelCare",
                 link: "/live-patching-services/",
-                description: "Rebootless security patches for Linux kernels and shared libraries.",
+                description: "Security patches and bugfixes for popular Linux kernels, installed without rebooting.",
                 links: [
                     { text: "Kernel live patching", link: "/live-patching-services/#kernelcare-kernel-live-patching" },
                     { text: "LibCare", link: "/live-patching-services/#libcare" },
                 ],
             },
             {
+                task: "Patch IoT and embedded devices live",
                 title: "KernelCare for IoT",
                 link: "/kernelcare-for-iot/",
-                description: "Live patching for ARM64 embedded and IoT devices.",
+                description: "Live security patching for ARM64-based embedded systems, for enterprise IoT users and OEMs.",
             },
             {
+                task: "Manage live patching on-premises",
                 title: "ePortal",
                 link: "/eportal/",
-                description: "On-premises console for managing KernelCare patches.",
+                description: "The web management console for KernelCare Enterprise live patch management.",
                 links: [
                     { text: "Installation", link: "/eportal/#installation" },
                     { text: "PatchSet deployment", link: "/eportal/#patchset-deployment" },
                 ],
             },
             {
+                task: "Automate ePortal",
                 title: "ePortal API",
                 link: "/eportal-api/",
-                description: "Automate ePortal from scripts and tooling.",
+                description: "A complete API for everyday use.",
             },
         ],
     },
@@ -69,39 +61,44 @@ export const groups: HomeGroup[] = [
         title: "Endless Lifecycle Support",
         products: [
             {
+                task: "Find the right ELS product",
                 title: "ELS overview",
                 link: "/endless-lifecycle-support/",
                 description: "How ELS is delivered and which product fits your case.",
             },
             {
+                task: "Keep an end-of-life Linux server patched",
                 title: "ELS for Operating Systems",
                 link: "/els-for-os/",
-                description: "Security fixes for end-of-life Linux distributions.",
+                description: "Continue running your Linux server after the operating system’s end of life.",
                 links: [
                     { text: "Managing the repository", link: "/els-for-os/managing-els-repository/" },
                     { text: "Security data", link: "/els-for-os/machine-readable-security-data/" },
                 ],
             },
             {
+                task: "Stay on an end-of-life runtime",
                 title: "ELS for Runtimes",
                 link: "/els-for-runtimes/",
-                description: "PHP, Python, Node.js, Ruby, .NET and OpenJDK beyond end of life.",
+                description: "Security fixes for language runtimes beyond their official end-of-life date.",
                 links: [
                     { text: "Security data", link: "/els-for-runtimes/machine-readable-security-data/" },
                 ],
             },
             {
+                task: "Patch end-of-life libraries in your build",
                 title: "ELS for Language Ecosystems",
                 link: "/els-for-libraries/",
-                description: "Patched Java, JavaScript, Python, PHP and .NET packages.",
+                description: "Security fixes for open-source packages across language ecosystems beyond their official end-of-life date.",
                 links: [
                     { text: "Security data", link: "/els-for-libraries/machine-readable-security-data/" },
                 ],
             },
             {
+                task: "Secure end-of-life databases and applications",
                 title: "ELS for Applications",
                 link: "/els-for-applications/",
-                description: "Fixes for end-of-life MySQL, PostgreSQL, Tomcat and more.",
+                description: "Security fixes for open-source applications after official support ends.",
                 links: [
                     { text: "Managing the repository", link: "/els-for-applications/managing-els-repository/" },
                     { text: "Security data", link: "/els-for-applications/machine-readable-security-data/" },
@@ -113,9 +110,10 @@ export const groups: HomeGroup[] = [
         title: "Enterprise Linux",
         products: [
             {
+                task: "Run AlmaLinux or Rocky Linux with long-term support and FIPS",
                 title: "TuxCare Enterprise Support",
                 link: "/enterprise-support-for-almalinux/",
-                description: "Vetted AlmaLinux and Rocky Linux updates with 16 years of coverage.",
+                description: "TuxCare-vetted AlmaLinux and Rocky Linux updates with 16 years of coverage, FIPS-compliant patches and pay-as-you-go support.",
                 links: [
                     { text: "Extended Security Updates", link: "/enterprise-support-for-almalinux/#extended-security-updates" },
                     { text: "FIPS", link: "/enterprise-support-for-almalinux/fips/" },
@@ -127,18 +125,20 @@ export const groups: HomeGroup[] = [
         title: "Supply Chain and Risk",
         products: [
             {
+                task: "Use signed, verified open-source packages",
                 title: "SecureChain for Open Source",
                 link: "/securechain/",
-                description: "Signed, verified packages from a TuxCare-managed registry.",
+                description: "Verified, signed, continuously patched open-source packages from a TuxCare-managed registry. JavaScript at launch; Python, Java, Go and PHP on the roadmap.",
                 links: [
                     { text: "JavaScript", link: "/securechain/javascript/" },
                     { text: "CLI", link: "/securechain/cli/" },
                 ],
             },
             {
+                task: "Prioritize vulnerabilities by real-world risk",
                 title: "TuxCare Radar",
                 link: "/radar/",
-                description: "Vulnerability scanning that ranks findings by real-world risk.",
+                description: "Reveals the real-world risk vulnerabilities pose, instead of relying on conventional scoring.",
                 links: [
                     { text: "Installation", link: "/radar/#installation" },
                     { text: "Usage", link: "/radar/#usage" },
@@ -150,18 +150,20 @@ export const groups: HomeGroup[] = [
         title: "Account and Support",
         products: [
             {
+                task: "Manage licenses and subscriptions",
                 title: "Subscription Management Portal",
                 link: "/tuxcare-cln/",
-                description: "Manage license keys, subscriptions and billing.",
+                description: "Manage your TuxCare licenses and services in one user-friendly interface.",
                 links: [
                     { text: "Dashboard", link: "/tuxcare-cln/#dashboard" },
                     { text: "Billing", link: "/tuxcare-cln/#billing" },
                 ],
             },
             {
+                task: "Check what technical support includes",
                 title: "Service Descriptions",
                 link: "/service-descriptions/",
-                description: "What Essential and Enhanced Support include.",
+                description: "Technical support service descriptions.",
                 links: [
                     { text: "Technical Account Manager", link: "/service-descriptions/tam/" },
                 ],
