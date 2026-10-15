@@ -174,7 +174,6 @@ export default defineClientConfig({
             footerCustomLogo: 'global/TuxCare_color_logo_tagline_RGB.webp',
             headerDefaultSearchIcon: 'global/search.svg',
             siteLogo: "global/TuxCare_white-blue_logo_tagline_RGB.webp",
-            searchSelectIcon: 'arrows/select-down.svg',
             headerSearchIcon: 'global/header-search.svg',
 
             // Header

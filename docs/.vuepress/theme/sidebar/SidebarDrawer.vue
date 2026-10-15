@@ -25,14 +25,7 @@
           <span class="sidebar-drawer__close-text">close</span>
         </button>
         <div class="sidebar-header">
-          <p class="sidebar-header__paragraph">Select TuxCare docs</p>
-          <DSelect
-              :modelValue="modelValue"
-              @update:model-value="$emit('update:model-value', $event)"
-              @changeSidebarItems="$emit('changeSidebarItems', $event)"
-              with-icon
-              :options="documents"
-          />
+          <ProductSwitcher :current="currentDocument" :options="documents" id-prefix="drawer-product-switcher"/>
         </div>
       </template>
     </Sidebar>
@@ -42,7 +35,7 @@
 <script lang="ts" setup>
 import {onBeforeUnmount, onMounted, ref} from "vue";
 import Sidebar from "../sidebar/Sidebar.vue";
-import DSelect from "../components/DSelect.vue";
+import ProductSwitcher from "../components/ProductSwitcher.vue";
 import {useFocusTrap} from "../composables/useFocusTrap";
 import {setModalOpen} from "../composables/useModalOpen";
 
@@ -61,28 +54,22 @@ const props = defineProps({
     type: Function,
     default: () => {}
   },
-  modelValue:{
+  currentDocument: {
     type: Object,
-    required: true,
-    default: ()=>{}
+    default: null
   },
   isMobileWidth: {
     type: Boolean,
   },
 })
-defineEmits(['changeSidebarItems','update:model-value'])
-
 const dialogRef = ref<HTMLElement | null>(null)
 
 // Modal: keep Tab inside the drawer (the page behind is made inert by Layout.vue).
 const trapFocus = useFocusTrap(dialogRef)
 
-// Escape closes the drawer (Page.vue returns focus to the menu button),
-// unless it is closing the open docs select inside it.
-const onEscape = (event: KeyboardEvent) => {
-  if ((event.target as HTMLElement | null)?.closest('.vs--open')) return
-  props.closeSidebarDrawer()
-}
+// Escape closes the drawer (Page.vue returns focus to the menu button). An open
+// product switcher inside it handles Escape itself and stops it first.
+const onEscape = () => props.closeSidebarDrawer()
 
 // The drawer is only mounted while open.
 onMounted(() => setModalOpen('sidebar', true))
@@ -138,8 +125,8 @@ onBeforeUnmount(() => setModalOpen('sidebar', false))
     line-height 1
 
 @media (max-width: $mobileBreakpoint)
+  // Leave room for the close button on the right.
   .sidebar-header
-    padding-right 2.5rem !important
-  .sidebar-header__paragraph
-    margin-top 2.5rem !important
+    padding-top 0.75rem !important
+    padding-right 3.5rem !important
 </style>

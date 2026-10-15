@@ -50,7 +50,7 @@ export default defineUserConfig({
   bundler: viteBundler({
     viteOptions: {
       ssr: {
-        noExternal: ['vue-select', 'vue-multiselect'],
+        noExternal: ['vue-multiselect'],
       },
     },
     vuePluginOptions: {

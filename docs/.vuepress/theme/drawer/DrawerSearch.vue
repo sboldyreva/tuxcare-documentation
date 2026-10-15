@@ -260,7 +260,7 @@ watch(
     width 100%
 
 @media (max-width: $mobileBreakpoint) and (min-width: $mobileBreakpointForSearch)
-  .drawer-header__input, .v-select .vs__dropdown-toggle
+  .drawer-header__input
     width 75%
   .header-layout__search-title
     text-align center
