@@ -35,7 +35,7 @@ export const resources = [
     {
         title: "CVE tracker",
         description: "Status of every CVE across TuxCare products.",
-        link: "https://cve.tuxcare.com/",
+        link: "https://tuxcare.com/cve-tracker/",
     },
     {
         title: "Security data feeds",

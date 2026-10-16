@@ -2,6 +2,10 @@
 
 # Endless Lifecycle Support for Runtimes
 
+:::tip
+New to ELS? [Endless Lifecycle Support](/endless-lifecycle-support/) helps you choose a product and explains how ELS is delivered and how to get access.
+:::
+
 <ELSRTechnology />
 
 <ContactSales text="Need a runtime or version not listed? Contact sales@tuxcare.com for more information." />
