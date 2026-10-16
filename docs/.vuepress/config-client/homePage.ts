@@ -23,9 +23,9 @@ export const quickStarts = [
     },
     {
         product: "SecureChain for Open Source",
-        title: "Use SecureChain for JavaScript",
-        description: "Point npm at the TuxCare registry for verified, signed packages.",
-        link: "/securechain/javascript/#installation",
+        title: "Set up SecureChain",
+        description: "Send your projects' dependencies to the portal with the SecureChain CLI.",
+        link: "/securechain/cli/",
     },
 ]
 
@@ -41,11 +41,6 @@ export const resources = [
         title: "Security data feeds",
         description: "Errata, OVAL and CSAF data for scanners.",
         link: "/els-for-os/machine-readable-security-data/",
-    },
-    {
-        title: "Knowledge base",
-        description: "Answers to common questions and how-tos.",
-        link: "https://support.tuxcare.com/",
     },
     {
         title: "Submit a support request",

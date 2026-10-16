@@ -15,7 +15,9 @@
       <span class="product-switcher__current">
         <span class="sr-only">TuxCare docs, current product: </span>
         <span v-if="currentGroup" class="product-switcher__eyebrow">{{ currentGroup.title }}</span>
-        <span class="product-switcher__title">{{ current?.title || 'Select TuxCare docs' }}</span>
+        <span v-if="current" class="product-switcher__title">{{ current.title }}</span>
+        <!-- Pages outside any product (e.g. /tuxcare/) have no current product. -->
+        <span v-else class="product-switcher__title product-switcher__title--placeholder">Choose product docs</span>
       </span>
       <svg class="product-switcher__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false">
         <path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -49,10 +51,10 @@
 
 <script setup>
 import {computed, nextTick, onMounted, onUnmounted, ref, watch} from "vue";
-import {documentGroups} from "../../config-client/documents";
+import {productGroups} from "../productNav";
 
 const props = defineProps({
-  // The product whose docs are shown (an entry of `options`), or null.
+  // The product whose docs are shown (see findCurrentProduct), or null.
   current: {
     type: Object,
     default: null
@@ -74,16 +76,7 @@ const root = ref(null)
 const trigger = ref(null)
 const panel = ref(null)
 
-// Products grouped as in documentGroups; products without a known group go last.
-const groups = computed(() => {
-  const known = new Set(documentGroups.map(group => group.id))
-  const result = documentGroups.map(group => ({
-    ...group,
-    items: props.options.filter(item => item.group === group.id)
-  }))
-  result.push({id: 'other', title: 'More', items: props.options.filter(item => !known.has(item.group))})
-  return result.filter(group => group.items.length)
-})
+const groups = computed(() => productGroups(props.options))
 const currentGroup = computed(() => groups.value.find(group => group.items.some(item => item.link === props.current?.link)))
 
 // On desktop the panel is wider than the sidebar, which clips overflow, so it is
@@ -216,6 +209,11 @@ onUnmounted(() => {
     white-space nowrap
     overflow hidden
     text-overflow ellipsis
+
+  // #6b7280 on white is 4.8:1 (WCAG 1.4.3).
+  &__title--placeholder
+    font-weight 500
+    color #6b7280
 
   &__chevron
     flex none

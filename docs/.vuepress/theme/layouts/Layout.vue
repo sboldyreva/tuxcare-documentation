@@ -45,6 +45,7 @@ import {computed, inject, onMounted, onUnmounted, ref} from "vue";
 import { usePageData } from "@vuepress/client";
 import {pagesData} from "../../.temp/internal/pagesData.js";
 import {resolveSidebarItems} from "../util.js";
+import {findCurrentProduct} from "../productNav";
 import {useRouteAnnouncer} from "../composables/useRouteAnnouncer";
 
 const { documents,MOBILE_BREAKPOINT } = inject('themeConfig')
@@ -61,7 +62,7 @@ const {announcement} = useRouteAnnouncer(() => !isDrawerOpen.value)
 const sidebarItems = computed(() => page.value && allPages.value.length ? resolveSidebarItems(page.value, route, allPages.value) : [])
 
 // The product whose docs are open: the one whose section ("/eportal/") holds the page.
-const currentDocument = computed(() => documents.find((item) => item.link && route.path.startsWith(item.link)) || null)
+const currentDocument = computed(() => findCurrentProduct(documents, route.path))
 
 const handleResize = () => {
   isMobileWidth.value = window.innerWidth <= MOBILE_BREAKPOINT;

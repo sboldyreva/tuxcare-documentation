@@ -48,19 +48,15 @@
 
 <script setup>
 import {inject} from "vue";
-import {documentGroups} from "../../config-client/documents";
+import {productGroups} from "../productNav";
 import {quickStarts, resources} from "../../config-client/homePage";
 
 const {documents} = inject('themeConfig')
 
 const isExternal = (link) => /^https?:\/\//.test(link)
 
-// Same grouping as the sidebar product switcher; products without a known group go last.
-const known = new Set(documentGroups.map(group => group.id))
-const groups = [
-  ...documentGroups.map(group => ({...group, items: documents.filter(item => item.group === group.id)})),
-  {id: 'other', title: 'More', items: documents.filter(item => !known.has(item.group))},
-].filter(group => group.items.length)
+// Same grouping as the sidebar product switcher.
+const groups = productGroups(documents)
 </script>
 
 <style lang="stylus">
@@ -103,6 +99,7 @@ $homeMaxWidth = 1170px
   gap 1rem
 
 .home-resources
+  grid-template-columns repeat(3, 1fr)
   margin-top 1.25rem
 
 // A card whose title link covers the whole card (see .home-card__link::after).
