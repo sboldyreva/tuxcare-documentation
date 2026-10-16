@@ -6,7 +6,7 @@ Endless Lifecycle Support (ELS) for Vue from TuxCare provides security fixes for
 
 | Package | Version |
 |---|---|
-| vue | 2.6.11, 2.6.14, 2.7.16 |
+| vue | 2.2.6, 2.6.11, 2.6.14, 2.7.16 |
 | @vue/server-renderer | 2.2.6, 2.6.11, 2.6.14, 2.7.16 |
 | vue-template-compiler | 2.2.6, 2.6.11, 2.6.14, 2.7.16 |
 
@@ -15,7 +15,7 @@ Endless Lifecycle Support (ELS) for Vue from TuxCare provides security fixes for
 <ELSBadge heading>Docker compatible</ELSBadge>
 
 :::tip Have a SecureChain token?
-Follow the [SecureChain installation instructions](/securechain/javascript/#ELS) instead — the steps below are for username & password access.
+Follow the [SecureChain installation instructions](https://sc.tuxcare.cloud/guide/developer) instead — the steps below are for username & password access.
 :::
 
 <ELSPrerequisites>
@@ -153,9 +153,9 @@ Follow the [SecureChain installation instructions](/securechain/javascript/#ELS)
 
 * ![](/images/eye.webp) [CVE Tracker](https://tuxcare.com/cve-tracker/?product=Vue) — Track vulnerability fixes and updates
 * ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=Vue) — Patched versions and changelogs
-* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=Vue) — Full list of product parts covered by ELS
+* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/technologies/?package=vuejs&ecosystem=javascript) — Full list of product parts covered by ELS
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/vue/) — Vulnerability Exploitability eXchange feed
-* ![](/images/unlock-alt.webp) [SBOM](/els-for-libraries/machine-readable-security-data/#software-bill-of-materials-sbom) — Software Bill of Materials (Nexus, credentials required)
+* ![](/images/unlock-alt.webp) [SBOM](/els-for-libraries/machine-readable-security-data/#software-bill-of-materials-sbom) — Software Bill of Materials (security.tuxcare.com)
 * ![](/images/bolt.webp) [Package updates](/els-for-libraries/managing-els-repository/#JavaScript) — Update an installed package to a newer TuxCare release
 
 </WhatsNext>

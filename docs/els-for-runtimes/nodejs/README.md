@@ -22,6 +22,10 @@ alt-nodejs provides a more flexible and convenient environment for working with 
 
 ## Supported OS and Node.js versions
 
+<TableTabs>
+
+  <template #Active_Support>
+
 | Operating Systems                                                       | Package Type | OS Version | Node.js versions                   |
 | :---------------------------------------------------------------------: | :----------: | :--------: | :--------------------------------: |
 | EL 6 (CentOS, CloudLinux, Oracle Linux, etc.)                           | RPM          | 6.x        | 12, 14                             |
@@ -45,6 +49,26 @@ alt-nodejs provides a more flexible and convenient environment for working with 
 * aarch64/arm64 — Debian 12 and 13, Alpine Linux 3.23 and later
 
 <ContactSales text="Other versions and architectures available upon request. Contact sales@tuxcare.com for more information." />
+
+  </template>
+
+  <template #End_Of_Life>
+
+TuxCare provides additional security support for Node.js versions after the end of support from the vendor.
+
+*EOL — end of life, SST — security support time*
+
+| Version |  Released  | EOL by vendor | SST by vendor (years) | EOL by TuxCare | SST by TuxCare after vendor's EOL (years) |
+|:-------:|:----------:|:-------------:|:---------------------:|:--------------:|:----------------------------------------:|
+|   12    | 23.04.2019 |  30.04.2022   |          3.0          |                |                                          |
+|   14    | 21.04.2020 |  30.04.2023   |          3.0          |                |                                          |
+|   16    | 20.04.2021 |  11.09.2023   |          2.3          |                |                                          |
+|   18    | 19.04.2022 |  30.04.2025   |          3.0          |                |                                          |
+|   20    | 18.04.2023 |  30.04.2026   |          3.0          |                |                                          |
+
+  </template>
+
+</TableTabs>
 
 ## Installation
 
@@ -127,6 +151,6 @@ alt-nodejs provides a more flexible and convenient environment for working with 
 * ![](/images/eye.webp) [CVE Tracker](https://tuxcare.com/cve-tracker/?product=Node.js) — Track vulnerability fixes and updates
 * ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=Node.js) — Patched versions and changelogs
 * ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=Node.js) — Full list of product parts covered by ELS
-* ![](/images/shield.webp) [Machine-readable security data](/els-for-runtimes/machine-readable-security-data/#node.js) — Common Security Advisory Framework (CSAF) advisories and RSS feeds for Node.js ELS
+* ![](/images/shield.webp) [Machine-readable security data](/els-for-runtimes/machine-readable-security-data/#nodejs) — Common Security Advisory Framework (CSAF) advisories and RSS feeds for Node.js ELS
 
 </WhatsNext>

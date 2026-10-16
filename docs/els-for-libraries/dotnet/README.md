@@ -4,7 +4,7 @@ Endless Lifecycle Support (ELS) for .NET from TuxCare delivers security fixes fo
 
 NuGet is the standard package manager for .NET, used to deliver the reusable components that applications depend on. ELS applies fixes at the package level, so your applications receive security updates without requiring changes to your own code.
 
-## Supported NuGet packages
+## Supported NuGet Packages
 
 * .NET 6, 8, 10
 * AutoMapper 2.2.2, 3.3.2, 4.2.2, 5.2.1, 6.2.3, 7.0.2, 8.1.2, 9.0.1, 10.1.2, 11.0.2, 12.0.2, 13.0.2, 14.0.1
@@ -17,7 +17,7 @@ NuGet is the standard package manager for .NET, used to deliver the reusable com
 * Microsoft.Data.SqlClient 1.1.4, 1.1.5
 * Microsoft.Owin 3.1.0, 3.1.1
 * MimeKit 3.6.1, 3.6.2
-* Newtonsoft.Json 4.5.11, 4.5.12, 6.0.8, 6.0.9, 8.0.3, 8.0.4, 9.0.1, 9.0.2, 10.0.3, 10.0.4, 11.0.2, 11.0.3, 12.0.3, 12.0.4, 13.0.5
+* Newtonsoft.Json 4.5.11, 6.0.8, 8.0.3, 9.0.1, 10.0.3, 11.0.2, 12.0.3, 13.0.5
 * NHibernate 4.1.2.4001
 * NuGet.Packaging 6.3.5
 * NuGet.Packaging.Core 6.3.5
@@ -95,6 +95,8 @@ Other versions upon request.
 
 5. Install the patched package
 
+   TuxCare releases a patched package under the next patch number of the upstream version, with a `-tuxcare.N` suffix — for example, Newtonsoft.Json `12.0.3` becomes `12.0.4-tuxcare.1`. All available versions are listed in your TuxCare Nexus account; pick the latest `-tuxcare.N` release for your base version. For details on version numbering and moving to a newer release, see [How to Upgrade to a Newer Version](/els-for-libraries/managing-els-repository/#dotnet).
+
    Install the TuxCare-maintained release that matches your project:
 
    ```text
@@ -106,8 +108,6 @@ Other versions upon request.
    ```text
    dotnet add package Newtonsoft.Json --version 12.0.4-tuxcare.1
    ```
-
-   **Check the exact version listed in your TuxCare Nexus account to ensure you receive the most recent patched release.**
 
    :::tip
 
@@ -154,7 +154,7 @@ Other versions upon request.
 
 * ![](/images/eye.webp) [CVE Tracker](https://tuxcare.com/cve-tracker/?product=.NET) — Track vulnerability fixes and updates
 * ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=.NET) — Patched versions and changelogs
-* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=.NET) — Full list of product parts covered by ELS
+* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/technologies/?ecosystem=dotnet) — Full list of product parts covered by ELS
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_dotnet/) — Vulnerability Exploitability eXchange feed
 * ![](/images/wrench.webp) [Managing NuGet sources](/els-for-libraries/managing-els-repository/#dotnetSources) — Add, update, and remove the TuxCare source
 * ![](/images/bolt.webp) [Package updates](/els-for-libraries/managing-els-repository/#dotnet) — Update an installed package to a newer TuxCare release

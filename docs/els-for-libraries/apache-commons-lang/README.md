@@ -5,7 +5,7 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Commons Lang provides secur
 ## Supported Versions
 
 * Apache Commons Lang 2.4, 2.6
-* Apache Commons Lang3 3.4, 3.8.1, 3.10, 3.11, 3.12.0, 3.14.0, 3.15.0, 3.17.0
+* Apache Commons Lang3 3.4, 3.8.1, 3.10, 3.11, 3.12.0, 3.14.0, 3.15.0, 3.16.0, 3.17.0
 
 ## Installation
 
@@ -122,10 +122,10 @@ Optionally, ELS can be consumed through your own repository manager instead of c
 
 * ![](/images/eye.webp) [CVE Tracker](https://tuxcare.com/cve-tracker/?product=Apache+Commons+Lang) — Track vulnerability fixes and updates
 * ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=Apache+Commons+Lang) — Patched versions and changelogs
-* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=Apache+Commons+Lang) — Full list of product parts covered by ELS
+* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/technologies/?q=Apache+Commons+Lang) — Full list of product parts covered by ELS
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_java/commons-lang/) — Vulnerability Exploitability eXchange feed
 * ![](/images/unlock-alt.webp) [Source code](/els-for-libraries/managing-els-repository/#javaSources) — Access source JARs in Nexus
-* ![](/images/unlock-alt.webp) [SBOM](/els-for-libraries/machine-readable-security-data/#software-bill-of-materials-sbom) — Software Bill of Materials (Nexus, credentials required)
+* ![](/images/unlock-alt.webp) [SBOM](/els-for-libraries/machine-readable-security-data/#software-bill-of-materials-sbom) — Software Bill of Materials (security.tuxcare.com)
 * ![](/images/bolt.webp) [Package updates](/els-for-libraries/managing-els-repository/#java) — Update an installed package to a newer TuxCare release
 
 </WhatsNext>

@@ -4,7 +4,7 @@ Endless Lifecycle Support (ELS) for Laravel from TuxCare provides security fixes
 
 ## Supported Versions
 
-* **Laravel** 5.4.36, 5.5.50, 5.6.40, 5.7.29, 5.8.38, 6.20.45, 7.30.7, 8.12.0, 8.12.1, 8.12.2, 8.12.3, 8.83.29, 9.52.21, 10, 11, 12.58.0
+* **Laravel** 5.4.36, 5.5.50, 5.6.40, 5.7.29, 5.8.38, 6.20.45, 7.30.7, 8.12.0, 8.12.1, 8.12.2, 8.12.3, 8.83.29, 9.52.21, 10.48.28, 10.48.29, 10.50.2, 11.44.0, 11.51.0, 12.58.0
 * **Illuminate View** 5.4.36
 * **Illuminate Database** 5.4.36
 
@@ -138,7 +138,7 @@ This allows Composer to fall back to Packagist for packages not available in the
 
 * ![](/images/eye.webp) [CVE Tracker](https://tuxcare.com/cve-tracker/?product=Laravel) — Track vulnerability fixes and updates
 * ![](/images/bolt.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=Laravel) — Patched versions and changelogs
-* ![](/images/box.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=Laravel) — Components covered by ELS
+* ![](/images/box.webp) [Supported components](https://tuxcare.com/cve-tracker/technologies/?q=Laravel&ecosystem=php) — Components covered by ELS
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_php/laravel/) — Vulnerability Exploitability eXchange feed
 * ![](/images/wrench.webp) [Package updates](/els-for-libraries/managing-els-repository/#PHP) — Upgrade to a newer version
 

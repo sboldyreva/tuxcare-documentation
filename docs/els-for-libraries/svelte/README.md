@@ -11,7 +11,7 @@ Endless Lifecycle Support (ELS) for Svelte from TuxCare provides security fixes 
 <ELSBadge heading>Docker compatible</ELSBadge>
 
 :::tip Have a SecureChain token?
-Follow the [SecureChain installation instructions](/securechain/javascript/#ELS) instead — the steps below are for username & password access.
+Follow the [SecureChain installation instructions](https://sc.tuxcare.cloud/guide/developer) instead — the steps below are for username & password access.
 :::
 
 <ELSPrerequisites>
@@ -192,7 +192,7 @@ Follow the [SecureChain installation instructions](/securechain/javascript/#ELS)
 * ![](/images/eye.webp) [CVE Tracker](https://tuxcare.com/cve-tracker/?q=svelte) — Track vulnerability fixes and updates
 * ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?q=svelte) — Patched versions and changelogs
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/) — Vulnerability Exploitability eXchange feed
-* ![](/images/unlock-alt.webp) [SBOM](/els-for-libraries/machine-readable-security-data/#software-bill-of-materials-sbom) — Software Bill of Materials (Nexus, credentials required)
+* ![](/images/unlock-alt.webp) [SBOM](/els-for-libraries/machine-readable-security-data/#software-bill-of-materials-sbom) — Software Bill of Materials (security.tuxcare.com)
 * ![](/images/bolt.webp) [Package updates](/els-for-libraries/managing-els-repository/#JavaScript) — Update an installed package to a newer TuxCare release
 
 </WhatsNext>

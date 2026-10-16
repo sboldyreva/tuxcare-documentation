@@ -23,6 +23,7 @@ Security advisories and patch definitions are published for the database applica
 | Percona Server | EL 7 | [errata](https://security.tuxcare.com/errata/els_percona/el7/) | [oval.xml](https://security.tuxcare.com/oval/els_percona/el7/oval.xml) | [csaf](https://security.tuxcare.com/csaf/v2/els_percona/el7/) |
 | PostgreSQL | EL 7 | [errata](https://security.tuxcare.com/errata/els_postgresql/el7/) | [oval.xml](https://security.tuxcare.com/oval/els_postgresql/el7/oval.xml) | [csaf](https://security.tuxcare.com/csaf/v2/els_postgresql/el7/) |
 | PostgreSQL | EL 9 | [errata](https://security.tuxcare.com/errata/els_postgresql/el9/) | [oval.xml](https://security.tuxcare.com/oval/els_postgresql/el9/oval.xml) | [csaf](https://security.tuxcare.com/csaf/v2/els_postgresql/el9/) |
+| PostgreSQL | Ubuntu 22.04 | [errata](https://security.tuxcare.com/errata/els_postgresql/ubuntu22.04/) | [oval.xml](https://security.tuxcare.com/oval/els_postgresql/ubuntu22.04/oval.xml) | [csaf](https://security.tuxcare.com/csaf/v2/els_postgresql/ubuntu22.04/) |
 
 ## Software Bill of Materials (SBOM)
 
@@ -30,7 +31,7 @@ Each application package built by TuxCare ships with an SBOM that lists its comp
 
 SBOMs for these applications are published as follows:
 
-* Java applications (Apache Tomcat, WildFly, Apache Hive, Apache Hadoop) - [els-java-sbom](https://nexus.repo.tuxcare.com/#browse/browse:els-java-sbom) on TuxCare Nexus; access requires credentials
+* Java applications (Apache Tomcat, WildFly, Apache Hive, Apache Hadoop) - [els_lang_java](https://security.tuxcare.com/sbom/cyclonedx/els_lang_java/) on [security.tuxcare.com](https://security.tuxcare.com/sbom/cyclonedx/), publicly accessible
 * Go applications (Grafana, Loki, MinIO) - [els_lang_go](https://security.tuxcare.com/sbom/cyclonedx/els_lang_go/) on [security.tuxcare.com](https://security.tuxcare.com/sbom/cyclonedx/), publicly accessible; each SBOM is accompanied by its detached `.asc` signature in the same directory
 
 To check whether an SBOM is available for other applications or to request a copy, reach out to [sales@tuxcare.com](mailto:sales@tuxcare.com).

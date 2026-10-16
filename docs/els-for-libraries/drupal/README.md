@@ -4,7 +4,7 @@ Endless Lifecycle Support (ELS) for Drupal from TuxCare provides security fixes 
 
 ## Supported Versions
 
-* **drupal/core** 8.9.x, 9.5.x
+* **drupal/core** 8.9.x, 9.5.x, 10.5.12
 * **drupal/access_code** 7.1.1
 * **drupal/bootstrap_site_alert** 7.1.6
 * **drupal/coffee** 7.2.3
@@ -304,7 +304,7 @@ This allows Composer to fall back to Packagist for packages not available in the
 
 ## Customer Instructions
 
-### For legacy-project customers
+### For Legacy-Project Customers
 
 No special steps are needed. The `^9.5` range matches `9.5.11-p6+tuxcare` directly:
 
@@ -323,7 +323,7 @@ Then run:
 composer update drupal/core --with-all-dependencies
 ```
 
-### For recommended-project customers (needs an alias)
+### For Recommended-Project Customers (Needs an Alias)
 
 Because `drupal/core-recommended:9.5.11` requires exactly `drupal/core:9.5.11`, customers need a Composer inline alias to tell Composer that `9.5.11-p6+tuxcare` should be treated as `9.5.11`:
 

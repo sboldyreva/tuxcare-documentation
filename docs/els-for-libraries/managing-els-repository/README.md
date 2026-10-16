@@ -1,4 +1,4 @@
-# Managing the ELS repository
+# Managing the ELS Repository
 
 This page provides instructions for upgrading to newer TuxCare package versions, accessing source code for libraries patched under Endless Lifecycle Support (ELS), managing the TuxCare NuGet source for .NET projects, and consuming the Java repository through your own repository manager.
 
@@ -59,6 +59,16 @@ npm install
 
 <template #dotnet>
 
+TuxCare releases a patched package under the next patch number of the upstream version, with a `-tuxcare.N` suffix. NuGet sorts this version above the upstream original, so your project picks up the fix automatically, but below a future upstream release of the same number. Each subsequent TuxCare patch of the same version only increases `N`.
+
+Out-of-band (OOB) libraries, such as System.Text.Json, ship on their own version line. Their suffix also carries the .NET framework patch number they belong to — `37` in the example below.
+
+| Package type | Example | Upstream original | TuxCare releases | Reserved for upstream |
+| :----------- | :------ | :---------------- | :--------------- | :-------------------- |
+| Third-party packages | Newtonsoft.Json | `10.0.1` | `10.0.2-tuxcare.1`, `10.0.2-tuxcare.2` | `10.0.2` |
+| .NET runtime and SDK | Microsoft.NETCore.App.Runtime.win-x64 | `6.0.36` | `6.0.37-tuxcare.1`, `6.0.37-tuxcare.2` | `6.0.37` |
+| Out-of-band libraries | System.Text.Json | `6.0.5` | `6.0.6-tuxcare.37.1`, `6.0.6-tuxcare.37.2` | `6.0.6` |
+
 **Check the exact version listed in your TuxCare Nexus account to ensure you receive the most recent patched release.**
 
 To upgrade to a newer TuxCare release, update the package in your project:
@@ -77,7 +87,7 @@ dotnet build
 
 </TableTabs>
 
-## Source code
+## Source Code
 
 <TableTabs label="Choose the Ecosystem: " :labels="{ javaSources: 'Java', dotnetSources: '.NET' }">
 
@@ -153,7 +163,7 @@ The TuxCare NuGet source is configured per-project in `nuget.config`. Use the `d
 
 </TableTabs>
 
-## Consuming ELS through your own repository manager
+## Consuming ELS Through Your Own Repository Manager
 
 Instead of pointing Maven or Gradle directly at `https://nexus.repo.tuxcare.com/repository/els_java/`, you can proxy the TuxCare Java repository through your own repository manager. This is optional and intended for organizations that already run one — otherwise ELS connects directly, as described in the setup steps on each library's page.
 
