@@ -46,7 +46,7 @@ const VIEWPORTS = [
 // custom component registered in docs/.vuepress/client.ts. Keep it small;
 // `--all` covers the rest. (ResolvedCveTable is not used by any page.)
 const CURATED_PAGES = [
-  "/",                                   // HomeLayout, DocsCard grid
+  "/",                                   // HomeLayout, home page sections
   "/404.html",                           // NotFound layout
   // Product landings (docs/.vuepress/config-client/documents.ts)
   "/tuxcare/",
@@ -282,10 +282,10 @@ const KEYBOARD_CHECKS = [
     async run(page) {
       await open(page, "/");
       const res = await page.evaluate(() => {
-        const cards = [...document.querySelectorAll(".docs-card-container")];
+        const cards = [...document.querySelectorAll(".home-card")];
         return { cards: cards.length, linked: cards.filter((c) => c.querySelector("a[href]")).length };
       });
-      if (!res.cards) throw new Error("no .docs-card-container on the home page");
+      if (!res.cards) throw new Error("no .home-card on the home page");
       if (res.linked !== res.cards) throw new Error(`${res.cards - res.linked} of ${res.cards} home cards have no <a href>`);
     },
   },
