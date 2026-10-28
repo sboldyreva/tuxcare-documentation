@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, useSlots, onMounted, watch, nextTick, useId } from 'vue'
+import { groupChoice, setGroupChoice, storedGroupChoice } from '../utils/tabGroups'
 
 const slots = useSlots()
 const tabKeys = Object.keys(slots)
@@ -28,14 +29,21 @@ const props = defineProps({
     type: Object,
     default: () => ({})
   },
+  // Kept for backward compatibility with pages that pass :bottom-line="false".
+  // The block now has its own border, so no extra rule is drawn.
   bottomLine: {
     type: Boolean,
     default: true
   },
-  // Render a row of tab buttons (styled like the WhatsNext version switcher)
-  // instead of the select. Meant for a few short tabs, e.g. nested inside
-  // another TableTabs tab; button tabs do not write their key to the URL hash.
+  // Force the segmented button row. Short tab sets get it automatically;
+  // this only matters for a set the heuristic would put in a select.
   buttons: {
+    type: Boolean,
+    default: false
+  },
+  // Force the select. Escape hatch for a short tab set that should still
+  // collapse into a dropdown.
+  dropdown: {
     type: Boolean,
     default: false
   }
@@ -44,6 +52,24 @@ const props = defineProps({
 function tabLabel(key) {
   return props.labels[key] || formatKey(key)
 }
+
+// Showing every option beats hiding them behind a dropdown, as long as the row
+// stays on one line in the content column (~847 px). Longer or more numerous
+// sets (PHP versions, command lists) keep the select.
+const autoButtons = computed(() => {
+  if (tabKeys.length < 2 || tabKeys.length > 4) return false
+  const labels = tabKeys.map(tabLabel)
+  const total = labels.reduce((sum, l) => sum + l.length, 0)
+  const longest = labels.reduce((max, l) => Math.max(max, l.length), 0)
+  return total <= 80 && longest <= 34
+})
+
+const useButtons = computed(() => !props.dropdown && (props.buttons || autoButtons.value))
+
+// Same choice, asked once per page: every TableTabs with the same set of tabs
+// (RPM/DEB/APK, Built-in/Loadable, …) shares one value, and the value is
+// remembered across pages.
+const groupKey = tabKeys.join('|')
 
 const tabRefs = ref([])
 
@@ -59,10 +85,11 @@ function onTabKeydown(event, index) {
   nextTick(() => tabRefs.value[next]?.focus())
 }
 
-// Without a visible label, name the select after the section it sits in
+// Without a visible label, name the control after the section it sits in
 // (the nearest preceding heading), falling back to a generic name.
 const fallbackName = ref('Select table view')
 const selectName = computed(() => props.label ? undefined : (props.ariaLabel || fallbackName.value))
+const groupName = computed(() => props.label || props.ariaLabel || fallbackName.value)
 
 function nearestHeadingText(el) {
   let node = el
@@ -84,6 +111,8 @@ onMounted(() => {
     const heading = nearestHeadingText(wrapperRef.value)
     if (heading) fallbackName.value = `${heading}: select table view`
   }
+
+  // A deep link wins over the remembered choice.
   const hash = decodeURIComponent(window.location.hash.slice(1))
   if (tabKeys.includes(hash)) {
     activeTab.value = hash
@@ -95,11 +124,24 @@ onMounted(() => {
         window.scrollTo({ top, behavior: 'smooth' })
       }
     })
+    return
   }
+
+  const remembered = groupChoice(groupKey) ?? storedGroupChoice(groupKey)
+  if (tabKeys.includes(remembered)) activeTab.value = remembered
+})
+
+// Follow the other blocks of this group when one of them changes.
+watch(() => groupChoice(groupKey), (value) => {
+  if (tabKeys.includes(value)) activeTab.value = value
 })
 
 watch(activeTab, (newVal) => {
-  if (newVal && !props.buttons) {
+  if (!newVal) return
+  setGroupChoice(groupKey, newVal)
+  // Only the long sets still own the URL hash: the short ones are now button
+  // rows, and having a dozen of them rewrite the hash broke heading anchors.
+  if (!useButtons.value) {
     history.replaceState(null, '', `#${encodeURIComponent(newVal)}`)
   }
 })
@@ -107,30 +149,41 @@ watch(activeTab, (newVal) => {
 
 <template>
   <div ref="wrapperRef" class="table-tabs">
-    <div v-if="buttons" class="tab-buttons" role="tablist" :aria-label="label || selectName">
-      <button
-        v-for="(key, index) in tabKeys"
-        :key="key"
-        :ref="(el) => { if (el) tabRefs[index] = el }"
-        :id="`${selectId}-tab-${index}`"
-        type="button"
-        role="tab"
-        :aria-selected="activeTab === key ? 'true' : 'false'"
-        :aria-controls="`${selectId}-panel`"
-        :tabindex="activeTab === key ? 0 : -1"
-        :class="{ active: activeTab === key }"
-        @click="activeTab = key"
-        @keydown="onTabKeydown($event, index)"
-      >
-        {{ tabLabel(key) }}
-      </button>
-    </div>
-
-    <div v-else class="tab-header">
-      <label v-if="label" :for="selectId" class="label-text">
+    <div class="tab-header">
+      <label v-if="label && !useButtons" :for="selectId" class="label-text">
         {{ label }}
       </label>
-      <select :id="selectId" v-model="activeTab" class="tab-select" :aria-label="selectName" :aria-controls="`${selectId}-panel`">
+      <span v-else-if="label" class="label-text">
+        {{ label }}
+      </span>
+
+      <div v-if="useButtons" class="tab-buttons" role="tablist" :aria-label="groupName">
+        <button
+          v-for="(key, index) in tabKeys"
+          :key="key"
+          :ref="(el) => { if (el) tabRefs[index] = el }"
+          :id="`${selectId}-tab-${index}`"
+          type="button"
+          role="tab"
+          :aria-selected="activeTab === key ? 'true' : 'false'"
+          :aria-controls="`${selectId}-panel`"
+          :tabindex="activeTab === key ? 0 : -1"
+          :class="{ active: activeTab === key }"
+          @click="activeTab = key"
+          @keydown="onTabKeydown($event, index)"
+        >
+          {{ tabLabel(key) }}
+        </button>
+      </div>
+
+      <select
+        v-else
+        :id="selectId"
+        v-model="activeTab"
+        class="tab-select"
+        :aria-label="selectName"
+        :aria-controls="`${selectId}-panel`"
+      >
         <option v-for="key in tabKeys" :key="key" :value="key">
           {{ tabLabel(key) }}
         </option>
@@ -140,49 +193,75 @@ watch(activeTab, (newVal) => {
     <div
       class="tab-content"
       :id="`${selectId}-panel`"
-      :role="buttons ? 'tabpanel' : undefined"
-      :aria-labelledby="buttons ? `${selectId}-tab-${tabKeys.indexOf(activeTab)}` : undefined"
+      :role="useButtons ? 'tabpanel' : undefined"
+      :aria-labelledby="useButtons ? `${selectId}-tab-${tabKeys.indexOf(activeTab)}` : undefined"
     >
       <slot :name="currentTab" />
     </div>
-
-    <div v-if="bottomLine" class="bottom-line" />
   </div>
 </template>
 
 
 <style scoped>
+/* The control and the content it switches are one bordered block, so the start
+   and the end of the switchable region are always visible. Neutral on purpose:
+   a tinted panel reads as a callout next to .tip / .warning blocks. */
 .table-tabs {
   background: #fff;
+  border: 1px solid #dde2e8;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1.25rem 0;
   scroll-margin-top: 4rem;
 }
 
 .tab-header {
-  display: flex; align-items: center; gap: .75rem; flex-wrap: wrap;
-  background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 100%);
-  border: 1px solid #d9edff;
-  border-radius: 10px;
-  padding: 1rem 1.25rem;
+  display: flex; align-items: center; gap: .55rem; flex-wrap: wrap;
+  background: #f6f8fa;
+  border-bottom: 1px solid #e4e8ed;
+  padding: .5rem .85rem;
 }
 
 .label-text {
-  color: #163055;
-  font-size: .9rem;
+  color: #5c6a7a;
+  font-size: .75rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.tab-content {
+  padding: .85rem .85rem .35rem;
+}
+
+.tab-content :deep(p:first-child),
+.tab-content :deep(ul:first-child),
+.tab-content :deep(ol:first-child),
+.tab-content :deep(h4:first-child),
+.tab-content :deep(h5:first-child) {
+  margin-top: 0;
+}
+
+/* A nested block keeps a white header so the two levels stay distinguishable. */
+.tab-content :deep(.table-tabs) {
+  margin: .75rem 0;
+}
+
+.tab-content :deep(.table-tabs > .tab-header) {
+  background: #fff;
 }
 
 .tab-select {
   appearance: none; -webkit-appearance: none; cursor: pointer;
-  font-size: .9rem; font-weight: 600; color: #163055;
+  font-size: .85rem; font-weight: 600; color: #163055;
   background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="%23163055" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>')
-    no-repeat right .8rem center;
-  padding: .55rem 2.5rem .55rem .95rem;
-  border: 1.5px solid #163055; border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(22, 48, 85, .12);
+    no-repeat right .7rem center;
+  padding: .35rem 2.1rem .35rem .65rem;
+  border: 1px solid #c3cad3; border-radius: 6px;
   transition: border-color .15s ease, box-shadow .15s ease;
 }
 
-.tab-select:hover { border-color: #0b5cad; box-shadow: 0 2px 6px rgba(22, 48, 85, .18); }
+.tab-select:hover { border-color: #0b5cad; box-shadow: 0 1px 3px rgba(22, 48, 85, .14); }
 
 /* Outline (not box-shadow only) so the ring survives forced-colors mode and
    reaches 3:1 against the light header (WCAG 2.4.7, 1.4.11). */
@@ -195,26 +274,25 @@ watch(activeTab, (newVal) => {
   .tab-select:focus-visible { outline-color: Highlight; }
 }
 
-/* Button mode: same segmented toggle as the WhatsNext version switcher
-   (light pill, active tab white with a dark underline bar). */
+/* Segmented toggle, same language as the WhatsNext version switcher and the
+   CodeTabs row (light pill, active tab white with a dark underline bar). */
 .tab-buttons {
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
-  background: #f1f3f5;
-  border-radius: 8px;
+  gap: 2px;
+  background: #e9edf2;
+  border-radius: 7px;
   padding: 3px;
-  margin-bottom: 0.75rem;
 }
 
 .tab-buttons button {
-  padding: 0.3rem 0.75rem;
+  padding: 0.3rem 0.7rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   background: transparent;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: #5c6370;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #55606e;
   cursor: pointer;
   transition: all 0.15s ease;
   white-space: nowrap;
@@ -227,9 +305,8 @@ watch(activeTab, (newVal) => {
 /* Selected state needs a non-colour cue with >= 3:1 contrast (WCAG 1.4.11). */
 .tab-buttons button.active {
   background: #fff;
-  color: #1b1f27;
-  font-weight: 700;
-  box-shadow: inset 0 -2px 0 #163055, 0 1px 3px rgba(0, 0, 0, 0.08);
+  color: #12243d;
+  box-shadow: inset 0 -2px 0 #163055, 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .tab-buttons button:focus-visible {
@@ -246,14 +323,12 @@ watch(activeTab, (newVal) => {
   }
 }
 
-.bottom-line {
-  border-top: 1px solid #d1d5db;
-  margin-top: 1rem; 
-}
-
 .tab-content :deep(.els-steps) {
   margin-top: 0.5rem;
   padding-top: 0;
 }
-</style>
 
+.tab-content :deep(table) {
+  margin-top: 0;
+}
+</style>
