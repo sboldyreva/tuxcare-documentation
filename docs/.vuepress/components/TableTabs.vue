@@ -242,13 +242,22 @@ watch(activeTab, (newVal) => {
   margin-top: 0;
 }
 
-/* A nested block keeps a white header so the two levels stay distinguishable. */
+/* A nested block drops its own frame: the outer card already marks the region,
+   and a second border inside it only adds noise. Its control row is enough. */
 .tab-content :deep(.table-tabs) {
-  margin: .75rem 0;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
 }
 
 .tab-content :deep(.table-tabs > .tab-header) {
-  background: #fff;
+  background: transparent;
+  border-bottom: 0;
+  padding: 0 0 .15rem;
+}
+
+.tab-content :deep(.table-tabs > .tab-content) {
+  padding: 0;
 }
 
 .tab-select {
