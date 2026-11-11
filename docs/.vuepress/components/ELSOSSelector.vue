@@ -68,8 +68,11 @@ import operatingSystems from "../config-client/osReleases";
 .os-card {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.85rem 1rem;
+  /* 18px gap and padding: the clear space the brand guidelines ask for around
+     a 36px logomark is at least 50% of its height on every side, which here
+     means the card edge and the name both stay 18px away from the icon. */
+  gap: 1.125rem;
+  padding: 1.125rem;
   border-radius: 12px;
   border: 1px solid #e0e3e8;
   background: #fff;
@@ -94,6 +97,8 @@ import operatingSystems from "../config-client/osReleases";
   color: #B34F12;
 }
 
+/* 36px is the smallest a product logomark may render at, per the brand
+   guidelines, so this box keeps that size at every breakpoint. */
 .os-card-icon {
   display: flex;
   align-items: center;
@@ -165,12 +170,7 @@ import operatingSystems from "../config-client/osReleases";
   }
 
   .os-card {
-    padding: 0.7rem 0.85rem;
-  }
-
-  .os-card-icon {
-    width: 28px;
-    height: 28px;
+    padding: 1.125rem;
   }
 }
 </style>
