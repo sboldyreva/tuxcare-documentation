@@ -68,9 +68,6 @@ import operatingSystems from "../config-client/osReleases";
 .os-card {
   display: flex;
   align-items: center;
-  /* 18px gap and padding: the clear space the brand guidelines ask for around
-     a 36px logomark is at least 50% of its height on every side, which here
-     means the card edge and the name both stay 18px away from the icon. */
   gap: 1.125rem;
   padding: 1.125rem;
   border-radius: 12px;
@@ -97,8 +94,6 @@ import operatingSystems from "../config-client/osReleases";
   color: #B34F12;
 }
 
-/* 36px is the smallest a product logomark may render at, per the brand
-   guidelines, so this box keeps that size at every breakpoint. */
 .os-card-icon {
   display: flex;
   align-items: center;

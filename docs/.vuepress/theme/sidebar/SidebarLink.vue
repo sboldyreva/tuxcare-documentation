@@ -231,9 +231,6 @@ function renderChildren(h, children, path, route, maxDepth, depth = 1, ctx, to) 
     width 1.625rem
     transform translateY(-50%)
 
-// The CloudLinux brand guidelines set a floor for a product logomark: 36px
-// tall at the smallest, with clear space on every side of at least half that
-// height. One rule styles every sidebar icon, so they all follow that floor.
 .sidebar-link-icon
   width 2.25rem
   height 2.25rem
@@ -296,8 +293,6 @@ function renderChildren(h, children, path, route, maxDepth, depth = 1, ctx, to) 
     margin 0
     padding 0.55rem 0 0.5rem 0
 
-  // A row that carries an icon pads 9px above and below, so two stacked icons
-  // sit 18px apart — the clear space the brand guidelines ask for vertically.
   .sidebar-header &.sidebar-link--with-icon
     padding-top 0.5625rem
     padding-bottom 0.5625rem
