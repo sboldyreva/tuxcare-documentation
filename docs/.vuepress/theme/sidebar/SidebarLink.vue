@@ -232,11 +232,9 @@ function renderChildren(h, children, path, route, maxDepth, depth = 1, ctx, to) 
     transform translateY(-50%)
 
 .sidebar-link-icon
-  width 2.25rem
-  height 2.25rem
-  object-fit contain
-  flex-shrink 0
-  margin-right 1.125rem
+  max-width 1.5rem
+  height auto
+  margin-right 0.5rem
   vertical-align middle
   display inline-block
 
@@ -292,10 +290,6 @@ function renderChildren(h, children, path, route, maxDepth, depth = 1, ctx, to) 
   .sidebar-header &
     margin 0
     padding 0.55rem 0 0.5rem 0
-
-  .sidebar-header &.sidebar-link--with-icon
-    padding-top 0.5625rem
-    padding-bottom 0.5625rem
 
   .sidebar-sub-headers &
     &.active
