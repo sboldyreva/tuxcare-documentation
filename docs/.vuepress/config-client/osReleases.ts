@@ -46,7 +46,7 @@ export default [
     },
     {
         name: "CloudLinux 7",
-        icon: "/images/cloudlinux.webp",
+        icon: "/images/cloudlinux-mini.webp",
         slug: "cloudlinux-7-els",
         eol: "June 2024"
     },

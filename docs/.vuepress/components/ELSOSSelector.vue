@@ -68,8 +68,8 @@ import operatingSystems from "../config-client/osReleases";
 .os-card {
   display: flex;
   align-items: center;
-  gap: 1.125rem;
-  padding: 1.125rem;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
   border-radius: 12px;
   border: 1px solid #e0e3e8;
   background: #fff;
@@ -165,7 +165,12 @@ import operatingSystems from "../config-client/osReleases";
   }
 
   .os-card {
-    padding: 1.125rem;
+    padding: 0.7rem 0.85rem;
+  }
+
+  .os-card-icon {
+    width: 28px;
+    height: 28px;
   }
 }
 </style>
