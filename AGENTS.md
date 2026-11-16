@@ -14,5 +14,5 @@ Public TuxCare documentation (VuePress, `docs/`). Build: `yarn docs:build`.
 
 - `sales@tuxcare.com` — prospective customers: a feature, version, OS or architecture not yet offered,
   licensing, and access credentials (Nexus logins, registry tokens).
-- [TuxCare Support Portal](https://tuxcare.com/support-portal/) — customers using a product they already
-  have: signature and key verification, SBOM availability, source archives, errors.
+- `support@tuxcare.com` — customers using a product they already have: signature and key
+  verification, SBOM availability and coverage, source archives, errors.
