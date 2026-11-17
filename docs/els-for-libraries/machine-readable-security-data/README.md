@@ -128,7 +128,7 @@ The signature location and artifact naming vary by ecosystem. The Java, JavaScri
 
 1. **Obtain the exact published artifact**
 
-   With your TuxCare repository configured (see the [Java libraries](/els-for-libraries/java-libraries/) setup), copy the published `.jar` out of the repository:
+   With the TuxCare Maven repository configured (see the [Java libraries](/els-for-libraries/java-libraries/) setup), copy the published `.jar` out of it:
 
    ```text
    mvn dependency:copy \
@@ -164,7 +164,7 @@ The signature location and artifact naming vary by ecosystem. The Java, JavaScri
 
 1. **Obtain the exact published tarball**
 
-   Verification works on the byte-for-byte artifact that was signed, so download the published `.tgz` rather than repacking it locally. With your TuxCare registry configured (see the [JavaScript libraries](/els-for-libraries/javascript-libraries/) setup), `npm pack` with a version spec downloads the registry tarball as-is:
+   Verification works on the byte-for-byte artifact that was signed, so download the published `.tgz` rather than repacking it locally. With the TuxCare npm registry configured (see the [JavaScript libraries](/els-for-libraries/javascript-libraries/) setup), `npm pack` with a version spec downloads the registry tarball as-is:
 
    ```text
    npm pack @els-js/angular@1.8.3-tuxcare.8
@@ -212,7 +212,7 @@ The signature location and artifact naming vary by ecosystem. The Java, JavaScri
 
 1. **Obtain the exact published artifact**
 
-   With your TuxCare index configured (see the [Python libraries](/els-for-libraries/python-libraries/) setup), `pip download` fetches the published wheel as-is (the customer index serves wheels):
+   With the TuxCare PyPI-compatible index configured (see the [Python libraries](/els-for-libraries/python-libraries/) setup), `pip download` fetches the published wheel as-is (the index serves wheels):
 
    ```text
    pip download certifi==2021.10.8.post2+tuxcare --no-deps -d .
@@ -298,7 +298,7 @@ The signature location and artifact naming vary by ecosystem. The Java, JavaScri
 
 1. **Obtain the exact published artifact**
 
-   With your TuxCare NuGet source configured (see the [.NET libraries](/els-for-libraries/dotnet/) setup), download the published `.nupkg`:
+   With the TuxCare NuGet feed configured (see the [.NET libraries](/els-for-libraries/dotnet/) setup), download the published `.nupkg`:
 
    ```text
    nuget install Newtonsoft.Json -Version 12.0.4-tuxcare.1 -DependencyVersion Ignore -OutputDirectory .
