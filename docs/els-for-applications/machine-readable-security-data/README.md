@@ -32,7 +32,7 @@ A Software Bill of Materials (SBOM) lists the components, versions, and dependen
 * Java applications (Apache Tomcat, WildFly, Apache Hive, Apache Hadoop) — [els_lang_java](https://security.tuxcare.com/sbom/cyclonedx/els_lang_java/), laid out as `<group path>/<artifactId>/<version>/<artifactId>-<version>.sbom.json`, for example `org/apache/tomcat/tomcat/8.5.46-tuxcare.3/`
 * Go applications (Grafana, Loki, MinIO) — [els_lang_go](https://security.tuxcare.com/sbom/cyclonedx/els_lang_go/), laid out as `<application>/<version>/<build>.sbom.json`, with one SBOM per build target, for example `grafana-debian12.sbom.json`
 
-To ask whether an SBOM is available for another application, email [support@tuxcare.com](mailto:support@tuxcare.com).
+To ask whether an SBOM is available for another application, ask through the [TuxCare Support Portal](https://tuxcare.com/support-portal/).
 
 ### Verify an SBOM
 
@@ -44,7 +44,7 @@ curl -fsSLO https://security.tuxcare.com/sbom/cyclonedx/els_lang_go/Grafana/11.5
 gpg --verify grafana-debian12.sbom.json.asc grafana-debian12.sbom.json
 ```
 
-A valid signature reports `using RSA key 7BF120293948A27B` and `Good signature from "TuxCare SecureChain <support@tuxcare.com>"`. If the `.asc` is missing or `gpg` reports a different key, email [support@tuxcare.com](mailto:support@tuxcare.com).
+A valid signature reports `using RSA key 7BF120293948A27B` and `Good signature from "TuxCare SecureChain <support@tuxcare.com>"`. If the `.asc` is missing or `gpg` reports a different key, ask through the [TuxCare Support Portal](https://tuxcare.com/support-portal/).
 
 ## Vulnerability Exploitability eXchange (VEX)
 
@@ -82,7 +82,7 @@ The file holds two TuxCare SecureChain keys. Before importing, list them with th
 gpg --show-keys --with-fingerprint tuxcare-els-public.asc
 ```
 
-The signatures published on security.tuxcare.com are made with the key whose fingerprint is `AD13 9411 89BF 2258 AA30  72C9 7BF1 2029 3948 A27B`; `gpg --verify` reports it as `using RSA key 7BF120293948A27B`. If `gpg` reports a different key, or `No public key` after you import this file, email [support@tuxcare.com](mailto:support@tuxcare.com).
+The signatures published on security.tuxcare.com are made with the key whose fingerprint is `AD13 9411 89BF 2258 AA30  72C9 7BF1 2029 3948 A27B`; `gpg --verify` reports it as `using RSA key 7BF120293948A27B`. If `gpg` reports a different key, or `No public key` after you import this file, ask through the [TuxCare Support Portal](https://tuxcare.com/support-portal/).
 
 Once you have the key file (for example, `tuxcare-els-public.asc`), import it into your keyring:
 
@@ -105,7 +105,7 @@ Import the public key once. It can verify every TuxCare-signed archive, so this 
 ELS applications are distributed as archives you download from TuxCare Nexus. The signatures on [security.tuxcare.com](https://security.tuxcare.com/) sign the SBOMs, not the archives — to check an SBOM, follow [Verify an SBOM](#verify-an-sbom) instead. To verify an archive, download its detached `.asc` signature from TuxCare Nexus with the credentials you use for the archive, and run `gpg --verify` against the archive. Select your ecosystem below.
 
 :::warning
-The signature location and artifact naming differ per ecosystem: for the Java-based applications the `.asc` is published in `els-java-sbom`, and for the Go-based applications next to the archive itself in `els-golang`. Not every Go archive has a signature published yet. If your archive has no `.asc`, email [support@tuxcare.com](mailto:support@tuxcare.com).
+The signature location and artifact naming differ per ecosystem: for the Java-based applications the `.asc` is published in `els-java-sbom`, and for the Go-based applications next to the archive itself in `els-golang`. Not every Go archive has a signature published yet. If your archive has no `.asc`, ask through the [TuxCare Support Portal](https://tuxcare.com/support-portal/).
 :::
 
 <TableTabs label="Choose ecosystem: ">
