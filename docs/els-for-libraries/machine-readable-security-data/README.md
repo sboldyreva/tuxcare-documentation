@@ -9,6 +9,39 @@ TuxCare provides machine-readable security data and verification tooling for End
 
 Released fixes are available via [tuxcare.com/cve-tracker](https://tuxcare.com/cve-tracker/) and [security.tuxcare.com](https://security.tuxcare.com/).
 
+## Obtain the TuxCare Public Key
+
+To verify a signature you first need TuxCare's public signing key, the TuxCare SecureChain key. It is published at [security.tuxcare.com/gpg/GPG-KEY-TuxCare-SecureChain](https://security.tuxcare.com/gpg/GPG-KEY-TuxCare-SecureChain); no credentials are needed:
+
+```text
+curl -fsSL https://security.tuxcare.com/gpg/GPG-KEY-TuxCare-SecureChain -o tuxcare-els-public.asc
+```
+
+The file holds two TuxCare SecureChain keys. Before importing, list them with their fingerprints:
+
+```text
+gpg --show-keys --with-fingerprint tuxcare-els-public.asc
+```
+
+The signatures published on security.tuxcare.com are made with the key whose fingerprint is `AD13 9411 89BF 2258 AA30  72C9 7BF1 2029 3948 A27B`; `gpg --verify` reports it as `using RSA key 7BF120293948A27B`. If `gpg` reports a different key, or `No public key` after you import this file, ask through the [TuxCare Support Portal](https://tuxcare.com/support-portal/).
+
+Once you have the key file (for example, `tuxcare-els-public.asc`), import it into your keyring:
+
+```text
+gpg --import tuxcare-els-public.asc
+```
+
+Confirm it imported by listing the keys in your keyring:
+
+```text
+gpg --list-keys
+```
+
+:::tip
+Import the public key once. It can verify every TuxCare-signed package, so this step is not repeated for each artifact.
+:::
+
+
 ## Software Bill of Materials (SBOM)
 
 A Software Bill of Materials (SBOM) lists the components, versions, and dependency relationships of a package. TuxCare publishes SBOMs in CycloneDX format on [security.tuxcare.com](https://security.tuxcare.com/sbom/cyclonedx/), so any SBOM-aware scanner or supply-chain tool can read them.
@@ -65,7 +98,7 @@ Each VEX document reports the CVEs that directly affect the artifact. The feed c
 
 ## Package Signature Verification (GPG)
 
-Every package TuxCare builds is signed with a detached OpenPGP signature so you can confirm, before installing or updating, that the artifact was produced by TuxCare and has not been altered in transit. The signature is published as a separate `.asc` file — on [security.tuxcare.com](https://security.tuxcare.com/signatures/) for JavaScript, in TuxCare Nexus for the other ecosystems — and is created with TuxCare's signing key (SHA-256 detached signature).
+Packages TuxCare builds are signed so you can confirm, before installing or updating, that the artifact was produced by TuxCare and has not been altered in transit. For most ecosystems the signature is published as a separate `.asc` file, created with TuxCare's signing key (SHA-256 detached signature).
 
 A successful verification proves two things about the artifact:
 
@@ -76,45 +109,21 @@ A failed verification is an **integrity violation**: the artifact must be treate
 
 ### Where Signatures Are Published
 
-TuxCare publishes two different kinds of `.asc` file, and they sign different things. The signatures on [security.tuxcare.com](https://security.tuxcare.com/signatures/) sign **SBOMs**, except the JavaScript `.tgz.asc`, which signs the package tarball. To check an SBOM, follow [Verify an SBOM](#verify-an-sbom). The rest of this section covers the signatures that sign the **packages** themselves.
+TuxCare publishes two kinds of `.asc` file, and they sign different things: one signs the **SBOM**, the other signs the **package**. To check an SBOM, follow [Verify an SBOM](#verify-an-sbom). This section is about package signatures.
 
-Where the package `.asc` is published varies by ecosystem. JavaScript signatures are on [security.tuxcare.com](https://security.tuxcare.com/signatures/els_lang_javascript/) and need no credentials. The other ecosystems publish to TuxCare Nexus, which requires the same credentials as the package repositories: Java publishes the `.asc` next to the artifact in `els_java`, PHP uses the `els_php_raw_custom1` raw repository, and Python publishes it next to each package in `els-python-whl`, or `els-python-source` for source distributions. .NET has no detached signature. See the per-ecosystem steps under [Verify a Package](#verify-a-package) for the precise location and path.
+Package signatures are published per ecosystem:
 
-### Obtain the TuxCare Public Key
+* **Java** — in TuxCare Nexus, next to the artifact in `els_java`
+* **JavaScript** — on [security.tuxcare.com](https://security.tuxcare.com/signatures/els_lang_javascript/), under `signatures/els_lang_javascript/`
+* **Python** — in TuxCare Nexus, in `els-python-whl` and `els-python-source`
+* **PHP** — in TuxCare Nexus, next to the archive in the `els_php_raw_custom1` raw repository
+* **.NET** — no detached signature; the `.nupkg` carries an embedded NuGet signature
 
-To verify a signature you first need TuxCare's public signing key, the TuxCare SecureChain key. It is published at [security.tuxcare.com/gpg/GPG-KEY-TuxCare-SecureChain](https://security.tuxcare.com/gpg/GPG-KEY-TuxCare-SecureChain); no credentials are needed:
-
-```text
-curl -fsSL https://security.tuxcare.com/gpg/GPG-KEY-TuxCare-SecureChain -o tuxcare-els-public.asc
-```
-
-The file holds two TuxCare SecureChain keys. Before importing, list them with their fingerprints:
-
-```text
-gpg --show-keys --with-fingerprint tuxcare-els-public.asc
-```
-
-The signatures published on security.tuxcare.com are made with the key whose fingerprint is `AD13 9411 89BF 2258 AA30  72C9 7BF1 2029 3948 A27B`; `gpg --verify` reports it as `using RSA key 7BF120293948A27B`. If `gpg` reports a different key, or `No public key` after you import this file, ask through the [TuxCare Support Portal](https://tuxcare.com/support-portal/).
-
-Once you have the key file (for example, `tuxcare-els-public.asc`), import it into your keyring:
-
-```text
-gpg --import tuxcare-els-public.asc
-```
-
-Confirm it imported by listing the keys in your keyring:
-
-```text
-gpg --list-keys
-```
-
-:::tip
-Import the public key once. It can verify every TuxCare-signed package, so this step is not repeated for each artifact.
-:::
+Except for JavaScript, downloading a package signature needs the same TuxCare Nexus credentials as the package itself. The steps under [Verify a Package](#verify-a-package) give the exact path for each ecosystem.
 
 ### Verify a Package
 
-The verification procedure is the same for Java, JavaScript, Python, and PHP: obtain the exact published artifact, download its detached `.asc` signature (from [security.tuxcare.com](https://security.tuxcare.com/signatures/) for JavaScript, from TuxCare Nexus for the other ecosystems), and run `gpg --verify`. Select your ecosystem below.
+The procedure is the same for Java, JavaScript, Python, and PHP: obtain the exact published artifact, download its detached `.asc` signature, and run `gpg --verify`. Select your ecosystem below.
 
 :::tip
 TuxCare does not publish a detached `.asc` file for .NET packages. A TuxCare `.nupkg` carries an embedded NuGet signature instead, which the NuGet client checks for you when the package is installed, so there is no separate `gpg --verify` step for .NET.

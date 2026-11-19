@@ -25,6 +25,39 @@ Security advisories and patch definitions are published for the database applica
 | PostgreSQL | EL 9 | [errata](https://security.tuxcare.com/errata/els_postgresql/el9/) | [oval.xml](https://security.tuxcare.com/oval/els_postgresql/el9/oval.xml) | [csaf](https://security.tuxcare.com/csaf/v2/els_postgresql/el9/) |
 | PostgreSQL | Ubuntu 22.04 | [errata](https://security.tuxcare.com/errata/els_postgresql/ubuntu22.04/) | [oval.xml](https://security.tuxcare.com/oval/els_postgresql/ubuntu22.04/oval.xml) | [csaf](https://security.tuxcare.com/csaf/v2/els_postgresql/ubuntu22.04/) |
 
+## Obtain the TuxCare Public Key
+
+To verify a signature you first need TuxCare's public signing key, the TuxCare SecureChain key. It is published at [security.tuxcare.com/gpg/GPG-KEY-TuxCare-SecureChain](https://security.tuxcare.com/gpg/GPG-KEY-TuxCare-SecureChain); no credentials are needed:
+
+```text
+curl -fsSL https://security.tuxcare.com/gpg/GPG-KEY-TuxCare-SecureChain -o tuxcare-els-public.asc
+```
+
+The file holds two TuxCare SecureChain keys. Before importing, list them with their fingerprints:
+
+```text
+gpg --show-keys --with-fingerprint tuxcare-els-public.asc
+```
+
+The signatures published on security.tuxcare.com are made with the key whose fingerprint is `AD13 9411 89BF 2258 AA30  72C9 7BF1 2029 3948 A27B`; `gpg --verify` reports it as `using RSA key 7BF120293948A27B`. If `gpg` reports a different key, or `No public key` after you import this file, ask through the [TuxCare Support Portal](https://tuxcare.com/support-portal/).
+
+Once you have the key file (for example, `tuxcare-els-public.asc`), import it into your keyring:
+
+```text
+gpg --import tuxcare-els-public.asc
+```
+
+Confirm it imported by listing the keys in your keyring:
+
+```text
+gpg --list-keys
+```
+
+:::tip
+Import the public key once. It can verify every TuxCare-signed archive, so this step is not repeated for each artifact.
+:::
+
+
 ## Software Bill of Materials (SBOM)
 
 A Software Bill of Materials (SBOM) lists the components, versions, and dependency relationships of an application package. TuxCare publishes SBOMs in CycloneDX format on [security.tuxcare.com](https://security.tuxcare.com/sbom/cyclonedx/):
@@ -68,38 +101,6 @@ A successful verification proves two things about the artifact:
 
 A failed verification is an **integrity violation**: the artifact must be treated as untrusted and not installed. Do not work around a failed check by re-downloading over an insecure channel or skipping verification — investigate the source instead.
 
-### Obtain the TuxCare Public Key
-
-To verify a signature you first need TuxCare's public signing key, the TuxCare SecureChain key. It is published at [security.tuxcare.com/gpg/GPG-KEY-TuxCare-SecureChain](https://security.tuxcare.com/gpg/GPG-KEY-TuxCare-SecureChain); no credentials are needed:
-
-```text
-curl -fsSL https://security.tuxcare.com/gpg/GPG-KEY-TuxCare-SecureChain -o tuxcare-els-public.asc
-```
-
-The file holds two TuxCare SecureChain keys. Before importing, list them with their fingerprints:
-
-```text
-gpg --show-keys --with-fingerprint tuxcare-els-public.asc
-```
-
-The signatures published on security.tuxcare.com are made with the key whose fingerprint is `AD13 9411 89BF 2258 AA30  72C9 7BF1 2029 3948 A27B`; `gpg --verify` reports it as `using RSA key 7BF120293948A27B`. If `gpg` reports a different key, or `No public key` after you import this file, ask through the [TuxCare Support Portal](https://tuxcare.com/support-portal/).
-
-Once you have the key file (for example, `tuxcare-els-public.asc`), import it into your keyring:
-
-```text
-gpg --import tuxcare-els-public.asc
-```
-
-Confirm it imported by listing the keys in your keyring:
-
-```text
-gpg --list-keys
-```
-
-:::tip
-Import the public key once. It can verify every TuxCare-signed archive, so this step is not repeated for each artifact.
-:::
-
 ### Verify a Downloaded Archive
 
 ELS applications are distributed as archives you download from TuxCare Nexus. The signatures on [security.tuxcare.com](https://security.tuxcare.com/) sign the SBOMs, not the archives — to check an SBOM, follow [Verify an SBOM](#verify-an-sbom) instead. To verify an archive, download its detached `.asc` signature from TuxCare Nexus with the credentials you use for the archive, and run `gpg --verify` against the archive. Select your ecosystem below.
@@ -120,7 +121,7 @@ The signature location and artifact naming differ per ecosystem: for both the Ja
 
    ```text
    curl -u "${USERNAME}:${PASSWORD}" -O \
-     https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.12/tomcat-8.5.100-tuxcare.12.tar.gz
+     https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.3/tomcat-8.5.100-tuxcare.3.tar.gz
    ```
 
 2. **Download the matching signature**
@@ -129,13 +130,13 @@ The signature location and artifact naming differ per ecosystem: for both the Ja
 
    ```text
    curl -u "${USERNAME}:${PASSWORD}" -O \
-     https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.12/tomcat-8.5.100-tuxcare.12.tar.gz.asc
+     https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.3/tomcat-8.5.100-tuxcare.3.tar.gz.asc
    ```
 
 3. **Verify the signature against the archive**
 
    ```text
-   gpg --verify tomcat-8.5.100-tuxcare.12.tar.gz.asc tomcat-8.5.100-tuxcare.12.tar.gz
+   gpg --verify tomcat-8.5.100-tuxcare.3.tar.gz.asc tomcat-8.5.100-tuxcare.3.tar.gz
    ```
 
    A `Good signature` line, and a key ID that matches the TuxCare public key you imported, confirm the archive is authentic and unmodified. `BAD signature`, or a missing public key, is an integrity violation — stop and re-obtain the archive from TuxCare over a trusted channel.
@@ -244,9 +245,9 @@ Because the download and signature check run as `curl` and `gpg` commands, their
 #!/usr/bin/env bash
 set -o pipefail
 LOG=/var/log/tuxcare-integrity.log
-ARCHIVE=tomcat-8.5.100-tuxcare.12.tar.gz
-ARCHIVE_URL=https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.12/${ARCHIVE}
-SIG_URL=https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.12/${ARCHIVE}.asc
+ARCHIVE=tomcat-8.5.100-tuxcare.3.tar.gz
+ARCHIVE_URL=https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.3/${ARCHIVE}
+SIG_URL=https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.3/${ARCHIVE}.asc
 
 run() {
   # $1 = event label, remaining args = the command to check
