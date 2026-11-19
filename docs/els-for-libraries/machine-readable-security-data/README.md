@@ -114,13 +114,13 @@ Import the public key once. It can verify every TuxCare-signed package, so this 
 
 ### Verify a Package
 
-The verification procedure is the same for every ELS for Language Ecosystems language (Java, JavaScript, Python, PHP, .NET): obtain the exact published artifact, download its detached `.asc` signature (from [security.tuxcare.com](https://security.tuxcare.com/signatures/) for JavaScript, from TuxCare Nexus for the other ecosystems), and run `gpg --verify`. Select your ecosystem below.
+The verification procedure is the same for Java, JavaScript, Python, and PHP: obtain the exact published artifact, download its detached `.asc` signature (from [security.tuxcare.com](https://security.tuxcare.com/signatures/) for JavaScript, from TuxCare Nexus for the other ecosystems), and run `gpg --verify`. Select your ecosystem below.
 
-:::warning
-The signature location and artifact naming vary by ecosystem. The Java, JavaScript, PHP, and Python steps below are confirmed; the .NET steps shown are representative — confirm the exact signatures location and artifact naming for .NET through the [TuxCare Support Portal](https://tuxcare.com/support-portal/).
+:::tip
+TuxCare does not publish a detached `.asc` file for .NET packages. A TuxCare `.nupkg` carries an embedded NuGet signature instead, which the NuGet client checks for you when the package is installed, so there is no separate `gpg --verify` step for .NET.
 :::
 
-<TableTabs label="Choose ecosystem: " :labels="{ DotNET: '.NET' }">
+<TableTabs label="Choose ecosystem: ">
 
 <template #Java>
 
@@ -138,11 +138,11 @@ The signature location and artifact naming vary by ecosystem. The Java, JavaScri
 
 2. **Download the matching signature**
 
-   For Java, the `.asc` is published in the SBOM repository (`els-java-sbom`), keyed by artifact name and version:
+   For Java, the `.asc` is published next to the artifact itself in the `els_java` repository, at the same Maven coordinate path:
 
    ```text
    curl -u "${USERNAME}:${PASSWORD}" -fsSL \
-     https://nexus.repo.tuxcare.com/repository/els-java-sbom/commons-lang3/3.12.0-tuxcare.1/commons-lang3-3.12.0-tuxcare.1.jar.asc \
+     https://nexus.repo.tuxcare.com/repository/els_java/org/apache/commons/commons-lang3/3.12.0-tuxcare.1/commons-lang3-3.12.0-tuxcare.1.jar.asc \
      -o commons-lang3-3.12.0-tuxcare.1.jar.asc
    ```
 
@@ -292,39 +292,6 @@ The signature location and artifact naming vary by ecosystem. The Java, JavaScri
 
 </template>
 
-<template #DotNET>
-
-<ELSSteps>
-
-1. **Obtain the exact published artifact**
-
-   With the TuxCare NuGet feed configured (see the [.NET libraries](/els-for-libraries/dotnet/) setup), download the published `.nupkg`:
-
-   ```text
-   nuget install Newtonsoft.Json -Version 12.0.4-tuxcare.1 -DependencyVersion Ignore -OutputDirectory .
-   ```
-
-   The package is written to `./Newtonsoft.Json.12.0.4-tuxcare.1/`; copy the `.nupkg` from there for verification.
-
-2. **Download the matching signature**
-
-   ```text
-   curl -u "${USERNAME}:${PASSWORD}" -fsSL \
-     https://nexus.repo.tuxcare.com/repository/els-dotnet-signatures/newtonsoft.json/12.0.4-tuxcare.1/newtonsoft.json.12.0.4-tuxcare.1.nupkg.asc \
-     -o newtonsoft.json.12.0.4-tuxcare.1.nupkg.asc
-   ```
-
-3. **Verify the signature against the artifact**
-
-   ```text
-   gpg --verify newtonsoft.json.12.0.4-tuxcare.1.nupkg.asc newtonsoft.json.12.0.4-tuxcare.1.nupkg
-   ```
-
-   A `Good signature` line confirms authenticity and integrity. `BAD signature`, or a missing public key, is an integrity violation — stop and re-obtain the package from TuxCare over a trusted channel.
-
-</ELSSteps>
-
-</template>
 
 </TableTabs>
 

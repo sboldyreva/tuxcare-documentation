@@ -150,11 +150,11 @@ The signature location and artifact naming differ per ecosystem: for the Java-ba
 
 1. **Obtain the exact published archive**
 
-   Download the archive as described in the application's setup page (see, for example, [Loki](/els-for-applications/loki/)). Verification works on the byte-for-byte artifact that was signed, so keep the downloaded `.tar.gz` as-is:
+   Download the archive as described in the application's setup page (see, for example, [MinIO](/els-for-applications/minio/)). Verification works on the byte-for-byte artifact that was signed, so keep the downloaded `.tar.gz` as-is:
 
    ```text
    curl -u "${USERNAME}:${PASSWORD}" -O \
-     https://nexus.repo.tuxcare.com/repository/els-golang/loki/debian12/loki-2.8.3-tuxcare.1.tar.gz
+     https://nexus.repo.tuxcare.com/repository/els-golang/minio/minio_linux_amd64-2025.10.15T17.29.55Z-tuxcare.19.tar.gz
    ```
 
 2. **Download the matching signature**
@@ -163,7 +163,7 @@ The signature location and artifact naming differ per ecosystem: for the Java-ba
 
    ```text
    curl -u "${USERNAME}:${PASSWORD}" -O \
-     https://nexus.repo.tuxcare.com/repository/els-golang/loki/debian12/loki-2.8.3-tuxcare.1.tar.gz.asc
+     https://nexus.repo.tuxcare.com/repository/els-golang/minio/minio_linux_amd64-2025.10.15T17.29.55Z-tuxcare.19.tar.gz.asc
    ```
 
 3. **Verify the signature against the archive**
@@ -171,7 +171,7 @@ The signature location and artifact naming differ per ecosystem: for the Java-ba
    Pass the signature file first, then the archive you downloaded:
 
    ```text
-   gpg --verify loki-2.8.3-tuxcare.1.tar.gz.asc loki-2.8.3-tuxcare.1.tar.gz
+   gpg --verify minio_linux_amd64-2025.10.15T17.29.55Z-tuxcare.19.tar.gz.asc minio_linux_amd64-2025.10.15T17.29.55Z-tuxcare.19.tar.gz
    ```
 
    A valid signature produces output similar to:
