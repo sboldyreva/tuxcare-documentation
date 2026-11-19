@@ -105,7 +105,7 @@ Import the public key once. It can verify every TuxCare-signed archive, so this 
 ELS applications are distributed as archives you download from TuxCare Nexus. The signatures on [security.tuxcare.com](https://security.tuxcare.com/) sign the SBOMs, not the archives — to check an SBOM, follow [Verify an SBOM](#verify-an-sbom) instead. To verify an archive, download its detached `.asc` signature from TuxCare Nexus with the credentials you use for the archive, and run `gpg --verify` against the archive. Select your ecosystem below.
 
 :::warning
-The signature location and artifact naming differ per ecosystem: for both the Java-based and the Go-based applications the `.asc` is published next to the archive itself, in `els_java` and `els-golang` respectively. Not every Go archive has a signature published yet. If your archive has no `.asc`, ask through the [TuxCare Support Portal](https://tuxcare.com/support-portal/).
+The signature location and artifact naming differ per ecosystem: for both the Java-based and the Go-based applications the `.asc` is published next to the archive itself, in `els_java` and `els-golang` respectively. Inside `els-golang` the directory layout differs per application — see the Go steps below. If your archive has no `.asc`, ask through the [TuxCare Support Portal](https://tuxcare.com/support-portal/).
 :::
 
 <TableTabs label="Choose ecosystem: ">
@@ -157,9 +157,16 @@ The signature location and artifact naming differ per ecosystem: for both the Ja
      https://nexus.repo.tuxcare.com/repository/els-golang/minio/minio_linux_amd64-2025.10.15T17.29.55Z-tuxcare.19.tar.gz
    ```
 
+   The layout inside `els-golang` comes from each application's build configuration, so it differs between applications:
+
+   * Grafana and Loki use a directory per operating system: `<application>/<os>/<application>[-<arch>]-<version>.tar.gz`
+   * MinIO keeps every build in one directory and puts the platform in the file name: `<application>/<application>_<os>_<arch>-<version>.tar.gz`
+
+   **MinIO file names also differ from its version.** MinIO's upstream release identifier is not an ordinary version number, so the Nexus file name drops the `RELEASE.` prefix and writes the timestamp with dots instead of dashes. The release itself is `RELEASE.2025-10-15T17-29-55Z-tuxcare.19`, the form published on security.tuxcare.com; only the Nexus file name is written differently.
+
 2. **Download the matching signature**
 
-   For the Go-based applications, the `.asc` is published next to the archive in the same `els-golang` repository. Authenticate with your TuxCare Nexus credentials:
+   For the Go-based applications, the `.asc` is always published next to the archive, in the same `els-golang` repository and the same directory. Authenticate with your TuxCare Nexus credentials:
 
    ```text
    curl -u "${USERNAME}:${PASSWORD}" -O \
@@ -270,9 +277,9 @@ run "gpg verify ${ARCHIVE}" gpg --verify "${ARCHIVE}.asc" "${ARCHIVE}"
 #!/usr/bin/env bash
 set -o pipefail
 LOG=/var/log/tuxcare-integrity.log
-ARCHIVE=loki-2.8.3-tuxcare.1.tar.gz
-ARCHIVE_URL=https://nexus.repo.tuxcare.com/repository/els-golang/loki/debian12/${ARCHIVE}
-SIG_URL=https://nexus.repo.tuxcare.com/repository/els-golang/loki/debian12/${ARCHIVE}.asc
+ARCHIVE=minio_linux_amd64-2025.10.15T17.29.55Z-tuxcare.19.tar.gz
+ARCHIVE_URL=https://nexus.repo.tuxcare.com/repository/els-golang/minio/${ARCHIVE}
+SIG_URL=https://nexus.repo.tuxcare.com/repository/els-golang/minio/${ARCHIVE}.asc
 
 run() {
   # $1 = event label, remaining args = the command to check
