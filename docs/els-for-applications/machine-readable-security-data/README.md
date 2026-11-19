@@ -120,7 +120,7 @@ The signature location and artifact naming differ per ecosystem: for both the Ja
 
    ```text
    curl -u "${USERNAME}:${PASSWORD}" -O \
-     https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.3/tomcat-8.5.100-tuxcare.3.tar.gz
+     https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.12/tomcat-8.5.100-tuxcare.12.tar.gz
    ```
 
 2. **Download the matching signature**
@@ -129,13 +129,13 @@ The signature location and artifact naming differ per ecosystem: for both the Ja
 
    ```text
    curl -u "${USERNAME}:${PASSWORD}" -O \
-     https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.3/tomcat-8.5.100-tuxcare.3.tar.gz.asc
+     https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.12/tomcat-8.5.100-tuxcare.12.tar.gz.asc
    ```
 
 3. **Verify the signature against the archive**
 
    ```text
-   gpg --verify tomcat-8.5.100-tuxcare.3.tar.gz.asc tomcat-8.5.100-tuxcare.3.tar.gz
+   gpg --verify tomcat-8.5.100-tuxcare.12.tar.gz.asc tomcat-8.5.100-tuxcare.12.tar.gz
    ```
 
    A `Good signature` line, and a key ID that matches the TuxCare public key you imported, confirm the archive is authentic and unmodified. `BAD signature`, or a missing public key, is an integrity violation — stop and re-obtain the archive from TuxCare over a trusted channel.
@@ -237,9 +237,9 @@ Because the download and signature check run as `curl` and `gpg` commands, their
 #!/usr/bin/env bash
 set -o pipefail
 LOG=/var/log/tuxcare-integrity.log
-ARCHIVE=tomcat-8.5.100-tuxcare.3.tar.gz
-ARCHIVE_URL=https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.3/${ARCHIVE}
-SIG_URL=https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.3/${ARCHIVE}.asc
+ARCHIVE=tomcat-8.5.100-tuxcare.12.tar.gz
+ARCHIVE_URL=https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.12/${ARCHIVE}
+SIG_URL=https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.12/${ARCHIVE}.asc
 
 run() {
   # $1 = event label, remaining args = the command to check
