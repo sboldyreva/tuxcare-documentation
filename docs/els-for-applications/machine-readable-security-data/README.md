@@ -105,7 +105,7 @@ Import the public key once. It can verify every TuxCare-signed archive, so this 
 ELS applications are distributed as archives you download from TuxCare Nexus. The signatures on [security.tuxcare.com](https://security.tuxcare.com/) sign the SBOMs, not the archives — to check an SBOM, follow [Verify an SBOM](#verify-an-sbom) instead. To verify an archive, download its detached `.asc` signature from TuxCare Nexus with the credentials you use for the archive, and run `gpg --verify` against the archive. Select your ecosystem below.
 
 :::warning
-The signature location and artifact naming differ per ecosystem: for the Java-based applications the `.asc` is published in `els-java-sbom`, and for the Go-based applications next to the archive itself in `els-golang`. Not every Go archive has a signature published yet. If your archive has no `.asc`, ask through the [TuxCare Support Portal](https://tuxcare.com/support-portal/).
+The signature location and artifact naming differ per ecosystem: for both the Java-based and the Go-based applications the `.asc` is published next to the archive itself, in `els_java` and `els-golang` respectively. Not every Go archive has a signature published yet. If your archive has no `.asc`, ask through the [TuxCare Support Portal](https://tuxcare.com/support-portal/).
 :::
 
 <TableTabs label="Choose ecosystem: ">
@@ -125,11 +125,11 @@ The signature location and artifact naming differ per ecosystem: for the Java-ba
 
 2. **Download the matching signature**
 
-   For the Java-based applications, the `.asc` is published in the SBOM repository (`els-java-sbom`), keyed by artifact name and version:
+   For the Java-based applications, the `.asc` is published next to the archive itself in the `els_java` repository, at the same path:
 
    ```text
    curl -u "${USERNAME}:${PASSWORD}" -O \
-     https://nexus.repo.tuxcare.com/repository/els-java-sbom/tomcat/8.5.100-tuxcare.3/tomcat-8.5.100-tuxcare.3.tar.gz.asc
+     https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.3/tomcat-8.5.100-tuxcare.3.tar.gz.asc
    ```
 
 3. **Verify the signature against the archive**
@@ -239,7 +239,7 @@ set -o pipefail
 LOG=/var/log/tuxcare-integrity.log
 ARCHIVE=tomcat-8.5.100-tuxcare.3.tar.gz
 ARCHIVE_URL=https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.3/${ARCHIVE}
-SIG_URL=https://nexus.repo.tuxcare.com/repository/els-java-sbom/tomcat/8.5.100-tuxcare.3/${ARCHIVE}.asc
+SIG_URL=https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat/8.5.100-tuxcare.3/${ARCHIVE}.asc
 
 run() {
   # $1 = event label, remaining args = the command to check

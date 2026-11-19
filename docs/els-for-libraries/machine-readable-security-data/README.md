@@ -78,7 +78,7 @@ A failed verification is an **integrity violation**: the artifact must be treate
 
 TuxCare publishes two different kinds of `.asc` file, and they sign different things. The signatures on [security.tuxcare.com](https://security.tuxcare.com/signatures/) sign **SBOMs**, except the JavaScript `.tgz.asc`, which signs the package tarball. To check an SBOM, follow [Verify an SBOM](#verify-an-sbom). The rest of this section covers the signatures that sign the **packages** themselves.
 
-Where the package `.asc` is published varies by ecosystem. JavaScript signatures are on [security.tuxcare.com](https://security.tuxcare.com/signatures/els_lang_javascript/) and need no credentials. The other ecosystems publish to TuxCare Nexus, which requires the same credentials as the package repositories: Java publishes the `.asc` alongside the SBOM, PHP uses the `els_php_raw_custom1` raw repository, and Python publishes it next to each package in the `els_python` package repository. See the per-ecosystem steps under [Verify a Package](#verify-a-package) for the precise location and path.
+Where the package `.asc` is published varies by ecosystem. JavaScript signatures are on [security.tuxcare.com](https://security.tuxcare.com/signatures/els_lang_javascript/) and need no credentials. The other ecosystems publish to TuxCare Nexus, which requires the same credentials as the package repositories: Java publishes the `.asc` next to the artifact in `els_java`, PHP uses the `els_php_raw_custom1` raw repository, and Python publishes it next to each package in `els-python-whl`, or `els-python-source` for source distributions. .NET has no detached signature. See the per-ecosystem steps under [Verify a Package](#verify-a-package) for the precise location and path.
 
 ### Obtain the TuxCare Public Key
 
@@ -215,25 +215,25 @@ TuxCare does not publish a detached `.asc` file for .NET packages. A TuxCare `.n
    With the TuxCare PyPI-compatible index configured (see the [Python libraries](/els-for-libraries/python-libraries/) setup), `pip download` fetches the published wheel as-is (the index serves wheels):
 
    ```text
-   pip download certifi==2021.10.8.post2+tuxcare --no-deps -d .
+   pip download anyio==3.7.1.post2+tuxcare --no-deps -d .
    ```
 
-   This writes `certifi-2021.10.8.post2+tuxcare-py2.py3-none-any.whl` to the current directory.
+   This writes `anyio-3.7.1.post2+tuxcare-py3-none-any.whl` to the current directory.
 
 2. **Download the matching signature**
 
-   For Python, the `.asc` is published next to the package in the `els_python` package repository, under `packages/<name>/<version>/`. Authenticate with your TuxCare Nexus credentials:
+   For Python, the `.asc` is published next to the wheel in the `els-python-whl` repository, under `packages/<name>/<version>/`; source distributions are signed the same way in `els-python-source`. Authenticate with your TuxCare Nexus credentials:
 
    ```text
    curl -u "${USERNAME}:${PASSWORD}" -fsSL \
-     "https://nexus.repo.tuxcare.com/repository/els_python/packages/certifi/2021.10.8.post2+tuxcare/certifi-2021.10.8.post2+tuxcare-py2.py3-none-any.whl.asc" \
-     -o certifi-2021.10.8.post2+tuxcare-py2.py3-none-any.whl.asc
+     "https://nexus.repo.tuxcare.com/repository/els-python-whl/packages/anyio/3.7.1.post2+tuxcare/anyio-3.7.1.post2+tuxcare-py3-none-any.whl.asc" \
+     -o anyio-3.7.1.post2+tuxcare-py3-none-any.whl.asc
    ```
 
 3. **Verify the signature against the artifact**
 
    ```text
-   gpg --verify certifi-2021.10.8.post2+tuxcare-py2.py3-none-any.whl.asc certifi-2021.10.8.post2+tuxcare-py2.py3-none-any.whl
+   gpg --verify anyio-3.7.1.post2+tuxcare-py3-none-any.whl.asc anyio-3.7.1.post2+tuxcare-py3-none-any.whl
    ```
 
    A `Good signature` line confirms authenticity and integrity. `BAD signature`, or a missing public key, is an integrity violation — stop and re-obtain the package from TuxCare over a trusted channel.
