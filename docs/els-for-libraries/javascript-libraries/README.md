@@ -233,11 +233,6 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
 * **Quill** 1.3.7
 * **react-dev-utils** 4.2.3
 * **react-native-community-cli** 2.0.2, 5.0.1, 11.4.1, 12.3.0, 12.3.2, 12.3.6, 12.3.7, 13.5.1, 13.6.8, 13.6.9, 15.1.3
-* **[react-router](../react-router/)**
-  * **react-router-dom-v5-compat** 6.3.0, 6.30.4, 6.30.6
-  * **remix-run-router** 1.6.2, 1.7.2, 1.15.3, 1.23.0, 1.23.2, 1.23.3
-* **react-router-dom** 6.3.0, 6.30.3, 6.30.4, 6.30.6, 7.5.1, 7.13.1, 7.14.1, 7.14.2, 7.15.0, 7.15.1, 7.18.1
-* **react-router-native** 6.3.0, 6.30.3, 6.30.6
 * **react-server-dom-parcel** 19.2.0, 19.2.8
 * **react-server-dom-turbopack** 19.0.0, 19.0.8, 19.2.0, 19.2.8
 * **react-server-dom-webpack** 19.0.0, 19.0.8, 19.2.0, 19.2.8

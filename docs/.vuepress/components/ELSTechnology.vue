@@ -2637,17 +2637,17 @@ const techData = [
       {
         name: "react-router-dom",
         versions: "6.3.0 | 6.30.3 | 6.30.4 | 6.30.6 | 7.5.1 | 7.13.1 | 7.14.1 | 7.14.2 | 7.15.0 | 7.15.1 | 7.18.1",
-        link: "./javascript-libraries/",
+        link: "./react-router/",
       },
       {
         name: "react-router-dom-v5-compat",
         versions: "6.3.0 | 6.30.4 | 6.30.6",
-        link: "./javascript-libraries/",
+        link: "./react-router/",
       },
       {
         name: "react-router-native",
         versions: "6.3.0 | 6.30.3 | 6.30.6",
-        link: "./javascript-libraries/",
+        link: "./react-router/",
       },
       {
         name: "react-server-dom-parcel",
@@ -2672,7 +2672,7 @@ const techData = [
       {
         name: "remix-run-router",
         versions: "1.6.2 | 1.7.2 | 1.15.3 | 1.23.0 | 1.23.2 | 1.23.3",
-        link: "./javascript-libraries/",
+        link: "./react-router/",
       },
       {
         name: "RequireJS",
