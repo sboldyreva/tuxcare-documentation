@@ -1375,11 +1375,6 @@ const techData = [
         link: "./javascript-libraries/",
       },
       {
-        name: "animations",
-        versions: "5.2.11 | 6.0.1",
-        link: "./javascript-libraries/",
-      },
-      {
         name: "ansi-html",
         versions: "0.0.7",
         link: "./javascript-libraries/",
@@ -2652,11 +2647,6 @@ const techData = [
       {
         name: "react-router-native",
         versions: "6.3.0 | 6.30.3 | 6.30.6",
-        link: "./javascript-libraries/",
-      },
-      {
-        name: "react-server-dom-esm",
-        versions: "0.0.0-13a913d5-20260727",
         link: "./javascript-libraries/",
       },
       {

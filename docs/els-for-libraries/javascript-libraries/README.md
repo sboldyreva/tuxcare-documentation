@@ -12,7 +12,6 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
   * **ag-grid-enterprise** 16.0.1, 17.1.1, 18.0.1, 20.2.0, 21.0.0, 23.0.2, 23.2.1, 24.1.0, 25.0.0, 26.1.0, 26.2.0, 26.2.1, 28.1.0, 28.1.3, 30.1.0, 31.1.1
 * **agent-base** 2.1.1
 * **ajv** 4.11.8, 5.5.2, 6.4.0, 6.5.2, 6.5.3, 6.9.1, 6.10.0, 6.10.2, 6.11.0, 6.12.3, 6.12.4, 6.12.6, 6.14.0, 8.1.0, 8.6.2, 8.6.3, 8.9.0, 8.11.0, 8.11.2, 8.12.0, 8.13.0, 8.17.1
-* **animations** 5.2.11, 6.0.1
 * **ansi-html** 0.0.7
 * **ansi-regex** 3.0.0
 * **apollo-server** 4.13.0
@@ -239,7 +238,6 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
   * **remix-run-router** 1.6.2, 1.7.2, 1.15.3, 1.23.0, 1.23.2, 1.23.3
 * **react-router-dom** 6.3.0, 6.30.3, 6.30.4, 6.30.6, 7.5.1, 7.13.1, 7.14.1, 7.14.2, 7.15.0, 7.15.1, 7.18.1
 * **react-router-native** 6.3.0, 6.30.3, 6.30.6
-* **react-server-dom-esm** 0.0.0-13a913d5-20260727
 * **react-server-dom-parcel** 19.2.0, 19.2.8
 * **react-server-dom-turbopack** 19.0.0, 19.0.8, 19.2.0, 19.2.8
 * **react-server-dom-webpack** 19.0.0, 19.0.8, 19.2.0, 19.2.8
