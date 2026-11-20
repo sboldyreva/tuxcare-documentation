@@ -49,7 +49,7 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
 * **cookie-signature** 1.0.0, 1.0.1
 * **copy-anything** 2.0.6
 * **cross-spawn** 0.2.9, 3.0.1, 5.1.0, 6.0.5, 7.0.3
-* **crypto-js** 3.3.0
+* **CryptoJS** 3.3.0
 * **css-what** 3.3.0
 * **csvtojson** 2.0.8
 * **cypress-request** 2.88.12
@@ -138,9 +138,9 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
 * **json5** 0.4.0, 0.5.1, 1.0.1, 1.0.2, 2.2.0
 * **jsoneditor** 5.19.0
 * **jsonpath** 1.1.1
-* **jsonpath-plus** 4.0.0, 5.1.0, 6.0.1, 7.2.0
+* **JSONPath Plus** 4.0.0, 5.1.0, 6.0.1, 7.2.0
 * **jsonpointer** 1.1.0, 2.0.0, 4.1.0
-* **jspdf** 1.4.1, 2.5.1, 2.5.2, 3.0.4
+* **jsPDF** 1.4.1, 2.5.1, 2.5.2, 3.0.4
 * **jws** 0.2.6
 * **jwt-simple** 0.3.1
 * **katex** 0.11.1, 0.12.0, 0.16.47, 0.17.0
@@ -231,7 +231,7 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
 * **protractor** 1.8.0, 2.5.1, 3.3.0, 4.0.14, 5.4.4, 6.0.0, 7.0.0
 * **pug** 2.0.4
 * **qs** 0.4.2, 0.5.1, 0.6.5, 0.6.6, 1.0.2, 1.2.2, 2.2.4, 2.2.5, 2.3.3, 2.4.2, 3.1.0, 4.0.0, 5.1.0, 5.2.0, 5.2.1, 6.0.2, 6.0.6, 6.1.4, 6.2.1, 6.2.6, 6.3.5, 6.4.3, 6.5.1, 6.5.3, 6.5.5, 6.7.0, 6.9.1, 6.9.6, 6.10.3, 6.10.4, 6.10.7, 6.11.0, 6.11.2, 6.13.0, 6.13.4, 6.14.0, 6.14.2, 6.15.3, 6.15.4
-* **quill** 1.3.7
+* **Quill** 1.3.7
 * **react-dev-utils** 4.2.3
 * **react-native-community-cli** 2.0.2, 5.0.1, 11.4.1, 12.3.0, 12.3.2, 12.3.6, 12.3.7, 13.5.1, 13.6.8, 13.6.9, 15.1.3
 * **[react-router](../react-router/)**
@@ -245,7 +245,7 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
 * **react-server-dom-webpack** 19.0.0, 19.0.8, 19.2.0, 19.2.8
 * **redis** 2.8.0
 * **request** 2.36.0, 2.37.0, 2.40.0, 2.57.0, 2.65.0, 2.67.0, 2.75.0, 2.81.0, 2.87.0, 2.88.0, 2.88.2
-* **rollup** 0.36.3, 0.41.6, 0.56.4, 0.57.1, 0.59.4, 0.63.5, 1.32.1, 2.1.0, 2.26.5, 2.38.4, 2.77.3, 2.79.1, 2.79.2, 3.15.0, 4.22.4
+* **Rollup** 0.36.3, 0.41.6, 0.56.4, 0.57.1, 0.59.4, 0.63.5, 1.32.1, 2.1.0, 2.26.5, 2.38.4, 2.77.3, 2.79.1, 2.79.2, 3.15.0, 4.22.4
 * **sanitize-html** 1.27.5
 * **saucelabs** 1.0.1, 1.3.0
 * **selenium-webdriver** 2.44.0, 2.47.0, 2.52.0, 2.53.3, 3.6.0
@@ -290,7 +290,7 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
 * **tootallnate-once** 1.1.2, 2.0.0
 * **tough-cookie** 0.12.1, 1.2.0, 2.2.0, 2.2.1, 2.2.2, 2.3.2, 2.3.4, 2.4.3, 2.5.0, 3.0.1, 4.0.0
 * **tunnel-agent** 0.3.0, 0.4.0, 0.4.3
-* **ua-parser-js** 0.7.21, 0.7.22, 0.7.31
+* **UAParser.js** 0.7.21, 0.7.22, 0.7.31
 * **uglify-js** 1.1.1, 1.3.5, 2.3.6, 2.8.29, 3.4.10
 * **underscore** 1.4.4, 1.6.0, 1.7.0, 1.9.1, 1.13.4, 1.13.6
 * **underscore.string** 2.2.1, 2.3.3
