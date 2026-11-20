@@ -4,7 +4,7 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
 
 ## Supported JavaScript Libraries
 
-* **acorn** 6.0.4, 6.2.0
+* **Acorn** 6.0.4, 6.2.0
 * **adm-zip** 0.4.4, 0.4.7, 0.4.16, 0.5.10, 0.5.12, 0.5.16, 0.5.17, 0.5.18, 0.6.0
 * **AG Grid / AG Charts**
   * **ag-grid** 16.0.1, 17.1.0, 17.1.1, 18.0.1, 18.1.2
@@ -272,7 +272,7 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
 * **sprintf-js** 1.0.3, 1.1.2, 1.1.3
 * **ssr-window** 4.0.2
 * **ssri** 5.3.0, 7.1.0
-* **storybook** 7.0.7, 8.5.3, 8.5.8, 8.6.14, 9.1.16, 10.1.9
+* **Storybook** 7.0.7, 8.5.3, 8.5.8, 8.6.14, 9.1.16, 10.1.9
 * **stream-json** 1.9.1
 * **stringstream** 0.0.4, 0.0.5
 * **svgo** 0.7.2, 1.3.2, 2.3.0, 2.8.0, 2.8.2, 2.8.3, 4.0.1, 4.0.2

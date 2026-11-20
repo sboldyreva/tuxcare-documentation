@@ -1345,7 +1345,7 @@ const techData = [
         link: "./angularjs/",
       },
       {
-        name: "acorn",
+        name: "Acorn",
         versions: "6.0.4 | 6.2.0",
         link: "./javascript-libraries/",
       },
@@ -2825,7 +2825,7 @@ const techData = [
         link: "./javascript-libraries/",
       },
       {
-        name: "storybook",
+        name: "Storybook",
         versions: "7.0.7 | 8.5.3 | 8.5.8 | 8.6.14 | 9.1.16 | 10.1.9",
         link: "./javascript-libraries/",
       },
