@@ -163,10 +163,11 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
 * **mime** 1.2.4, 1.2.6, 1.2.11, 1.3.0, 1.3.4, 1.3.6
 * **minimatch** 0.0.4, 0.0.5, 0.2.5, 0.2.14, 0.3.0, 0.4.0, 1.0.0, 2.0.10, 3.0.3, 3.0.4, 3.0.5, 3.0.8, 3.1.2, 3.1.5, 4.2.3, 5.1.0, 5.1.1, 5.1.2, 5.1.6, 5.1.9, 7.4.6, 8.0.4, 8.0.7, 9.0.3, 9.0.4, 9.0.5, 9.0.9, 10.1.1, 10.1.2, 10.2.2, 10.2.3, 10.2.4, 10.2.5, 10.2.6
 * **minimist** 0.0.8, 0.0.9, 0.0.10, 1.1.3, 1.2.0, 1.2.1, 1.2.8
+* **Model Context Protocol**
+  * **modelcontextprotocol-core** 2.0.0, 2.1.0
+  * **modelcontextprotocol-sdk** 0.5.0, 1.7.0, 1.10.2, 1.13.3, 1.17.3, 1.20.1, 1.24.0, 1.25.2, 1.26.0, 1.27.1, 1.29.0, 1.30.0, 1.30.1, 1.31.0
 * **modelcontextprotocol-client** 2.0.0, 2.1.0
 * **modelcontextprotocol-codemod** 2.1.0
-* **modelcontextprotocol-core** 2.0.0, 2.1.0
-* **modelcontextprotocol-sdk** 0.5.0, 1.7.0, 1.10.2, 1.13.3, 1.17.3, 1.20.1, 1.24.0, 1.25.2, 1.26.0, 1.27.1, 1.29.0, 1.30.0, 1.30.1, 1.31.0
 * **modelcontextprotocol-server** 2.0.0, 2.1.0
 * **modelcontextprotocol-server-legacy** 2.0.0, 2.1.0
 * **moment** 2.0.0, 2.10.6, 2.22.2, 2.24.0, 2.29.3, 2.30.1
@@ -232,16 +233,17 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
 * **qs** 0.4.2, 0.5.1, 0.6.5, 0.6.6, 1.0.2, 1.2.2, 2.2.4, 2.2.5, 2.3.3, 2.4.2, 3.1.0, 4.0.0, 5.1.0, 5.2.0, 5.2.1, 6.0.2, 6.0.6, 6.1.4, 6.2.1, 6.2.6, 6.3.5, 6.4.3, 6.5.1, 6.5.3, 6.5.5, 6.7.0, 6.9.1, 6.9.6, 6.10.3, 6.10.4, 6.10.7, 6.11.0, 6.11.2, 6.13.0, 6.13.4, 6.14.0, 6.14.2, 6.15.3, 6.15.4
 * **quill** 1.3.7
 * **react-dev-utils** 4.2.3
-* **react-native-community-cli** 2.0.2, 5.0.1, 11.4.1, 12.0.0-alpha.15, 12.0.0-alpha.17, 12.3.0, 12.3.2, 12.3.6, 12.3.7, 13.5.1, 13.6.8, 13.6.9, 15.1.3
+* **react-native-community-cli** 2.0.2, 5.0.1, 11.4.1, 12.3.0, 12.3.2, 12.3.6, 12.3.7, 13.5.1, 13.6.8, 13.6.9, 15.1.3
+* **[react-router](../react-router/)**
+  * **react-router-dom-v5-compat** 6.3.0, 6.30.4, 6.30.6
+  * **remix-run-router** 1.6.2, 1.7.2, 1.15.3, 1.23.0, 1.23.2, 1.23.3
 * **react-router-dom** 6.3.0, 6.30.3, 6.30.4, 6.30.6, 7.5.1, 7.13.1, 7.14.1, 7.14.2, 7.15.0, 7.15.1, 7.18.1
-* **react-router-dom-v5-compat** 6.3.0, 6.30.4, 6.30.6
 * **react-router-native** 6.3.0, 6.30.3, 6.30.6
 * **react-server-dom-esm** 0.0.0-13a913d5-20260727
 * **react-server-dom-parcel** 19.2.0, 19.2.8
 * **react-server-dom-turbopack** 19.0.0, 19.0.8, 19.2.0, 19.2.8
 * **react-server-dom-webpack** 19.0.0, 19.0.8, 19.2.0, 19.2.8
 * **redis** 2.8.0
-* **remix-run-router** 1.6.2, 1.7.2, 1.15.3, 1.23.0, 1.23.2, 1.23.3
 * **request** 2.36.0, 2.37.0, 2.40.0, 2.57.0, 2.65.0, 2.67.0, 2.75.0, 2.81.0, 2.87.0, 2.88.0, 2.88.2
 * **rollup** 0.36.3, 0.41.6, 0.56.4, 0.57.1, 0.59.4, 0.63.5, 1.32.1, 2.1.0, 2.26.5, 2.38.4, 2.77.3, 2.79.1, 2.79.2, 3.15.0, 4.22.4
 * **sanitize-html** 1.27.5
@@ -258,8 +260,9 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
 * **sharp** 0.27.2, 0.32.6
 * **shell-quote** 1.4.3, 1.6.1, 1.7.2, 1.7.3, 1.8.1, 1.8.2, 1.8.3, 1.8.4, 1.9.0, 1.10.0
 * **shelljs** 0.1.4, 0.3.0, 0.8.2, 0.8.4
-* **sigstore** 1.9.0, 2.3.1
-* **sigstore-core** 2.0.0, 3.2.0
+* **sigstore-js**
+  * **sigstore** 1.9.0, 2.3.1
+  * **sigstore-core** 2.0.0, 3.2.0
 * **simple-git** 3.36.0
 * **smol-toml** 1.5.2, 1.7.0
 * **sntp** 0.2.4, 1.0.9
@@ -309,7 +312,11 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
 * **vitest** 2.0.5, 2.1.9, 3.2.4, 3.2.7, 4.0.18
 * **vitest-mocker** 2.1.9, 3.2.4, 3.2.7, 4.0.18
 * **vm2** 3.10.0, 3.11.5, 3.11.7
-* **web3** 1.10.4
+* **web3**
+  * **web3** 1.10.4
+  * **web3-eth-abi** 1.10.4
+  * **web3-eth2-beaconchain** 1.10.4
+  * **web3-eth2-core** 1.10.4
 * **web3-bzz** 1.10.4
 * **web3-core** 1.10.4
 * **web3-core-helpers** 1.10.4
@@ -318,14 +325,11 @@ Endless Lifecycle Support (ELS) for JavaScript Libraries from TuxCare provides s
 * **web3-core-requestmanager** 1.10.4
 * **web3-core-subscriptions** 1.10.4
 * **web3-eth** 1.10.4
-* **web3-eth-abi** 1.10.4
 * **web3-eth-accounts** 1.10.4
 * **web3-eth-contract** 1.10.4
 * **web3-eth-ens** 1.10.4
 * **web3-eth-iban** 1.10.4
 * **web3-eth-personal** 1.10.4
-* **web3-eth2-beaconchain** 1.10.4
-* **web3-eth2-core** 1.10.4
 * **web3-net** 1.10.4
 * **web3-providers-http** 1.10.4
 * **web3-providers-ipc** 1.10.4

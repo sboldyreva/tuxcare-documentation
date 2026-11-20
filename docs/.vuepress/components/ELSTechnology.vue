@@ -2626,7 +2626,7 @@ const techData = [
       },
       {
         name: "react-native-community-cli",
-        versions: "2.0.2 | 5.0.1 | 11.4.1 | 12.0.0-alpha.15 | 12.0.0-alpha.17 | 12.3.0 | 12.3.2 | 12.3.6 | 12.3.7 | 13.5.1 | 13.6.8 | 13.6.9 | 15.1.3",
+        versions: "2.0.2 | 5.0.1 | 11.4.1 | 12.3.0 | 12.3.2 | 12.3.6 | 12.3.7 | 13.5.1 | 13.6.8 | 13.6.9 | 15.1.3",
         link: "./javascript-libraries/",
       },
       {
@@ -3261,7 +3261,7 @@ const techData = [
       },
       {
         name: "YUI",
-        versions: "2.9.0 | 3.18.1",
+        versions: "2.9.0",
         link: "./yui/",
       },
       {
