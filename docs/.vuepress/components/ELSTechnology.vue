@@ -1635,7 +1635,7 @@ const techData = [
         link: "./javascript-libraries/",
       },
       {
-        name: "crypto-js",
+        name: "CryptoJS",
         versions: "3.3.0",
         link: "./javascript-libraries/",
       },
@@ -2080,12 +2080,17 @@ const techData = [
         link: "./javascript-libraries/",
       },
       {
+        name: "JSON Web Token (JWT)",
+        versions: "0.1.0 | 0.3.0 | 0.4.0 | 0.4.1 | 5.4.0 | 7.1.6 | 8.5.1",
+        link: "./jsonwebtoken/",
+      },
+      {
         name: "jsonpath",
         versions: "1.1.1",
         link: "./javascript-libraries/",
       },
       {
-        name: "jsonpath-plus",
+        name: "JSONPath Plus",
         versions: "4.0.0 | 5.1.0 | 6.0.1 | 7.2.0",
         link: "./javascript-libraries/",
       },
@@ -2095,12 +2100,7 @@ const techData = [
         link: "./javascript-libraries/",
       },
       {
-        name: "jsonwebtoken",
-        versions: "0.1.0 | 0.3.0 | 0.4.0 | 0.4.1 | 5.4.0 | 7.1.6 | 8.5.1",
-        link: "./jsonwebtoken/",
-      },
-      {
-        name: "jspdf",
+        name: "jsPDF",
         versions: "1.4.1 | 2.5.1 | 2.5.2 | 3.0.4",
         link: "./javascript-libraries/",
       },
@@ -2610,7 +2610,7 @@ const techData = [
         link: "./javascript-libraries/",
       },
       {
-        name: "quill",
+        name: "Quill",
         versions: "1.3.7",
         link: "./javascript-libraries/",
       },
@@ -2695,7 +2695,7 @@ const techData = [
         link: "./javascript-libraries/",
       },
       {
-        name: "rollup",
+        name: "Rollup",
         versions: "0.36.3 | 0.41.6 | 0.56.4 | 0.57.1 | 0.59.4 | 0.63.5 | 1.32.1 | 2.1.0 | 2.26.5 | 2.38.4 | 2.77.3 | 2.79.1 | 2.79.2 | 3.15.0 | 4.22.4",
         link: "./javascript-libraries/",
       },
@@ -2925,7 +2925,7 @@ const techData = [
         link: "./javascript-libraries/",
       },
       {
-        name: "ua-parser-js",
+        name: "UAParser.js",
         versions: "0.7.21 | 0.7.22 | 0.7.31",
         link: "./javascript-libraries/",
       },

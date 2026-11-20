@@ -1,10 +1,10 @@
-# jsonwebtoken
+# JSON Web Token (JWT)
 
-Endless Lifecycle Support (ELS) for jsonwebtoken from TuxCare provides security fixes for jsonwebtoken versions that have reached their end of life. With ELS, you can continue running jsonwebtoken applications without vulnerability concerns, even after official support has ended.
+Endless Lifecycle Support (ELS) for JSON Web Token from TuxCare provides security fixes for JSON Web Token versions that have reached their end of life. With ELS, you can continue running JSON Web Token applications without vulnerability concerns, even after official support has ended.
 
 ## Supported Versions
 
-* jsonwebtoken 0.1.0, 0.3.0, 0.4.0, 0.4.1, 5.4.0, 7.1.6, 8.5.1
+* JSON Web Token 0.1.0, 0.3.0, 0.4.0, 0.4.1, 5.4.0, 7.1.6, 8.5.1
 
 ## Installation
 
